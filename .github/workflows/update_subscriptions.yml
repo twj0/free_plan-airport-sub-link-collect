@@ -1,0 +1,68 @@
+# 工作流名称
+name: Update Subscriptions
+
+on:
+  # 触发条件
+  schedule:
+    # cron表达式，表示每天UTC时间0点整运行一次
+    # 您可以根据需求修改，例如 '0 */6 * * *' 表示每6小时运行一次
+    - cron: '0 0 * * *'
+  
+  # 允许您在GitHub页面上手动触发此工作流
+  workflow_dispatch:
+
+jobs:
+  build:
+    # 运行环境
+    runs-on: ubuntu-latest
+
+    steps:
+      # 步骤1: 检出您的代码
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 步骤2: 设置Python环境
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      # 步骤3: 安装依赖
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # 步骤4: 运行Python脚本以更新订阅
+      - name: Run script to get subscriptions
+        env:
+          # 将GitHub Secrets映射为环境变量，名称与main.py中的期望完全一致
+          # 格式: ENV_VAR_NAME: ${{ secrets.GITHUB_SECRET_NAME }}
+          
+          # 网站: 漏网之鱼
+          LOUWANGZHIYU_EMAIL: ${{ secrets.LOUWANGZHIYU_EMAIL }}
+          LOUWANGZHIYU_PASSWORD: ${{ secrets.LOUWANGZHIYU_PASSWORD }}
+
+          # 网站: 大白
+          DABAI_EMAIL: ${{ secrets.DABAI_EMAIL }}
+          DABAI_PASSWORD: ${{ secrets.DABAI_PASSWORD }}
+          
+          # 网站: ikuuu
+          IKUUU_EMAIL: ${{ secrets.IKUUU_EMAIL }}
+          IKUUU_PASSWORD: ${{ secrets.IKUUU_PASSWORD }}
+
+          # 网站: 华夏联盟
+          WWN_EMAIL: ${{ secrets.WWN_EMAIL }}
+          WWN_PASSWORD: ${{ secrets.WWN_PASSWORD }}
+          
+        run: python main.py
+
+      # 步骤5: 自动提交并推送更改
+      - name: Commit and push if changed
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore(subscriptions): Automatic update"
+          file_pattern: "subscriptions.txt" # 只监控这一个文件的变化
+          commit_user_name: "GitHub Actions Bot"
+          commit_user_email: "actions@github.com"
+          commit_author: "GitHub Actions Bot <actions@github.com>"
