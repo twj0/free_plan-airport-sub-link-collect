@@ -1,112 +1,115 @@
 import os
+import sys
 import logging
-import sys  # <--- IMPORT SYS MODULE
-from clients.unified_client import UnifiedApiClient
-from clients.browser_client import BrowserAutomationClient
+from collections import OrderedDict
+
+# 动态导入所有客户端
+from clients import blue2sea_client, dabai_client, ikuuu_client, louwangzhiyu_client, wwn_client
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+OUTPUT_FILE = "subscriptions.txt"
 
-# --- SITE_CONFIGS remains the same ---
-SITE_CONFIGS = {
-    "louwangzhiyu": {
-        "client_type": "api",
-        "name": "漏网之鱼",
-        "base_url": "https://ch.louwangzhiyu.xyz",
-        "login_path": "/api/v1/passport/auth/login",
-        "login_method": "data",
-        "success_check": lambda r: 'data' in r and r['data'].get('auth_data'),
-        "auth_from_key": ['data', 'auth_data'],
-        "sub_method": "api",
-        "sub_api_path": "/api/v1/user/getSubscribe"
+# --- 任务定义 ---
+# 定义每个任务需要调用的函数以及它在输出文件中的唯一标识符
+TASKS = {
+    "blue2sea": {
+        "id": "blue2sea.com",
+        "func": blue2sea_client.get_subscription,
+        "needs_creds": False
     },
     "dabai": {
-        "client_type": "browser",
-        "name": "大白",
-        "base_url": "https://www.dabai.in",
-        "login_path": "/auth/login",
-        "selectors": {
-            "email": "#email",
-            "password": "#passwd",
-            "login_button": "#login",
-            "post_login_success": "a[href='/user/logout']"
-        },
-        "sub_html_selector_key": "data-clipboard-text"
+        "id": "dabai.in",
+        "func": dabai_client.get_subscription,
+        "needs_creds": True
     },
     "ikuuu": {
-        "client_type": "browser",
-        "name": "ikuuu",
-        "base_url": "https://ikuuu.one",
-        "login_path": "/auth/login",
-        "selectors": {
-            "email": "#email",
-            "password": "#passwd",
-            "login_button": "#login",
-            "post_login_success": "a[href='/user/logout']"
-        },
-        "sub_html_selector_key": "data-clipboard-text"
+        "id": "ikuuu.one",
+        "func": ikuuu_client.get_subscription,
+        "needs_creds": True
+    },
+    "louwangzhiyu": {
+        "id": "louwangzhiyu.xyz",
+        "func": louwangzhiyu_client.get_subscription,
+        "needs_creds": True
     },
     "wwn": {
-        "client_type": "api",
-        "name": "华夏联盟",
-        "base_url": "https://wwn.trx1.cyou",
-        "login_path": "/api/v1/passport/auth/login",
-        "login_method": "json",
-        "extra_payload": {"captchaData": ""},
-        "success_check": lambda r: 'data' in r and r['data'].get('auth_data'),
-        "auth_from_key": ['data', 'auth_data'],
-        "sub_method": "api",
-        "sub_api_path": "/api/v1/user/getSubscribe"
+        "id": "wwn.trx1.cyou",
+        "func": wwn_client.get_subscription,
+        "needs_creds": True
     }
 }
 
-CLIENT_MAP = {
-    "api": UnifiedApiClient,
-    "browser": BrowserAutomationClient
-}
+def read_existing_subscriptions(filename):
+    """读取已有的订阅文件，并将其解析为字典以便更新。"""
+    subs = OrderedDict()
+    if not os.path.exists(filename):
+        return subs
+    with open(filename, 'r', encoding='utf-8') as f:
+        for line in f:
+            line = line.strip()
+            if not line or '://' not in line:
+                continue
+            # 通过任务ID来识别和映射已有链接
+            for task_name, task_info in TASKS.items():
+                if task_info['id'] in line:
+                    subs[task_name] = line
+                    break
+    return subs
+
+def run_tasks(task_names):
+    """运行指定的任务并返回获取到的链接字典。"""
+    new_links = {}
+    for name in task_names:
+        task = TASKS[name]
+        logging.info(f"--- Running task: {name} ---")
+        
+        link = None
+        if task['needs_creds']:
+            email = os.environ.get(f"{name.upper()}_EMAIL")
+            password = os.environ.get(f"{name.upper()}_PASSWORD")
+            if not email or not password:
+                logging.warning(f"Skipping {name}: Credentials not found in GitHub Secrets.")
+                continue
+            link = task['func'](email, password)
+        else:
+            link = task['func']()
+            
+        if link:
+            logging.info(f"Success! Fetched link for {name}.")
+            new_links[name] = link
+        else:
+            logging.error(f"Failed to fetch link for {name}.")
+            
+    return new_links
 
 def main():
-    all_subscriptions = []
-    any_browser_failed = False  # <--- ADD A FLAG TO TRACK BROWSER FAILURES
-
-    for site_key, config in SITE_CONFIGS.items():
-        logging.info(f"--- 开始处理网站: {config['name']} ---")
-        email = os.environ.get(f"{site_key.upper()}_EMAIL")
-        password = os.environ.get(f"{site_key.upper()}_PASSWORD")
-        if not email or not password:
-            logging.warning(f"跳过 {config['name']}，因未设置Secrets。")
-            continue
-        try:
-            client_class = CLIENT_MAP[config['client_type']]
-            api_client = client_class(email=email, password=password, config=config)
-            
-            if api_client.login():
-                sub_link = api_client.get_subscription_link()
-                if sub_link:
-                    logging.info(f"成功获取 {config['name']} 的订阅链接。")
-                    all_subscriptions.append(sub_link)
-            elif config['client_type'] == 'browser':
-                # If login fails AND it was a browser client, set the flag
-                any_browser_failed = True
-
-        except Exception as e:
-            logging.error(f"处理 {config['name']} 时发生严重错误: {e}")
-            if config['client_type'] == 'browser':
-                any_browser_failed = True
-
-    if all_subscriptions:
-        unique_links = sorted(list(set(all_subscriptions)))
-        with open("subscriptions.txt", "w", encoding="utf-8") as f:
-            for link in unique_links:
-                f.write(link + "\n")
-        logging.info(f"--- {len(unique_links)}条唯一的订阅链接已成功写入 subscriptions.txt！ ---")
-    else:
-        logging.warning("--- 未能获取到任何订阅链接，文件未更新。 ---")
-
-    # <--- ADD FINAL CHECK ---
-    # If any browser client failed, exit with an error code to make the Action fail
-    if any_browser_failed:
-        logging.error("一个或多个浏览器客户端操作失败。正在以错误状态退出以触发工件上传。")
+    if len(sys.argv) < 2 or sys.argv[1] not in ['daily', 'weekly']:
+        print("Usage: python main.py [daily|weekly]")
         sys.exit(1)
+        
+    run_mode = sys.argv[1]
+    
+    # 根据运行模式选择要执行的任务
+    tasks_to_run = []
+    if run_mode == 'daily':
+        tasks_to_run = ['blue2sea']
+    elif run_mode == 'weekly':
+        tasks_to_run = ['dabai', 'ikuuu', 'louwangzhiyu', 'wwn']
+
+    # 核心逻辑
+    existing_subs = read_existing_subscriptions(OUTPUT_FILE)
+    newly_fetched_subs = run_tasks(tasks_to_run)
+    
+    # 更新订阅字典，用新获取的链接覆盖旧的
+    final_subs = existing_subs
+    final_subs.update(newly_fetched_subs)
+    
+    # 写入文件
+    with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
+        for task_name, link in final_subs.items():
+            f.write(link + "\n")
+            
+    logging.info(f"--- Subscription file '{OUTPUT_FILE}' updated successfully! ---")
 
 if __name__ == "__main__":
     main()

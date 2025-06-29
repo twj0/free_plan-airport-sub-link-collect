@@ -1,0 +1,36 @@
+name: Weekly Subscription Update
+
+on:
+  schedule:
+    # 每周日UTC时间18:30运行 (北京时间周一凌晨2:30)
+    - cron: '30 18 * * 0'
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run weekly script
+        env:
+          DABAI_EMAIL: ${{ secrets.DABAI_EMAIL }}
+          DABAI_PASSWORD: ${{ secrets.DABAI_PASSWORD }}
+          IKUUU_EMAIL: ${{ secrets.IKUUU_EMAIL }}
+          IKUUU_PASSWORD: ${{ secrets.IKUUU_PASSWORD }}
+          LOUWANGZHIYU_EMAIL: ${{ secrets.LOUWANGZHIYU_EMAIL }}
+          LOUWANGZHIYU_PASSWORD: ${{ secrets.LOUWANGZHIYU_PASSWORD }}
+          WWN_EMAIL: ${{ secrets.WWN_EMAIL }}
+          WWN_PASSWORD: ${{ secrets.WWN_PASSWORD }}
+        run: python main.py weekly
+      - name: Commit and push changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "feat: Weekly update for account-based subscriptions"
+          file_pattern: "subscriptions.txt"

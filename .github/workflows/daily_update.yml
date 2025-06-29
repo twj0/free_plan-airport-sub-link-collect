@@ -1,0 +1,27 @@
+name: Daily Subscription Update (Blue2sea)
+
+on:
+  schedule:
+    # 每天UTC时间18:00运行 (北京时间凌晨2点)
+    - cron: '0 18 * * *'
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run daily script
+        run: python main.py daily
+      - name: Commit and push changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "feat: Daily update for Blue2sea subscription"
+          file_pattern: "subscriptions.txt"
