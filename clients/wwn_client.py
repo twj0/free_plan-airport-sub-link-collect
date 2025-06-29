@@ -1,6 +1,7 @@
 import requests
 import logging
 
+import urllib.parse
 class WwnApiClient:
     """
     一个用于与 wwn.trx1.cyou 网站API交互的客户端类。
@@ -58,7 +59,16 @@ def get_subscription(email, password):
             if sub_data and sub_data.get('subscribe_url'):
                 dirty_url = sub_data['subscribe_url']
                 clean_url = dirty_url.strip().rstrip(',')
-                return clean_url
+                converter_backend = "suburl.v1.mk"
+                # 构建最终的、稳定的转换器URL
+                encoded_url = urllib.parse.quote(clean_url.strip().rstrip(','))
+                
+                # target=clash&list=true可以返回一个更干净的节点列表YAML
+                final_url = f"https://{converter_backend}/sub?target=clash&list=true&url={encoded_url}"
+                
+                logging.info(f"为 [华夏联盟] 构建了转换器链接: {final_url}")
+                
+                return final_url
         return None
     except Exception as e:
         logging.error(f"处理 wwn.trx1.cyou 客户端时出错: {e}")

@@ -9,7 +9,7 @@ from urllib.parse import unquote, urlparse
 from typing import Optional, List, Dict, Any
 
 # --- 配置区域 ---
-from clients import blue2sea_client, dabai_client, ikuuu_client, louwangzhiyu_client, wwn_client
+from clients import dabai_client, ikuuu_client, louwangzhiyu_client, wwn_client
 
 # 配置日志
 logging.basicConfig(
@@ -32,7 +32,11 @@ TASKS = {
     "ikuuu":        {"tag": "[ikuuu]",      "func": ikuuu_client.get_subscription,      "needs_creds": True},
     "wwn":          {"tag": "[华夏联盟]",     "func": wwn_client.get_subscription,     "needs_creds": True},
     "louwangzhiyu": {"tag": "[漏网之鱼]", "func": louwangzhiyu_client.get_subscription, "needs_creds": True},
-    "blue2sea":     {"tag": "[Blue2sea]",   "func": blue2sea_client.get_subscription,   "needs_creds": False},
+    
+
+
+
+
 }
 
 def validate_uri_format(uri: str) -> bool:
