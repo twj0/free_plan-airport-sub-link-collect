@@ -5,7 +5,6 @@
 
 ---
 
-```markdown
 
 
 [![Update Subscriptions](https://github.com/twj0/free_plan-airport-sub-link-collect/actions/workflows/weekly_update.yml/badge.svg)](https://github.com/twj0/free_plan-airport-sub-link-collect/actions/workflows/weekly_update.yml)
