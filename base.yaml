@@ -35,7 +35,6 @@ proxy-groups:
       - "ikuuu"
       - "华夏联盟"
       - "漏网之鱼"
-      - "Blue2sea"
       - "DIRECT"
 
   # 自动测速组
@@ -75,10 +74,7 @@ proxy-groups:
     proxies:
       - "[SITE:louwangzhiyu]"
 
-  - name: "Blue2sea"
-    type: select
-    proxies:
-      - "[SITE:blue2sea]"
+
 
 # 规则: 您可以自由定义所有规则
 rules:
