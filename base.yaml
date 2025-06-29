@@ -33,7 +33,7 @@ proxy-groups:
       - "所有节点"
       - "大白"
       - "ikuuu"
-      - "华夏联盟"
+      # - "华夏联盟"
       - "漏网之鱼"
       - "DIRECT"
 
@@ -64,10 +64,10 @@ proxy-groups:
     proxies:
       - "[SITE:ikuuu]"
   
-  - name: "华夏联盟"
-    type: select
-    proxies:
-      - "[SITE:wwn]"
+  # - name: "华夏联盟"
+    # type: select
+    # proxies:
+      # - "[SITE:wwn]"
 
   - name: "漏网之鱼"
     type: select
