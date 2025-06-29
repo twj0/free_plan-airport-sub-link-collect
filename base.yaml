@@ -1,4 +1,6 @@
-# 示例 base.yaml
+# 您的 Clash 基础配置模板
+
+# 基础设置
 port: 7890
 mixed-port: 7891
 allow-lan: true
@@ -6,26 +8,82 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 
-# 所有的节点都会被动态填充到这里
+# DNS 配置
+dns:
+  enable: true
+  listen: 0.0.0.0:53
+  enhanced-mode: redir-host
+  fallback-filter:
+    geoip: true
+    ipcidr: [240.0.0.0/4]
+  nameserver:
+    - https://dns.alidns.com/dns-query
+    - https://doh.pub/dns-query
+
+# 代理节点列表: 此处将由脚本自动填充所有节点
 proxies:
 
-# 我们自定义的代理组
+# 代理组: 此处是魔法发生的地方
 proxy-groups:
-  - name: "🚀 PROXY"
-    type: select
-    # '[]'中括号是占位符，转换器会自动填充所有节点名
-    proxies:
-      - "[]"
-      - "DIRECT"
-  - name: "🌍 国外媒体"
+  # 顶级选择器，所有规则的入口
+  - name: "🔮 PROXY"
     type: select
     proxies:
-      - "🚀 PROXY"
+      - "🚀 Auto"
+      - "所有节点"
+      - "大白"
+      - "ikuuu"
+      - "华夏联盟"
+      - "漏网之鱼"
+      - "Blue2sea"
       - "DIRECT"
-  # ... 其他你想要的代理组
 
-# 我们自定义的规则
+  # 自动测速组
+  - name: "🚀 Auto"
+    type: url-test
+    # 占位符: [AUTO]，脚本会自动将所有节点名填充到这里
+    proxies:
+      - "[AUTO]"
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 300
+
+  # 手动选择组 (包含所有节点)
+  - name: "所有节点"
+    type: select
+    proxies:
+      - "[AUTO]" # 这里也使用 [AUTO] 占位符
+
+  # --------- 以下是按来源自动分类的代理组 ---------
+  # 占位符格式: [SITE:站点标识符]，脚本会找到它并填充
+  - name: "大白"
+    type: select
+    proxies:
+      - "[SITE:dabai]"
+
+  - name: "ikuuu"
+    type: select
+    proxies:
+      - "[SITE:ikuuu]"
+  
+  - name: "华夏联盟"
+    type: select
+    proxies:
+      - "[SITE:wwn]"
+
+  - name: "漏网之鱼"
+    type: select
+    proxies:
+      - "[SITE:louwangzhiyu]"
+
+  - name: "Blue2sea"
+    type: select
+    proxies:
+      - "[SITE:blue2sea]"
+
+# 规则: 您可以自由定义所有规则
 rules:
-  - 'DOMAIN-SUFFIX,google.com,🚀 PROXY'
-  - 'DOMAIN-KEYWORD,telegram,🚀 PROXY'
-  - 'MATCH,DIRECT'
+  - 'DOMAIN-SUFFIX,google.com,🔮 PROXY'
+  - 'DOMAIN-SUFFIX,github.com,🔮 PROXY'
+  - 'DOMAIN-KEYWORD,telegram,🔮 PROXY'
+  - 'GEOIP,CN,DIRECT'
+  - 'MATCH,🔮 PROXY'
