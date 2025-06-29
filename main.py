@@ -4,9 +4,11 @@ import logging
 import requests
 import yaml
 import base64
+import json
+from urllib.parse import unquote
 from urllib.parse import urlparse
 
-# --- 配置区域 ---
+
 from clients import blue2sea_client, dabai_client, ikuuu_client, louwangzhiyu_client, wwn_client
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -20,6 +22,56 @@ TASKS = {
     "louwangzhiyu": {"tag": "[漏网之鱼]", "func": louwangzhiyu_client.get_subscription, "needs_creds": True},
 
 }
+
+# --- 新增：节点URI解析器 ---
+def parse_uri(uri):
+    """解析单个节点链接 (ss, vmess) 并返回Clash格式的字典。"""
+    try:
+        if uri.startswith('ss://'):
+            # SS URI: ss://method:password@server:port#name
+            # Base64部分: method:password
+            # 其他部分: @server:port#name
+            main_part, name = uri.split('#', 1)
+            # URL解码名称
+            name = unquote(name)
+            
+            # 去掉协议头 "ss://"
+            encoded_part, server_part = main_part[5:].rsplit('@', 1)
+            server, port = server_part.rsplit(':', 1)
+            
+            # 解码认证信息
+            decoded_auth = base64.b64decode(encoded_part).decode('utf-8')
+            cipher, password = decoded_auth.split(':', 1)
+            
+            return {'name': name, 'type': 'ss', 'server': server, 'port': int(port), 'cipher': cipher, 'password': password}
+
+        elif uri.startswith('vmess://'):
+            # VMess URI: vmess://BASE64
+            encoded_part = uri[8:]
+            decoded_json = base64.b64decode(encoded_part).decode('utf-8')
+            vmess_data = json.loads(decoded_json)
+            
+            node = {
+                'name': vmess_data.get('ps'),
+                'type': 'vmess',
+                'server': vmess_data.get('add'),
+                'port': int(vmess_data.get('port')),
+                'uuid': vmess_data.get('id'),
+                'alterId': int(vmess_data.get('aid')),
+                'cipher': vmess_data.get('scy', 'auto'),
+                'network': vmess_data.get('net'),
+                'tls': vmess_data.get('tls') == 'tls',
+            }
+            if node['network'] == 'ws':
+                node['ws-opts'] = {'path': vmess_data.get('path', '/'), 'headers': {'Host': vmess_data.get('host', node['server'])}}
+            if node['tls']:
+                node['servername'] = vmess_data.get('host', node['server'])
+
+            return node
+    except Exception as e:
+        logging.error(f"解析URI失败: '{uri[:30]}...', 错误: {e}")
+        return None
+    return None
 
 def get_content_from_url(url):
     if not url: return None
@@ -44,18 +96,21 @@ def parse_subscription_content(content):
         data = yaml.safe_load(sanitized_content)
         if isinstance(data, dict) and 'proxies' in data and isinstance(data['proxies'], list):
             return data['proxies']
-    except (yaml.YAMLError, AttributeError):
+    except Exception:
+        # 如果YAML解析失败，进入Base64处理流程
         try:
-            content = ''.join(content.split())
-            decoded_content = base64.b64decode(content).decode('utf-8')
-            # 此处可以扩展为解析URI链接，但目前简化处理
-            logging.warning("内容被识别为Base64，但当前版本不支持解析其中的URI。")
-            return []
+            decoded_content = base64.b64decode(''.join(content.split())).decode('utf-8')
+            uris = decoded_content.splitlines()
+            nodes = []
+            for uri in uris:
+                if uri.strip():
+                    node = parse_uri(uri)
+                    if node:
+                        nodes.append(node)
+            return nodes
         except Exception:
-            # 如果两种方式都失败了，静默处理，返回空列表
-            logging.error("内容既不是有效的YAML(即使净化后)也不是Base64。")
+            logging.error("内容既不是有效的YAML也不是Base64。")
             return []
-            
     return []
 
 def run_tasks_and_get_nodes(task_names):
