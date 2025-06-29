@@ -2,7 +2,7 @@ import os
 import logging
 from clients.unified_client import UnifiedApiClient
 
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # --- 为每个网站定义配置 ---
 SITE_CONFIGS = {
@@ -11,9 +11,9 @@ SITE_CONFIGS = {
         "base_url": "https://ch.louwangzhiyu.xyz",
         "login_path": "/api/v1/passport/auth/login",
         "login_method": "data",
-        # CORRECTED: Changed success check logic to be more robust
         "success_check": lambda r: 'data' in r and r['data'].get('token'),
-        "auth_from_key": ['data', 'token'],
+        # CORRECTED: Use the correct 'auth_data' for API calls, not the short 'token'
+        "auth_from_key": ['data', 'auth_data'],
         "sub_method": "api",
         "sub_api_path": "/api/v1/user/getSubscribe"
     },
@@ -54,19 +54,16 @@ SITE_CONFIGS = {
     }
 }
 
+# ... (main function remains unchanged) ...
 def main():
     all_subscriptions = []
-
     for site_key, config in SITE_CONFIGS.items():
         logging.info(f"--- 开始处理网站: {config['name']} ---")
-        
         email = os.environ.get(f"{site_key.upper()}_EMAIL")
         password = os.environ.get(f"{site_key.upper()}_PASSWORD")
-        
         if not email or not password:
             logging.warning(f"跳过 {config['name']}，因为未在Secrets中设置 {site_key.upper()}_EMAIL 或 _PASSWORD。")
             continue
-
         try:
             api_client = UnifiedApiClient(email=email, password=password, config=config)
             if api_client.login():
@@ -76,7 +73,6 @@ def main():
                     all_subscriptions.append(sub_link)
         except Exception as e:
             logging.error(f"处理 {config['name']} 时发生严重错误: {e}")
-    
     if all_subscriptions:
         unique_links = sorted(list(set(all_subscriptions)))
         with open("subscriptions.txt", "w", encoding="utf-8") as f:
@@ -85,6 +81,5 @@ def main():
         logging.info(f"--- {len(unique_links)}条唯一的订阅链接已成功写入 subscriptions.txt！ ---")
     else:
         logging.warning("--- 未能获取到任何订阅链接，文件未更新。 ---")
-
 if __name__ == "__main__":
     main()
