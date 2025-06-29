@@ -51,3 +51,11 @@ jobs:
           commit_user_name: "GitHub Actions Bot"
           commit_user_email: "actions@github.com"
           commit_author: "GitHub Actions Bot <actions@github.com>"
+
+           # ADDED: 只有在前面的步骤失败时，此步骤才会运行
+      - name: Upload debug screenshots on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: debug-screenshots
+          path: debug_*.png # 上传所有以 debug_ 开头的png文件

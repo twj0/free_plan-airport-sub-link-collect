@@ -85,6 +85,7 @@ class UnifiedApiClient:
                 response = self.session.get(f"{self.base_url}{api_path}")
                 response.raise_for_status()
                 sub_data = response.json()
+                logging.debug(f"订阅API响应: {sub_data}")
                 if sub_data.get('data') and sub_data['data'].get('subscribe_url'):
                     return sub_data['data']['subscribe_url']
                 

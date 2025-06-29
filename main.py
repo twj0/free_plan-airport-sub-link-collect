@@ -4,7 +4,7 @@ from clients.unified_client import UnifiedApiClient
 # 导入新的浏览器客户端
 from clients.browser_client import BrowserAutomationClient
 
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # 为每个网站定义配置
 SITE_CONFIGS = {

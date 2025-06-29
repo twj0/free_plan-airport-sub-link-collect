@@ -1,42 +1,66 @@
 import logging
-from playwright.sync_api import sync_playwright
+from playwright.sync_api import sync_playwright, TimeoutError
 
 class BrowserAutomationClient:
     """
     一个使用Playwright驱动真实浏览器进行操作的客户端，
-    用于处理需要复杂JavaScript环境的网站。
+    增加了更稳健的等待和失败时自动截图的调试功能。
     """
     def __init__(self, email, password, config):
         self.email = email
         self.password = password
         self.config = config
         self.base_url = config['base_url']
-        self.page = None # Playwright的页面对象
+        self.page = None
+        self.browser = None
+        self.playwright = None
 
     def login(self) -> bool:
         logging.info(f"正在使用Playwright(浏览器模式)尝试登录 {self.config['name']}...")
         try:
-            # Playwright的上下文管理器，会自动处理浏览器启动和关闭
-            with sync_playwright() as p:
-                browser = p.chromium.launch(headless=True)
-                self.page = browser.new_page()
-                self.page.goto(f"{self.base_url}{self.config['login_path']}")
+            self.playwright = sync_playwright().start()
+            self.browser = self.playwright.chromium.launch(headless=True)
+            self.page = self.browser.new_page()
+            
+            logging.info("浏览器已启动，正在导航到登录页面...")
+            self.page.goto(f"{self.base_url}{self.config['login_path']}", timeout=60000)
 
-                # 等待页面加载完成，并填写表单
-                self.page.fill(self.config['selectors']['email'], self.email)
-                self.page.fill(self.config['selectors']['password'], self.password)
-                self.page.click(self.config['selectors']['login_button'])
+            # ADDED: 在操作前等待页面稳定，并截取一张初始图用于调试
+            self.page.wait_for_load_state('networkidle', timeout=15000)
+            self.page.screenshot(path=f"debug_{self.config['name']}_1_initial_page.png")
 
-                # 等待登录成功的关键标志出现
-                # 这里我们等待用户中心页面的某个特定元素，这是最可靠的方式
-                success_selector = self.config['selectors']['post_login_success']
-                self.page.wait_for_selector(success_selector, timeout=15000)
-                
-                logging.info("Playwright登录成功！已跳转到用户中心。")
-                return True
+            # 等待登录表单的关键元素变得可见
+            email_selector = self.config['selectors']['email']
+            password_selector = self.config['selectors']['password']
+            
+            logging.info(f"等待元素 '{email_selector}' 出现...")
+            self.page.wait_for_selector(email_selector, state='visible', timeout=20000)
+            
+            logging.info("填写登录表单...")
+            self.page.fill(email_selector, self.email)
+            self.page.fill(password_selector, self.password)
+            
+            # 点击前截图
+            self.page.screenshot(path=f"debug_{self.config['name']}_2_before_click.png")
+            self.page.click(self.config['selectors']['login_button'])
 
+            # 等待登录成功的标志出现
+            success_selector = self.config['selectors']['post_login_success']
+            logging.info(f"等待登录成功标志 '{success_selector}' 出现...")
+            self.page.wait_for_selector(success_selector, timeout=15000)
+            
+            self.page.screenshot(path=f"debug_{self.config['name']}_3_login_success.png")
+            logging.info("Playwright登录成功！")
+            return True
+
+        except TimeoutError as e:
+            logging.error(f"Playwright操作超时: {e}")
+            self.page.screenshot(path=f"debug_{self.config['name']}_4_timeout_failure.png")
+            return False
         except Exception as e:
-            logging.error(f"Playwright登录时发生错误: {e}")
+            logging.error(f"Playwright登录时发生未知错误: {e}")
+            if self.page:
+                self.page.screenshot(path=f"debug_{self.config['name']}_5_unknown_failure.png")
             return False
 
     def get_subscription_link(self) -> str | None:
@@ -46,15 +70,12 @@ class BrowserAutomationClient:
         
         logging.info("正在用户中心页面寻找订阅链接...")
         try:
-            # 链接通常在“复制”按钮的属性里
             selector_key = self.config['sub_html_selector_key']
-            # 使用 locator API，更稳定
             link_element = self.page.locator(f"[{selector_key}*='/link/']").first
             sub_link = link_element.get_attribute(selector_key)
             
             if sub_link:
                 logging.info("通过Playwright成功找到订阅链接！")
-                # Playwright操作完成后，页面和浏览器会被with语句自动关闭
                 return sub_link
             else:
                 logging.error("在页面中未能定位到订阅链接元素。")
@@ -62,3 +83,9 @@ class BrowserAutomationClient:
         except Exception as e:
             logging.error(f"Playwright寻找订阅链接时出错: {e}")
             return None
+        finally:
+            # 确保浏览器在所有操作后关闭
+            if self.browser:
+                self.browser.close()
+            if self.playwright:
+                self.playwright.stop()
