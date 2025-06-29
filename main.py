@@ -1,13 +1,15 @@
 import os
 import sys
 import logging
+import urllib.parse
+import requests
 from collections import OrderedDict
 
 # 动态导入所有客户端
 from clients import blue2sea_client, dabai_client, ikuuu_client, louwangzhiyu_client, wwn_client
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-OUTPUT_FILE = "subscriptions.txt"
+OUTPUT_FILE = "merged_subscription.yaml"
 
 # --- 任务定义 ---
 # 定义每个任务需要调用的函数以及它在输出文件中的唯一标识符
@@ -39,6 +41,11 @@ TASKS = {
     }
 }
 
+# --- 订阅转换器配置 ---
+
+SUB_CONVERTER_BACKEND = "subapi.v1.mk"
+BASE_CONFIG_URL = "https://raw.githubusercontent.com/twj0/free_plan-airport-sub-link-collect/main/base.yaml" 
+
 def read_existing_subscriptions(filename):
     """读取已有的订阅文件，并将其解析为字典以便更新。"""
     subs = OrderedDict()
@@ -58,7 +65,7 @@ def read_existing_subscriptions(filename):
 
 def run_tasks(task_names):
     """运行指定的任务并返回获取到的链接字典。"""
-    new_links = {}
+    all_links = {}
     for name in task_names:
         task = TASKS[name]
         logging.info(f"--- Running task: {name} ---")
@@ -76,11 +83,11 @@ def run_tasks(task_names):
             
         if link:
             logging.info(f"Success! Fetched link for {name}.")
-            new_links[name] = link
+            all_links[name] = link
         else:
             logging.error(f"Failed to fetch link for {name}.")
             
-    return new_links
+    return all_links
 
 def main():
     if len(sys.argv) < 2 or sys.argv[1] not in ['daily', 'weekly']:
@@ -95,21 +102,38 @@ def main():
         tasks_to_run = ['blue2sea']
     elif run_mode == 'weekly':
         tasks_to_run = ['dabai', 'ikuuu', 'louwangzhiyu', 'wwn']
+        # 1. 获取所有原始订阅链接
+    subscription_links = run_tasks(tasks_to_run)
+    if not subscription_links:
+        logging.warning("未能获取到任何订阅链接，任务终止。")
+        return
 
-    # 核心逻辑
-    existing_subs = read_existing_subscriptions(OUTPUT_FILE)
-    newly_fetched_subs = run_tasks(tasks_to_run)
+     # 2. 构建指向订阅转换器的URL
+    # 将我们的链接列表用'|'连接起来
+    links_str = "|".join(subscription_links)
     
-    # 更新订阅字典，用新获取的链接覆盖旧的
-    final_subs = existing_subs
-    final_subs.update(newly_fetched_subs)
+    # URL编码，确保链接中的特殊字符被正确处理
+    encoded_links = urllib.parse.quote(links_str)
+    encoded_config_url = urllib.parse.quote(BASE_CONFIG_URL)
+
+    final_converter_url = f"https://{SUB_CONVERTER_BACKEND}/sub?target=clash&url={encoded_links}&insert=false&config={encoded_config_url}&emoji=true&new_name=true"
     
-    # 写入文件
-    with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
-        for task_name, link in final_subs.items():
-            f.write(link + "\n")
-            
-    logging.info(f"--- Subscription file '{OUTPUT_FILE}' updated successfully! ---")
+    logging.info(f"正在调用订阅转换器: {final_converter_url}")
+
+    # 3. 从转换器获取最终的订阅内容
+    try:
+        response = requests.get(final_converter_url, timeout=30)
+        response.raise_for_status()
+        final_subscription_content = response.text
+
+        # 4. 保存到文件
+        with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
+            f.write(final_subscription_content)
+        
+        logging.info(f"--- 成功生成合并后的订阅文件: {OUTPUT_FILE}！ ---")
+
+    except Exception as e:
+        logging.error(f"调用订阅转换器或保存文件时出错: {e}")
 
 if __name__ == "__main__":
     main()

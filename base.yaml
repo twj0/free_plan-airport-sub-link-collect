@@ -1,0 +1,31 @@
+# 示例 base.yaml
+port: 7890
+mixed-port: 7891
+allow-lan: true
+mode: rule
+log-level: info
+external-controller: 127.0.0.1:9090
+
+# 所有的节点都会被动态填充到这里
+proxies:
+
+# 我们自定义的代理组
+proxy-groups:
+  - name: "🚀 PROXY"
+    type: select
+    # '[]'中括号是占位符，转换器会自动填充所有节点名
+    proxies:
+      - "[]"
+      - "DIRECT"
+  - name: "🌍 国外媒体"
+    type: select
+    proxies:
+      - "🚀 PROXY"
+      - "DIRECT"
+  # ... 其他你想要的代理组
+
+# 我们自定义的规则
+rules:
+  - 'DOMAIN-SUFFIX,google.com,🚀 PROXY'
+  - 'DOMAIN-KEYWORD,telegram,🚀 PROXY'
+  - 'MATCH,DIRECT'
