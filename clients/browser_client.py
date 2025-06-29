@@ -4,15 +4,15 @@ from playwright.async_api import async_playwright, TimeoutError
 
 class BrowserAutomationClient:
     """
-    一个使用Playwright的Async API驱动真实浏览器的客户端，
-    专为在复杂的异步环境（如GitHub Actions）中稳定运行而设计。
+    The definitive version of the browser client.
+    It uses press_sequentially to simulate human typing and bypass anti-bot measures.
     """
     def __init__(self, email, password, config):
         self.email = email
         self.password = password
         self.config = config
         self.base_url = config['base_url']
-        # We will manage the page and browser within each async method
+        self.result = None
 
     async def _async_login(self):
         """The internal async implementation of the login process."""
@@ -25,22 +25,29 @@ class BrowserAutomationClient:
                 await page.wait_for_load_state('networkidle', timeout=20000)
 
                 email_selector = self.config['selectors']['email']
+                password_selector = self.config['selectors']['password']
+                login_button_selector = self.config['selectors']['login_button']
+
                 logging.info(f"等待元素 '{email_selector}' 出现...")
                 await page.wait_for_selector(email_selector, state='visible', timeout=20000)
 
-                logging.info("填写登录表单...")
-                await page.fill(email_selector, self.email)
-                await page.fill(self.config['selectors']['password'], self.password)
-                await page.click(self.config['selectors']['login_button'])
+                logging.info("正在以“人类模式”输入邮箱...")
+                # CORRECTED: Use press_sequentially to simulate human typing
+                await page.locator(email_selector).press_sequentially(self.email, delay=50) # Small delay between keys
+
+                logging.info("正在以“人类模式”输入密码...")
+                # CORRECTED: Use press_sequentially for the password field as well
+                await page.locator(password_selector).press_sequentially(self.password, delay=50)
+                
+                logging.info("点击登录按钮...")
+                await page.locator(login_button_selector).click()
 
                 success_selector = self.config['selectors']['post_login_success']
                 logging.info(f"等待登录成功标志 '{success_selector}' 出现...")
                 await page.wait_for_selector(success_selector, timeout=20000)
-                await page.screenshot(path=f"debug_{self.config['name']}_success.png")
-
+                
                 logging.info("Playwright登录成功！")
                 
-                # After login, get the subscription link
                 logging.info("正在用户中心页面寻找订阅链接...")
                 selector_key = self.config['sub_html_selector_key']
                 link_element = page.locator(f"[{selector_key}*='/link/']").first
@@ -49,7 +56,7 @@ class BrowserAutomationClient:
                 await browser.close()
                 
                 if sub_link:
-                    logging.info("通过Playwright成功找到订阅链接！")
+                    logging.info(f"通过Playwright成功找到订阅链接！")
                     return sub_link
                 else:
                     logging.error("在页面中未能定位到订阅链接元素。")
@@ -57,42 +64,14 @@ class BrowserAutomationClient:
 
             except Exception as e:
                 logging.error(f"Playwright操作时发生错误: {e}")
+                # Save a screenshot on any failure for diagnostics
                 await page.screenshot(path=f"debug_{self.config['name']}_failure.png")
                 await browser.close()
                 return None
     
-    # These public methods provide a synchronous interface to our async code
     def login(self) -> bool:
-        # This is a placeholder since the real logic is combined now.
-        # We run the combined async method and check if it returns a link.
         self.result = asyncio.run(self._async_login())
         return self.result is not None
 
-
-
     def get_subscription_link(self) -> str | None:
-        if not self.page:
-            logging.error("Playwright页面未初始化，无法获取订阅链接。")
-            return None
-        
-        logging.info("正在用户中心页面寻找订阅链接...")
-        try:
-            selector_key = self.config['sub_html_selector_key']
-            link_element = self.page.locator(f"[{selector_key}*='/link/']").first
-            sub_link = link_element.get_attribute(selector_key)
-            
-            if sub_link:
-                logging.info("通过Playwright成功找到订阅链接！")
-                return sub_link
-            else:
-                logging.error("在页面中未能定位到订阅链接元素。")
-                return None
-        except Exception as e:
-            logging.error(f"Playwright寻找订阅链接时出错: {e}")
-            return None
-        finally:
-            # 确保浏览器在所有操作后关闭
-            if self.browser:
-                self.browser.close()
-            if self.playwright:
-                self.playwright.stop()
+        return self.result
