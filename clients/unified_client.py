@@ -75,7 +75,7 @@ class UnifiedApiClient:
             logging.error(f"登录时发生错误: {e}")
             return False
 
-    def get_subscription_link(self) -> str or None:
+    def get_subscription_link(self) -> str | None:
         method = self.config['sub_method']
         logging.info(f"正在使用 {method} 方式获取订阅链接...")
 

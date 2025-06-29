@@ -1,6 +1,5 @@
 import os
 import logging
-# 只导入一个统一的客户端
 from clients.unified_client import UnifiedApiClient
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -12,10 +11,11 @@ SITE_CONFIGS = {
         "base_url": "https://ch.louwangzhiyu.xyz",
         "login_path": "/api/v1/passport/auth/login",
         "login_method": "data",
-        "success_check": lambda r: r.get('code') == 0 and 'data' in r,
-        "auth_from_key": ['data', 'token'], # 使用短token
+        # CORRECTED: Changed success check logic to be more robust
+        "success_check": lambda r: 'data' in r and r['data'].get('token'),
+        "auth_from_key": ['data', 'token'],
         "sub_method": "api",
-        "sub_api_path": "/api/v1/user/getSubscribe" # 这是根据第一个网站推测的，需要确认
+        "sub_api_path": "/api/v1/user/getSubscribe"
     },
     "dabai": {
         "name": "大白",
@@ -25,7 +25,6 @@ SITE_CONFIGS = {
         "login_is_ajax": True,
         "extra_payload": {"remember_me": "on", "code": ""},
         "success_check": lambda r: r.get('ret') == 1,
-        # 'auth_from_key' is not needed, auth via cookie
         "sub_method": "html",
         "sub_page_path": "/user",
         "sub_html_selector_key": "data-clipboard-text"
@@ -78,9 +77,7 @@ def main():
         except Exception as e:
             logging.error(f"处理 {config['name']} 时发生严重错误: {e}")
     
-    # ... (写入文件的部分与之前相同) ...
     if all_subscriptions:
-        # 对链接进行去重
         unique_links = sorted(list(set(all_subscriptions)))
         with open("subscriptions.txt", "w", encoding="utf-8") as f:
             for link in unique_links:
