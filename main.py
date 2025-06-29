@@ -20,7 +20,7 @@ TASKS = {
 }
 
 # --- Subscription Converter Configuration ---
-SUB_CONVERTER_BACKEND = "subapi.v1.mk"
+SUB_CONVERTER_BACKEND = "url.v1.mk"
 # CHANGED: Corrected the GitHub Raw URL to the standard, permanent format.
 # Replace 'twj0' and 'free_plan-airport-sub-link-collect' with your username and repo name.
 BASE_CONFIG_URL = "https://raw.githubusercontent.com/twj0/free_plan-airport-sub-link-collect/main/base.yaml" 
