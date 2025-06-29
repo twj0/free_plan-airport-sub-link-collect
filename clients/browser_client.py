@@ -5,7 +5,7 @@ from playwright.async_api import async_playwright, TimeoutError
 class BrowserAutomationClient:
     """
     The definitive version of the browser client.
-    It uses press_sequentially to simulate human typing and bypass anti-bot measures.
+    It CLICKS before typing to ensure fields are active and to bypass sophisticated anti-bot measures.
     """
     def __init__(self, email, password, config):
         self.email = email
@@ -31,12 +31,14 @@ class BrowserAutomationClient:
                 logging.info(f"等待元素 '{email_selector}' 出现...")
                 await page.wait_for_selector(email_selector, state='visible', timeout=20000)
 
-                logging.info("正在以“人类模式”输入邮箱...")
-                # CORRECTED: Use press_sequentially to simulate human typing
-                await page.locator(email_selector).press_sequentially(self.email, delay=50) # Small delay between keys
+                logging.info("正在以“终极人类模式”输入邮箱 (点击 -> 输入)...")
+                # THE FINAL FIX: Click the field first to ensure it's focused and active.
+                await page.locator(email_selector).click()
+                await page.locator(email_selector).press_sequentially(self.email, delay=50)
 
-                logging.info("正在以“人类模式”输入密码...")
-                # CORRECTED: Use press_sequentially for the password field as well
+                logging.info("正在以“终极人类模式”输入密码 (点击 -> 输入)...")
+                # THE FINAL FIX: Click the password field as well.
+                await page.locator(password_selector).click()
                 await page.locator(password_selector).press_sequentially(self.password, delay=50)
                 
                 logging.info("点击登录按钮...")
@@ -64,7 +66,6 @@ class BrowserAutomationClient:
 
             except Exception as e:
                 logging.error(f"Playwright操作时发生错误: {e}")
-                # Save a screenshot on any failure for diagnostics
                 await page.screenshot(path=f"debug_{self.config['name']}_failure.png")
                 await browser.close()
                 return None
