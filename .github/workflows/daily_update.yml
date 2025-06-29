@@ -29,4 +29,4 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "feat: Daily update for Blue2sea subscription"
-          file_pattern: "subscriptions.txt"
+          file_pattern: "blue2sea_subscriptions.txt"
