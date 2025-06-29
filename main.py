@@ -44,7 +44,7 @@ TASKS = {
 # --- 订阅转换器配置 ---
 
 SUB_CONVERTER_BACKEND = "subapi.v1.mk"
-BASE_CONFIG_URL = "https://raw.githubusercontent.com/twj0/free_plan-airport-sub-link-collect/main/base.yaml" 
+BASE_CONFIG_URL = "https://raw.githubusercontent.com/twj0/free_plan-airport-sub-link-collect/refs/heads/main/base.yaml" 
 
 def read_existing_subscriptions(filename):
     """读取已有的订阅文件，并将其解析为字典以便更新。"""
