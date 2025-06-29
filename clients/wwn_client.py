@@ -61,7 +61,7 @@ def get_subscription(email, password):
                 
                 clean_url = dirty_url.strip().rstrip(',')
                 
-                converter_backend = "suburl.v1.mk"
+                converter_backend = "url.v1.mk"
                 # 构建最终的、稳定的转换器URL
                 encoded_url = urllib.parse.quote(clean_url.strip().rstrip(','))
                 
