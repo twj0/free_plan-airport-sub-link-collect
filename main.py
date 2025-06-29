@@ -68,6 +68,38 @@ def parse_uri(uri):
                 node['servername'] = vmess_data.get('host', node['server'])
 
             return node
+        
+        # 新增：Trojan URI解析器
+        elif uri.startswith('trojan://'):
+            main_part, name = uri.split('#', 1)
+            name = unquote(name)
+            
+            # 解析 ?后面的查询参数
+            query_params = {}
+            if '?' in main_part:
+                main_part, query_string = main_part.split('?', 1)
+                query_params = dict(param.split('=', 1) for param in query_string.split('&'))
+
+            password, server_part = main_part[9:].rsplit('@', 1)
+            server, port = server_part.rsplit(':', 1)
+            
+            node = {
+                'name': name,
+                'type': 'trojan',
+                'server': server,
+                'port': int(port),
+                'password': password,
+                'udp': True # trojan默认开启udp
+            }
+            # SNI (Server Name Indication) 是TLS的关键
+            if 'sni' in query_params:
+                node['sni'] = query_params['sni']
+            elif 'peer' in query_params: # 兼容旧格式
+                node['sni'] = query_params['peer']
+
+            return node
+        
+
     except Exception as e:
         logging.error(f"解析URI失败: '{uri[:30]}...', 错误: {e}")
         return None
@@ -75,12 +107,16 @@ def parse_uri(uri):
 
 def get_content_from_url(url):
     if not url: return None
+    
+    
+    cleaned_url = url.strip().rstrip(',')
+    
     try:
-        response = requests.get(url, timeout=20)
+        response = requests.get(cleaned_url, timeout=30)
         response.raise_for_status()
         return response.text
     except requests.exceptions.RequestException as e:
-        logging.error(f"下载内容失败: {url}, 错误: {e}")
+        logging.error(f"下载内容失败: {cleaned_url}, 错误: {e}")
         return None
 
 def parse_subscription_content(content):
