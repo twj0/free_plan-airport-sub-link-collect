@@ -18,118 +18,118 @@ dns:
 proxies:
 - name: '[大白] 🇺🇲 美国|【dabai.in】<<前往官网|GPT+流媒体|共享'
   type: vmess
-  server: s1.db-link01.top
-  port: 80
+  server: s5.db-link01.top
+  port: 2086
   uuid: a1b99cf4-234c-36a3-8d46-abfb2dd368cb
   alterId: 0
   cipher: auto
   udp: true
   network: ws
-  ws-path: /dabai.in172.64.54.239
+  ws-path: /dabai.in104.25.20.151
   ws-headers:
-    Host: 100-163-229-25.s1.db-link01.top
+    Host: 100-142-119-247.s5.db-link01.top
   ws-opts:
-    path: /dabai.in172.64.54.239
+    path: /dabai.in104.25.20.151
     headers:
-      Host: 100-163-229-25.s1.db-link01.top
+      Host: 100-142-119-247.s5.db-link01.top
 - name: '[大白] 🇺🇲 美国|【db01.in】<<前往官网|GPT+流媒体|共享'
   type: vmess
-  server: s1.db-link01.top
-  port: 80
-  uuid: a1b99cf4-234c-36a3-8d46-abfb2dd368cb
-  alterId: 0
-  cipher: auto
-  udp: true
-  network: ws
-  ws-path: /dabai.in104.21.195.197
-  ws-headers:
-    Host: 100-210-139-127.s1.db-link01.top
-  ws-opts:
-    path: /dabai.in104.21.195.197
-    headers:
-      Host: 100-210-139-127.s1.db-link01.top
-- name: '[大白] 🇺🇲 美国|【付费用户】油管秒开4K/8K|更多地区接入|GPT+流媒体|共享'
-  type: vmess
-  server: s1.db-link01.top
-  port: 80
-  uuid: a1b99cf4-234c-36a3-8d46-abfb2dd368cb
-  alterId: 0
-  cipher: auto
-  udp: true
-  network: ws
-  ws-path: /dabai.in104.17.148.65
-  ws-headers:
-    Host: 100-90-125-17.s1.db-link01.top
-  ws-opts:
-    path: /dabai.in104.17.148.65
-    headers:
-      Host: 100-90-125-17.s1.db-link01.top
-- name: '[大白] 🇺🇲 美国|【使用前请更新订阅】每日会变更节点密码|GPT+流媒体|共享'
-  type: vmess
-  server: s1.cn-db.top
-  port: 2095
-  uuid: a1b99cf4-234c-36a3-8d46-abfb2dd368cb
-  alterId: 0
-  cipher: auto
-  udp: true
-  network: ws
-  ws-path: /dabai.in104.20.28.74
-  ws-headers:
-    Host: 100-133-201-92.s1.cn-db.top
-  ws-opts:
-    path: /dabai.in104.20.28.74
-    headers:
-      Host: 100-133-201-92.s1.cn-db.top
-- name: '[大白] 🇺🇲 美国|【注册免费领1TB流量】前往-注册|共享'
-  type: vmess
-  server: s1.db-link02.top
-  port: 2052
-  uuid: a1b99cf4-234c-36a3-8d46-abfb2dd368cb
-  alterId: 0
-  cipher: auto
-  udp: true
-  network: ws
-  ws-path: /dabai.in104.16.73.92
-  ws-headers:
-    Host: 100-205-34-18.s1.db-link02.top
-  ws-opts:
-    path: /dabai.in104.16.73.92
-    headers:
-      Host: 100-205-34-18.s1.db-link02.top
-- name: '[大白] 🇺🇲 美国|【节点优先级】按量>[不限量]>[免费]>[公共订阅]|共享'
-  type: vmess
-  server: s1.cn-db.top
-  port: 2052
-  uuid: a1b99cf4-234c-36a3-8d46-abfb2dd368cb
-  alterId: 0
-  cipher: auto
-  udp: true
-  network: ws
-  ws-path: /dabai.in104.16.146.32
-  ws-headers:
-    Host: 100-159-103-117.s1.cn-db.top
-  ws-opts:
-    path: /dabai.in104.16.146.32
-    headers:
-      Host: 100-159-103-117.s1.cn-db.top
-- name: '[大白] 🇺🇲 美国|最低35%-aff招募进行中|共享'
-  type: vmess
-  server: s1.db-link02.top
+  server: s4.db-link01.top
   port: 2082
   uuid: a1b99cf4-234c-36a3-8d46-abfb2dd368cb
   alterId: 0
   cipher: auto
   udp: true
   network: ws
-  ws-path: /dabai.in172.64.32.73
+  ws-path: /dabai.in104.19.175.89
   ws-headers:
-    Host: 100-207-88-222.s1.db-link02.top
+    Host: 100-253-195-48.s4.db-link01.top
   ws-opts:
-    path: /dabai.in172.64.32.73
+    path: /dabai.in104.19.175.89
     headers:
-      Host: 100-207-88-222.s1.db-link02.top
+      Host: 100-253-195-48.s4.db-link01.top
+- name: '[大白] 🇺🇲 美国|【付费用户】油管秒开4K/8K|更多地区接入|GPT+流媒体|共享'
+  type: vmess
+  server: s1.db-link01.top
+  port: 2082
+  uuid: a1b99cf4-234c-36a3-8d46-abfb2dd368cb
+  alterId: 0
+  cipher: auto
+  udp: true
+  network: ws
+  ws-path: /dabai.in104.21.195.183
+  ws-headers:
+    Host: 100-250-59-140.s1.db-link01.top
+  ws-opts:
+    path: /dabai.in104.21.195.183
+    headers:
+      Host: 100-250-59-140.s1.db-link01.top
+- name: '[大白] 🇺🇲 美国|【使用前请更新订阅】每日会变更节点密码|GPT+流媒体|共享'
+  type: vmess
+  server: s1.cn-db.top
+  port: 2052
+  uuid: a1b99cf4-234c-36a3-8d46-abfb2dd368cb
+  alterId: 0
+  cipher: auto
+  udp: true
+  network: ws
+  ws-path: /dabai.in104.16.120.148
+  ws-headers:
+    Host: 100-158-70-164.s1.cn-db.top
+  ws-opts:
+    path: /dabai.in104.16.120.148
+    headers:
+      Host: 100-158-70-164.s1.cn-db.top
+- name: '[大白] 🇺🇲 美国|【注册免费领1TB流量】前往-注册|共享'
+  type: vmess
+  server: s2.db-link02.top
+  port: 2095
+  uuid: a1b99cf4-234c-36a3-8d46-abfb2dd368cb
+  alterId: 0
+  cipher: auto
+  udp: true
+  network: ws
+  ws-path: /dabai.in104.16.151.24
+  ws-headers:
+    Host: 100-25-117-40.s2.db-link02.top
+  ws-opts:
+    path: /dabai.in104.16.151.24
+    headers:
+      Host: 100-25-117-40.s2.db-link02.top
+- name: '[大白] 🇺🇲 美国|【节点优先级】按量>[不限量]>[免费]>[公共订阅]|共享'
+  type: vmess
+  server: s2.cn-db.top
+  port: 8880
+  uuid: a1b99cf4-234c-36a3-8d46-abfb2dd368cb
+  alterId: 0
+  cipher: auto
+  udp: true
+  network: ws
+  ws-path: /dabai.in104.25.237.213
+  ws-headers:
+    Host: 100-92-160-33.s2.cn-db.top
+  ws-opts:
+    path: /dabai.in104.25.237.213
+    headers:
+      Host: 100-92-160-33.s2.cn-db.top
+- name: '[大白] 🇺🇲 美国|最低35%-aff招募进行中|共享'
+  type: vmess
+  server: s4.db-link02.top
+  port: 2082
+  uuid: a1b99cf4-234c-36a3-8d46-abfb2dd368cb
+  alterId: 0
+  cipher: auto
+  udp: true
+  network: ws
+  ws-path: /dabai.in104.16.142.243
+  ws-headers:
+    Host: 100-96-60-226.s4.db-link02.top
+  ws-opts:
+    path: /dabai.in104.16.142.243
+    headers:
+      Host: 100-96-60-226.s4.db-link02.top
 - name: '[ikuuu] 🇯🇵 免费-日本1-Ver.7'
-  server: geoej-g04.jp01-nn-vm0.entry.fr0528.art
+  server: wnpki-g04.jp01-nn-vm0.entry.fr0528.art
   port: 21584
   type: vmess
   uuid: 90889b29-9cef-36d5-a005-a8af2d969ca4
@@ -139,7 +139,7 @@ proxies:
   skip-cert-verify: false
   udp: true
 - name: '[ikuuu] 🇯🇵 免费-日本2-Ver.8'
-  server: ueqa4-g04.jp02-e3-vm0.entry.fr0528.art
+  server: vxstg-g04.jp02-e3-vm0.entry.fr0528.art
   port: 11776
   type: vmess
   uuid: 90889b29-9cef-36d5-a005-a8af2d969ca4
@@ -149,7 +149,7 @@ proxies:
   skip-cert-verify: false
   udp: true
 - name: '[ikuuu] 🇯🇵 免费-日本3-Ver.7'
-  server: e9s0t-g04.jp03-j7-vm0.entry.fr0528.art
+  server: fb3jt-g04.jp03-j7-vm0.entry.fr0528.art
   port: 21584
   type: vmess
   uuid: 90889b29-9cef-36d5-a005-a8af2d969ca4
@@ -159,7 +159,7 @@ proxies:
   skip-cert-verify: false
   udp: true
 - name: '[ikuuu] 🇯🇵 免费-日本4-Ver.8'
-  server: 4fx1l-g04.jp04-1d-vm0.entry.fr0528.art
+  server: gi472-g04.jp04-1d-vm0.entry.fr0528.art
   port: 447
   type: vmess
   uuid: 90889b29-9cef-36d5-a005-a8af2d969ca4
@@ -169,7 +169,7 @@ proxies:
   skip-cert-verify: false
   udp: true
 - name: '[ikuuu] 🇯🇵 免费-日本5-Ver.9'
-  server: u6uan-g04.jp05-h6-vm0.entry.fr0528.art
+  server: 1k3wc-g04.jp05-h6-vm0.entry.fr0528.art
   port: 46485
   type: vmess
   uuid: 90889b29-9cef-36d5-a005-a8af2d969ca4
@@ -179,7 +179,7 @@ proxies:
   skip-cert-verify: false
   udp: true
 - name: '[ikuuu] 🇯🇵 免费-日本6-Ver.8'
-  server: gr0fr-g04.jp06-jz-vm0.entry.fr0528.art
+  server: wssef-g04.jp06-jz-vm0.entry.fr0528.art
   port: 28786
   type: vmess
   uuid: 90889b29-9cef-36d5-a005-a8af2d969ca4
@@ -189,7 +189,7 @@ proxies:
   skip-cert-verify: false
   udp: true
 - name: '[ikuuu] 🇯🇵 免费-日本7-Ver.2'
-  server: b9jzm-g04.jp07-sh-vm0.entry.fr0528.art
+  server: i3eh5-g04.jp07-sh-vm0.entry.fr0528.art
   port: 28786
   type: vmess
   uuid: 90889b29-9cef-36d5-a005-a8af2d969ca4
