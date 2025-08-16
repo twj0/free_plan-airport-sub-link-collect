@@ -1,4 +1,4 @@
-中文版点击：[chinese](README-zhcn.md) | English
+中文版点击：[chinese](README-zhcn.md) | english
 # Free Airport Node Subscription Collector
 
 This is a Python project designed to automatically log into various "airport" (proxy provider) websites, retrieve subscription links for their free nodes, and merge all nodes into a single Clash subscription file.
