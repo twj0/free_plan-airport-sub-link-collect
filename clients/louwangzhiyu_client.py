@@ -1,65 +1,79 @@
 import requests
 import logging
-
-class LouwangzhiyuApiClient:
-    """
-    一个用于与 ch.louwangzhiyu.xyz 网站API交互的客户端类。
-    """
-    def __init__(self, email, password):
-        self.base_url = "https://ch.louwangzhiyu.xyz/api/v1"
-        self.email = email
-        self.password = password
-        self.session = requests.Session()
-        self.session.headers.update({
-            "Accept": "application/json, text/plain, */*",
-            "Referer": "https://ch.louwangzhiyu.xyz/",
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
-        })
-        self.auth_token = None
-
-    def login(self) -> bool:
-        login_url = f"{self.base_url}/passport/auth/login"
-        payload = {'email': self.email, 'password': self.password}
-        try:
-            response = self.session.post(login_url, data=payload)
-            response.raise_for_status() 
-            response_data = response.json()
-            if response_data.get('status') == 'success' and response_data.get('data', {}).get('auth_data'):
-                self.auth_token = response_data['data']['auth_data']
-                self.session.headers['Authorization'] = self.auth_token
-                logging.info("登录 louwangzhiyu.xyz 成功！")
-                return True
-            logging.error(f"登录 louwangzhiyu.xyz 失败: {response_data.get('message', '未知错误')}")
-            return False
-        except Exception as e:
-            logging.error(f"登录 louwangzhiyu.xyz 时出错: {e}")
-            return False
-
-    def get_subscription_info(self):
-        if not self.auth_token: return None
-        subscribe_url = f"{self.base_url}/user/getSubscribe"
-        try:
-            response = self.session.get(subscribe_url)
-            response.raise_for_status()
-            subscribe_data = response.json()
-            if subscribe_data.get('status') == 'success':
-                return subscribe_data.get('data')
-            return None
-        except Exception as e:
-            logging.error(f"获取 louwangzhiyu.xyz 订阅信息时出错: {e}")
-            return None
+from urllib.parse import quote
 
 def get_subscription(email, password):
-    """主调用函数，封装客户端操作并净化URL。"""
+    """
+    Logs in to louwangzhiyu and retrieves the subscription link using direct HTTP requests.
+    """
+    logging.info("正在为 [漏网之鱼] 使用HTTP请求进行登录...")
+    session = requests.Session()
+
+    # 1. Login request
+    login_url = "https://hg.owokkvsxks.store/api/v1/passport/auth/login"
+    
+    encoded_email = quote(email)
+    encoded_password = quote(password)
+    
+    login_headers = {
+        'accept': 'application/json, text/plain, */*',
+        'content-type': 'application/x-www-form-urlencoded',
+        'origin': 'https://hg.owokkvsxks.store',
+        'referer': 'https://hg.owokkvsxks.store/',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36',
+    }
+    
+    login_data = f'email={encoded_email}&password={encoded_password}'
+
     try:
-        client = LouwangzhiyuApiClient(email, password)
-        if client.login():
-            sub_data = client.get_subscription_info()
-            if sub_data and sub_data.get('subscribe_url'):
-                dirty_url = sub_data['subscribe_url']
-                clean_url = dirty_url.strip().rstrip(',')
-                return clean_url
+        logging.info("发送登录请求...")
+        response = session.post(login_url, headers=login_headers, data=login_data, timeout=30)
+        response.raise_for_status()
+        login_json = response.json()
+        
+        # CORRECTED LOGIC: Check for 'status' and 'auth_data'
+        if login_json.get("status") != "success" or not login_json.get("data", {}).get("auth_data"):
+            logging.error(f"[漏网之鱼] 登录失败: {login_json.get('message', '响应中没有找到auth_data')}")
+            logging.error(f"服务器响应: {login_json}")
+            return None
+            
+        auth_token = login_json["data"]["auth_data"]
+        logging.info("登录成功，获取到authorization token。")
+
+    except requests.exceptions.RequestException as e:
+        logging.error(f"[漏网之鱼] 登录请求失败: {e}")
         return None
-    except Exception as e:
-        logging.error(f"处理 louwangzhiyu.xyz 客户端时出错: {e}")
+    except ValueError:
+        logging.error(f"[漏网之鱼] 解析登录响应JSON失败。响应内容: {response.text[:200]}")
+        return None
+
+    # 2. Get subscription link
+    sub_url = "https://hg.owokkvsxks.store/api/v1/user/getSubscribe"
+    sub_headers = {
+        'accept': 'application/json, text/plain, */*',
+        'authorization': auth_token,
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36',
+    }
+
+    try:
+        logging.info("发送获取订阅链接请求...")
+        response = session.get(sub_url, headers=sub_headers, timeout=30)
+        response.raise_for_status()
+        sub_json = response.json()
+
+        # CORRECTED LOGIC: Assume similar success structure
+        if sub_json.get("status") != "success" or not sub_json.get("data", {}).get("subscribe_url"):
+            logging.error(f"[漏网之鱼] 获取订阅链接失败: {sub_json.get('message', '响应中没有找到subscribe_url')}")
+            logging.error(f"服务器响应: {sub_json}")
+            return None
+            
+        subscription_link = sub_json["data"]["subscribe_url"]
+        logging.info(f"成功获取到订阅链接!")
+        return subscription_link
+
+    except requests.exceptions.RequestException as e:
+        logging.error(f"[漏网之鱼] 获取订阅链接请求失败: {e}")
+        return None
+    except ValueError:
+        logging.error(f"[漏网之鱼] 解析订阅响应JSON失败。响应内容: {response.text[:200]}")
         return None

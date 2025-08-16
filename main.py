@@ -9,7 +9,7 @@ from urllib.parse import unquote, urlparse
 from typing import Optional, List, Dict, Any
 
 # --- 配置区域 ---
-from clients import dabai_client, ikuuu_client, louwangzhiyu_client, wwn_client
+from clients import dabai_client, huaxia_client, ikuuu_client, louwangzhiyu_client
 
 # 配置日志
 logging.basicConfig(
@@ -30,7 +30,7 @@ MAX_RETRIES = 3
 TASKS = {
     "dabai":        {"tag": "[大白]",       "func": dabai_client.get_subscription,       "needs_creds": True},
     "ikuuu":        {"tag": "[ikuuu]",      "func": ikuuu_client.get_subscription,      "needs_creds": True},
-    "wwn":          {"tag": "[华夏联盟]",     "func": wwn_client.get_subscription,     "needs_creds": True},
+    "wwn":          {"tag": "[华夏联盟]",     "func": huaxia_client.get_subscription,     "needs_creds": True},
     "louwangzhiyu": {"tag": "[漏网之鱼]", "func": louwangzhiyu_client.get_subscription, "needs_creds": True},
     
 
@@ -401,6 +401,35 @@ def parse_subscription_content(content: str) -> List[Dict[str, Any]]:
         logging.error(f"Base64内容处理失败: {e}")
         return []
 
+def load_creds_from_json(file_path="user_credentials.json") -> Dict[str, Dict[str, str]]:
+    """从JSON文件中加载凭据"""
+    if not os.path.exists(file_path):
+        return {}
+    try:
+        with open(file_path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        
+        # 映射JSON中的中文键到TASKS中的任务名
+        key_mapping = {
+            "大白": "dabai",
+            "ikuuu": "ikuuu",
+            "华夏联盟": "wwn",
+            "漏网之鱼": "louwangzhiyu"
+        }
+
+        creds = {}
+        for json_key, task_name in key_mapping.items():
+            if json_key in data:
+                creds[task_name] = {
+                    "email": data[json_key].get("username1"),
+                    "password": data[json_key].get("password")
+                }
+        logging.info(f"成功从 {file_path} 加载了 {len(creds)} 个凭据。")
+        return creds
+    except Exception as e:
+        logging.error(f"从JSON文件加载凭据失败: {e}")
+        return {}
+
 def run_tasks_and_get_nodes(task_names: List[str]) -> List[Dict[str, Any]]:
     """运行指定的任务，获取、解析并标记所有节点。"""
     if not task_names:
@@ -408,6 +437,7 @@ def run_tasks_and_get_nodes(task_names: List[str]) -> List[Dict[str, Any]]:
         return []
     
     all_tagged_nodes = []
+    json_creds = load_creds_from_json() # 加载JSON凭据
     
     for name in task_names:
         if name not in TASKS:
@@ -417,17 +447,25 @@ def run_tasks_and_get_nodes(task_names: List[str]) -> List[Dict[str, Any]]:
         task = TASKS[name]
         logging.info(f"--- 正在运行任务: {task['tag']} ---")
         
-        # 获取订阅链接
         raw_subscription_url = None
         try:
             if task['needs_creds']:
+                # 优先使用环境变量
                 email = os.environ.get(f"{name.upper()}_EMAIL")
                 password = os.environ.get(f"{name.upper()}_PASSWORD")
                 
+                # 如果环境变量不存在，则尝试从JSON加载
                 if not email or not password:
-                    logging.warning(f"跳过 {name}: 未在环境变量中设置凭据 ({name.upper()}_EMAIL, {name.upper()}_PASSWORD)")
-                    continue
-                
+                    if name in json_creds and json_creds[name].get("email") and json_creds[name].get("password"):
+                        email = json_creds[name]["email"]
+                        password = json_creds[name]["password"]
+                        logging.info(f"使用JSON文件中的凭据运行任务: {name}")
+                    else:
+                        logging.warning(f"跳过 {name}: 未在环境变量或JSON文件中找到完整凭据")
+                        continue
+                else:
+                    logging.info(f"使用环境变量中的凭据运行任务: {name}")
+
                 raw_subscription_url = task['func'](email, password)
             else:
                 raw_subscription_url = task['func']()
@@ -506,7 +544,7 @@ def save_final_config(config: Dict[str, Any]) -> bool:
         with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
             yaml.dump(config, f, sort_keys=False, allow_unicode=True, default_flow_style=False)
         
-        logging.info(f"🎉 成功生成合并后的订阅文件: {OUTPUT_FILE}")
+        logging.info(f"成功生成合并后的订阅文件: {OUTPUT_FILE}")
         return True
         
     except Exception as e:
@@ -529,7 +567,7 @@ def main():
     if run_mode == 'daily':
         tasks_to_run = ['blue2sea']
     else:  # weekly
-        tasks_to_run = ['dabai', 'ikuuu', 'wwn', 'louwangzhiyu']
+        tasks_to_run = ['dabai', 'ikuuu', 'louwangzhiyu']
     
     logging.info(f"将运行以下任务: {tasks_to_run}")
     
