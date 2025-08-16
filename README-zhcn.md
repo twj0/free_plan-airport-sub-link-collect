@@ -71,19 +71,22 @@ pip install -r requirements.txt
     {
       "ikuuu": {
         "username1": "your_ikuuu_email@example.com",
-        "password": "your_ikuuu_password"
+        "password1": "your_ikuuu_password",
+        "username2": "your_ikuuu_email2@example.com",
+        "password2": "your_ikuuu_password2"
+
       },
       "大白": {
         "username1": "your_dabai_email@example.com",
-        "password": "your_dabai_password"
+        "password1": "your_dabai_password"
       },
       "华夏联盟": {
         "username1": "your_huaxia_email@example.com",
-        "password": "your_huaxia_password"
+        "password1": "your_huaxia_password"
       },
       "漏网之鱼": {
         "username1": "your_louwangzhiyu_email@example.com",
-        "password": "your_louwangzhiyu_password"
+        "password1": "your_louwangzhiyu_password"
       }
     }
     ```

@@ -53,27 +53,41 @@ def get_subscription(email, password):
         wait.until(EC.url_contains("/user"))
         logging.info("登录成功，已跳转到用户中心。")
 
-        # 5. 更鲁棒地处理弹窗
-        logging.info("正在检查是否存在'重要通知'弹窗...")
+        # 5. 优化弹窗处理逻辑
+        logging.info("正在检查并关闭所有可能的弹窗...")
         try:
-            # 等待弹窗和关闭按钮出现
-            modal_locator = (By.ID, "popup-ann-modal")
-            read_button_locator = (By.CSS_SELECTOR, "#popup-ann-modal .btn-primary")
+            # 使用一个较短的等待时间专门用于查找弹窗按钮
+            popup_wait = WebDriverWait(driver, 10)
             
-            wait.until(EC.visibility_of_element_located(modal_locator))
-            logging.info("弹窗已出现，等待关闭按钮可点击...")
+            # 构建一个强大的XPath来查找所有可能的确认/关闭按钮
+            # 它会查找任何包含 "read", "知道了", "已读" (不区分大小写) 的 <button> 或 <a> 元素
+            close_button_xpath = (
+                "//button[contains(translate(text(), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'read') or "
+                "contains(translate(text(), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), '知道了') or "
+                "contains(translate(text(), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), '已读')] | "
+                "//a[contains(translate(text(), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'read') or "
+                "contains(translate(text(), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), '知道了') or "
+                "contains(translate(text(), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), '已读')]"
+            )
             
-            read_button = wait.until(EC.element_to_be_clickable(read_button_locator))
+            # 查找所有匹配的按钮
+            close_buttons = popup_wait.until(EC.presence_of_all_elements_located((By.XPATH, close_button_xpath)))
             
-            # 使用JS点击以避免被遮挡
-            driver.execute_script("arguments[0].click();", read_button)
-            logging.info("已点击'重要通知'弹窗的关闭按钮。")
+            for button in close_buttons:
+                try:
+                    if button.is_displayed() and button.is_enabled():
+                        logging.info(f"找到并点击了一个弹窗关闭按钮，文本为: '{button.text}'")
+                        driver.execute_script("arguments[0].click();", button)
+                        time.sleep(1) # 点击后稍作等待
+                except Exception as e:
+                    logging.debug(f"点击按钮时出错 (可能是元素已消失): {e}")
+
+            logging.info("弹窗处理完成。")
             
-            # 等待弹窗消失
-            wait.until(EC.invisibility_of_element_located(modal_locator))
-            logging.info("弹窗已成功关闭。")
         except TimeoutException:
-            logging.info("在指定时间内未找到'重要通知'弹窗，或弹窗未能关闭。继续执行...")
+            logging.info("在10秒内未找到任何需要关闭的弹窗。")
+        except Exception as e:
+            logging.warning(f"处理弹窗时发生未知错误: {e}")
 
         # 6. 尝试每日签到
         logging.info("正在尝试执行每日签到...")
