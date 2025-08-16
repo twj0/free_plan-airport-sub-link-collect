@@ -435,75 +435,96 @@ def run_tasks_and_get_nodes(task_names: List[str]) -> List[Dict[str, Any]]:
     if not task_names:
         logging.warning("未指定要运行的任务")
         return []
-    
+
     all_tagged_nodes = []
-    json_creds = load_creds_from_json() # 加载JSON凭据
-    
+    json_creds = load_creds_from_json()
+
     for name in task_names:
         if name not in TASKS:
             logging.warning(f"未知的任务名称: {name}")
             continue
-        
+
         task = TASKS[name]
         logging.info(f"--- 正在运行任务: {task['tag']} ---")
-        
-        raw_subscription_url = None
+
+        subscription_urls = []
         try:
             if task['needs_creds']:
-                # 优先使用环境变量
-                email = os.environ.get(f"{name.upper()}_EMAIL")
-                password = os.environ.get(f"{name.upper()}_PASSWORD")
+                # 检查多账户凭据环境变量 (例如 IKUUU_CREDENTIALS)
+                multi_creds_env = os.environ.get(f"{name.upper()}_CREDENTIALS")
                 
-                # 如果环境变量不存在，则尝试从JSON加载
-                if not email or not password:
-                    if name in json_creds and json_creds[name].get("email") and json_creds[name].get("password"):
-                        email = json_creds[name]["email"]
-                        password = json_creds[name]["password"]
-                        logging.info(f"使用JSON文件中的凭据运行任务: {name}")
-                    else:
-                        logging.warning(f"跳过 {name}: 未在环境变量或JSON文件中找到完整凭据")
-                        continue
+                if multi_creds_env:
+                    logging.info(f"找到 {name} 的多账户凭据，将进行遍历...")
+                    credentials = [cred.strip().split(',') for cred in multi_creds_env.split(';') if ',' in cred]
+                    
+                    for i, (email, password) in enumerate(credentials):
+                        logging.info(f"正在尝试使用账户 {i+1}: {email}")
+                        url = task['func'](email, password)
+                        if url:
+                            subscription_urls.append(url)
+                        else:
+                            logging.warning(f"账户 {email} 未能获取到订阅链接。")
                 else:
-                    logging.info(f"使用环境变量中的凭据运行任务: {name}")
+                    # 回退到单账户逻辑 (环境变量或JSON文件)
+                    email = os.environ.get(f"{name.upper()}_EMAIL")
+                    password = os.environ.get(f"{name.upper()}_PASSWORD")
 
-                raw_subscription_url = task['func'](email, password)
+                    if not email or not password:
+                        if name in json_creds and json_creds[name].get("email") and json_creds[name].get("password"):
+                            email = json_creds[name]["email"]
+                            password = json_creds[name]["password"]
+                            logging.info(f"使用JSON文件中的凭据运行任务: {name}")
+                        else:
+                            logging.warning(f"跳过 {name}: 未在环境变量或JSON文件中找到完整凭据")
+                            continue
+                    else:
+                        logging.info(f"使用环境变量中的凭据运行任务: {name}")
+                    
+                    url = task['func'](email, password)
+                    if url:
+                        subscription_urls.append(url)
             else:
-                raw_subscription_url = task['func']()
+                # 不需要凭据的任务
+                url = task['func']()
+                if url:
+                    subscription_urls.append(url)
+
         except Exception as e:
-            logging.error(f"执行任务 {name} 时发生错误: {e}")
+            logging.error(f"执行任务 {name} 时发生错误: {e}", exc_info=True)
             continue
-        
-        if not raw_subscription_url:
-            logging.error(f"未能获取到 {name} 的订阅链接")
+
+        if not subscription_urls:
+            logging.error(f"未能获取到任何 {name} 的订阅链接")
             continue
-        
-        logging.info(f"获取到订阅链接: {raw_subscription_url}")
-        
-        # 获取订阅内容
-        content = get_content_from_url(raw_subscription_url)
-        if not content:
-            logging.error(f"未能从 {name} 获取订阅内容")
-            continue
-        
-        # 解析节点
-        nodes = parse_subscription_content(content)
-        if not nodes:
-            logging.warning(f"从 {name} 未解析到任何有效节点")
-            continue
-        
-        # 为节点添加标签
-        valid_nodes = 0
-        for node in nodes:
-            if isinstance(node, dict) and 'name' in node:
-                original_name = node.get('name', 'Unnamed Node')
-                node['name'] = f"{task['tag']} {original_name}"
-                valid_nodes += 1
-            else:
-                logging.debug(f"跳过无效节点: {node}")
-        
-        all_tagged_nodes.extend(nodes)
-        logging.info(f"成功处理了 {valid_nodes} 个来自 {task['tag']} 的节点")
-    
+
+        # 遍历所有获取到的订阅链接
+        for i, url in enumerate(subscription_urls):
+            logging.info(f"正在处理第 {i+1}/{len(subscription_urls)} 个订阅链接: {url}")
+            
+            content = get_content_from_url(url)
+            if not content:
+                logging.error(f"未能从链接获取内容: {url}")
+                continue
+
+            nodes = parse_subscription_content(content)
+            if not nodes:
+                logging.warning(f"从链接未解析到任何有效节点: {url}")
+                continue
+
+            valid_nodes = 0
+            for node in nodes:
+                if isinstance(node, dict) and 'name' in node:
+                    original_name = node.get('name', 'Unnamed Node')
+                    # 为多账户添加后缀以区分
+                    account_suffix = f"_{i+1}" if len(subscription_urls) > 1 else ""
+                    node['name'] = f"{task['tag']}{account_suffix} {original_name}"
+                    valid_nodes += 1
+                else:
+                    logging.debug(f"跳过无效节点: {node}")
+            
+            all_tagged_nodes.extend(nodes)
+            logging.info(f"成功处理了 {valid_nodes} 个来自 {task['tag']} (账户 {i+1}) 的节点")
+
     logging.info(f"总共获取到 {len(all_tagged_nodes)} 个节点")
     return all_tagged_nodes
 

@@ -16,120 +16,8 @@ dns:
   - https://dns.alidns.com/dns-query
   - https://doh.pub/dns-query
 proxies:
-- name: '[大白] 🇺🇲 美国|【dabai.in】<<前往官网|GPT+流媒体|共享'
-  type: vmess
-  server: s4.cn-db.top
-  port: 2095
-  uuid: a1b99cf4-234c-36a3-8d46-abfb2dd368cb
-  alterId: 0
-  cipher: auto
-  udp: true
-  network: ws
-  ws-path: /dabai.in104.24.148.243
-  ws-headers:
-    Host: 100-84-235-238.s4.cn-db.top
-  ws-opts:
-    path: /dabai.in104.24.148.243
-    headers:
-      Host: 100-84-235-238.s4.cn-db.top
-- name: '[大白] 🇺🇲 美国|【db01.in】<<前往官网|GPT+流媒体|共享'
-  type: vmess
-  server: s3.db-link01.top
-  port: 8880
-  uuid: a1b99cf4-234c-36a3-8d46-abfb2dd368cb
-  alterId: 0
-  cipher: auto
-  udp: true
-  network: ws
-  ws-path: /dabai.in172.67.52.44
-  ws-headers:
-    Host: 100-218-234-22.s3.db-link01.top
-  ws-opts:
-    path: /dabai.in172.67.52.44
-    headers:
-      Host: 100-218-234-22.s3.db-link01.top
-- name: '[大白] 🇺🇲 美国|【付费用户】油管秒开4K/8K|更多地区接入|GPT+流媒体|共享'
-  type: vmess
-  server: s4.db-link02.top
-  port: 2086
-  uuid: a1b99cf4-234c-36a3-8d46-abfb2dd368cb
-  alterId: 0
-  cipher: auto
-  udp: true
-  network: ws
-  ws-path: /dabai.in172.67.47.215
-  ws-headers:
-    Host: 100-61-55-82.s4.db-link02.top
-  ws-opts:
-    path: /dabai.in172.67.47.215
-    headers:
-      Host: 100-61-55-82.s4.db-link02.top
-- name: '[大白] 🇺🇲 美国|【使用前请更新订阅】每日会变更节点密码|GPT+流媒体|共享'
-  type: vmess
-  server: s3.db-link01.top
-  port: 2052
-  uuid: a1b99cf4-234c-36a3-8d46-abfb2dd368cb
-  alterId: 0
-  cipher: auto
-  udp: true
-  network: ws
-  ws-path: /dabai.in172.64.14.216
-  ws-headers:
-    Host: 100-169-41-96.s3.db-link01.top
-  ws-opts:
-    path: /dabai.in172.64.14.216
-    headers:
-      Host: 100-169-41-96.s3.db-link01.top
-- name: '[大白] 🇺🇲 美国|【注册免费领1TB流量】前往-注册|共享'
-  type: vmess
-  server: s2.cn-db.top
-  port: 8080
-  uuid: a1b99cf4-234c-36a3-8d46-abfb2dd368cb
-  alterId: 0
-  cipher: auto
-  udp: true
-  network: ws
-  ws-path: /dabai.in104.25.209.116
-  ws-headers:
-    Host: 100-150-224-111.s2.cn-db.top
-  ws-opts:
-    path: /dabai.in104.25.209.116
-    headers:
-      Host: 100-150-224-111.s2.cn-db.top
-- name: '[大白] 🇺🇲 美国|【节点优先级】按量>[不限量]>[免费]>[公共订阅]|共享'
-  type: vmess
-  server: s2.db-link02.top
-  port: 2095
-  uuid: a1b99cf4-234c-36a3-8d46-abfb2dd368cb
-  alterId: 0
-  cipher: auto
-  udp: true
-  network: ws
-  ws-path: /dabai.in172.64.13.191
-  ws-headers:
-    Host: 100-103-134-168.s2.db-link02.top
-  ws-opts:
-    path: /dabai.in172.64.13.191
-    headers:
-      Host: 100-103-134-168.s2.db-link02.top
-- name: '[大白] 🇺🇲 美国|最低35%-aff招募进行中|共享'
-  type: vmess
-  server: s2.cn-db.top
-  port: 80
-  uuid: a1b99cf4-234c-36a3-8d46-abfb2dd368cb
-  alterId: 0
-  cipher: auto
-  udp: true
-  network: ws
-  ws-path: /dabai.in104.17.211.32
-  ws-headers:
-    Host: 100-192-112-163.s2.cn-db.top
-  ws-opts:
-    path: /dabai.in104.17.211.32
-    headers:
-      Host: 100-192-112-163.s2.cn-db.top
 - name: '[ikuuu] 🇯🇵 免费-日本1-Ver.7'
-  server: w71xz-g04.jp01-nn-vm0.entry.fr0528.art
+  server: 65wi4-g04.jp01-nn-vm0.entry.fr0528.art
   port: 21584
   type: vmess
   uuid: 90889b29-9cef-36d5-a005-a8af2d969ca4
@@ -139,7 +27,7 @@ proxies:
   skip-cert-verify: false
   udp: true
 - name: '[ikuuu] 🇯🇵 免费-日本2-Ver.8'
-  server: 83wam-g04.jp02-e3-vm0.entry.fr0528.art
+  server: ux9td-g04.jp02-e3-vm0.entry.fr0528.art
   port: 11776
   type: vmess
   uuid: 90889b29-9cef-36d5-a005-a8af2d969ca4
@@ -149,7 +37,7 @@ proxies:
   skip-cert-verify: false
   udp: true
 - name: '[ikuuu] 🇯🇵 免费-日本3-Ver.7'
-  server: pukvl-g04.jp03-j7-vm0.entry.fr0528.art
+  server: l8cr5-g04.jp03-j7-vm0.entry.fr0528.art
   port: 21584
   type: vmess
   uuid: 90889b29-9cef-36d5-a005-a8af2d969ca4
@@ -159,7 +47,7 @@ proxies:
   skip-cert-verify: false
   udp: true
 - name: '[ikuuu] 🇯🇵 免费-日本4-Ver.8'
-  server: pgik2-g04.jp04-1d-vm0.entry.fr0528.art
+  server: 7a144-g04.jp04-1d-vm0.entry.fr0528.art
   port: 447
   type: vmess
   uuid: 90889b29-9cef-36d5-a005-a8af2d969ca4
@@ -169,7 +57,7 @@ proxies:
   skip-cert-verify: false
   udp: true
 - name: '[ikuuu] 🇯🇵 免费-日本5-Ver.9'
-  server: tfyr9-g04.jp05-h6-vm0.entry.fr0528.art
+  server: bu9uc-g04.jp05-h6-vm0.entry.fr0528.art
   port: 46485
   type: vmess
   uuid: 90889b29-9cef-36d5-a005-a8af2d969ca4
@@ -179,7 +67,7 @@ proxies:
   skip-cert-verify: false
   udp: true
 - name: '[ikuuu] 🇯🇵 免费-日本6-Ver.8'
-  server: e70h8-g04.jp06-jz-vm0.entry.fr0528.art
+  server: 2l8ca-g04.jp06-jz-vm0.entry.fr0528.art
   port: 28786
   type: vmess
   uuid: 90889b29-9cef-36d5-a005-a8af2d969ca4
@@ -189,7 +77,7 @@ proxies:
   skip-cert-verify: false
   udp: true
 - name: '[ikuuu] 🇯🇵 免费-日本7-Ver.2'
-  server: 4zcc6-g04.jp07-sh-vm0.entry.fr0528.art
+  server: 8otr3-g04.jp07-sh-vm0.entry.fr0528.art
   port: 28786
   type: vmess
   uuid: 90889b29-9cef-36d5-a005-a8af2d969ca4
@@ -198,84 +86,6 @@ proxies:
   tls: false
   skip-cert-verify: false
   udp: true
-- name: '[漏网之鱼] 剩余流量：100 GB'
-  type: vmess
-  server: 45.136.245.177
-  port: 23159
-  uuid: e68799d7-c43c-428f-8a17-3c5c9cbe5142
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: false
-  ws-opts:
-    path: ''
-    headers:
-      Host: ''
-- name: '[漏网之鱼] 套餐到期：长期有效'
-  type: vmess
-  server: 45.136.245.177
-  port: 23159
-  uuid: e68799d7-c43c-428f-8a17-3c5c9cbe5142
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: false
-  ws-opts:
-    path: ''
-    headers:
-      Host: ''
-- name: '[漏网之鱼] 过滤掉3条线路'
-  type: vmess
-  server: 45.136.245.177
-  port: 23159
-  uuid: e68799d7-c43c-428f-8a17-3c5c9cbe5142
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: false
-  ws-opts:
-    path: ''
-    headers:
-      Host: ''
-- name: '[漏网之鱼] 美国-拉斯维加斯-002'
-  type: vmess
-  server: 45.136.245.177
-  port: 23159
-  uuid: e68799d7-c43c-428f-8a17-3c5c9cbe5142
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: false
-  ws-opts:
-    path: ''
-    headers:
-      Host: ''
-- name: '[漏网之鱼] 美国-拉斯维加斯-003'
-  type: vmess
-  server: 45.136.245.177
-  port: 25029
-  uuid: e68799d7-c43c-428f-8a17-3c5c9cbe5142
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: false
-  ws-opts:
-    path: ''
-    headers:
-      Host: ''
-- name: '[漏网之鱼] 美国-纽约-001'
-  type: vmess
-  server: 45.136.245.177
-  port: 22096
-  uuid: e68799d7-c43c-428f-8a17-3c5c9cbe5142
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: false
-  ws-opts:
-    path: ''
-    headers:
-      Host: ''
 proxy-groups:
 - name: 🔮 PROXY
   type: select
@@ -289,13 +99,6 @@ proxy-groups:
 - name: 🚀 Auto
   type: url-test
   proxies:
-  - '[大白] 🇺🇲 美国|【dabai.in】<<前往官网|GPT+流媒体|共享'
-  - '[大白] 🇺🇲 美国|【db01.in】<<前往官网|GPT+流媒体|共享'
-  - '[大白] 🇺🇲 美国|【付费用户】油管秒开4K/8K|更多地区接入|GPT+流媒体|共享'
-  - '[大白] 🇺🇲 美国|【使用前请更新订阅】每日会变更节点密码|GPT+流媒体|共享'
-  - '[大白] 🇺🇲 美国|【注册免费领1TB流量】前往-注册|共享'
-  - '[大白] 🇺🇲 美国|【节点优先级】按量>[不限量]>[免费]>[公共订阅]|共享'
-  - '[大白] 🇺🇲 美国|最低35%-aff招募进行中|共享'
   - '[ikuuu] 🇯🇵 免费-日本1-Ver.7'
   - '[ikuuu] 🇯🇵 免费-日本2-Ver.8'
   - '[ikuuu] 🇯🇵 免费-日本3-Ver.7'
@@ -303,24 +106,11 @@ proxy-groups:
   - '[ikuuu] 🇯🇵 免费-日本5-Ver.9'
   - '[ikuuu] 🇯🇵 免费-日本6-Ver.8'
   - '[ikuuu] 🇯🇵 免费-日本7-Ver.2'
-  - '[漏网之鱼] 剩余流量：100 GB'
-  - '[漏网之鱼] 套餐到期：长期有效'
-  - '[漏网之鱼] 过滤掉3条线路'
-  - '[漏网之鱼] 美国-拉斯维加斯-002'
-  - '[漏网之鱼] 美国-拉斯维加斯-003'
-  - '[漏网之鱼] 美国-纽约-001'
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: 所有节点
   type: select
   proxies:
-  - '[大白] 🇺🇲 美国|【dabai.in】<<前往官网|GPT+流媒体|共享'
-  - '[大白] 🇺🇲 美国|【db01.in】<<前往官网|GPT+流媒体|共享'
-  - '[大白] 🇺🇲 美国|【付费用户】油管秒开4K/8K|更多地区接入|GPT+流媒体|共享'
-  - '[大白] 🇺🇲 美国|【使用前请更新订阅】每日会变更节点密码|GPT+流媒体|共享'
-  - '[大白] 🇺🇲 美国|【注册免费领1TB流量】前往-注册|共享'
-  - '[大白] 🇺🇲 美国|【节点优先级】按量>[不限量]>[免费]>[公共订阅]|共享'
-  - '[大白] 🇺🇲 美国|最低35%-aff招募进行中|共享'
   - '[ikuuu] 🇯🇵 免费-日本1-Ver.7'
   - '[ikuuu] 🇯🇵 免费-日本2-Ver.8'
   - '[ikuuu] 🇯🇵 免费-日本3-Ver.7'
@@ -328,22 +118,9 @@ proxy-groups:
   - '[ikuuu] 🇯🇵 免费-日本5-Ver.9'
   - '[ikuuu] 🇯🇵 免费-日本6-Ver.8'
   - '[ikuuu] 🇯🇵 免费-日本7-Ver.2'
-  - '[漏网之鱼] 剩余流量：100 GB'
-  - '[漏网之鱼] 套餐到期：长期有效'
-  - '[漏网之鱼] 过滤掉3条线路'
-  - '[漏网之鱼] 美国-拉斯维加斯-002'
-  - '[漏网之鱼] 美国-拉斯维加斯-003'
-  - '[漏网之鱼] 美国-纽约-001'
 - name: 大白
   type: select
-  proxies:
-  - '[大白] 🇺🇲 美国|【dabai.in】<<前往官网|GPT+流媒体|共享'
-  - '[大白] 🇺🇲 美国|【db01.in】<<前往官网|GPT+流媒体|共享'
-  - '[大白] 🇺🇲 美国|【付费用户】油管秒开4K/8K|更多地区接入|GPT+流媒体|共享'
-  - '[大白] 🇺🇲 美国|【使用前请更新订阅】每日会变更节点密码|GPT+流媒体|共享'
-  - '[大白] 🇺🇲 美国|【注册免费领1TB流量】前往-注册|共享'
-  - '[大白] 🇺🇲 美国|【节点优先级】按量>[不限量]>[免费]>[公共订阅]|共享'
-  - '[大白] 🇺🇲 美国|最低35%-aff招募进行中|共享'
+  proxies: []
 - name: ikuuu
   type: select
   proxies:
@@ -356,13 +133,7 @@ proxy-groups:
   - '[ikuuu] 🇯🇵 免费-日本7-Ver.2'
 - name: 漏网之鱼
   type: select
-  proxies:
-  - '[漏网之鱼] 剩余流量：100 GB'
-  - '[漏网之鱼] 套餐到期：长期有效'
-  - '[漏网之鱼] 过滤掉3条线路'
-  - '[漏网之鱼] 美国-拉斯维加斯-002'
-  - '[漏网之鱼] 美国-拉斯维加斯-003'
-  - '[漏网之鱼] 美国-纽约-001'
+  proxies: []
 rules:
 - DOMAIN-SUFFIX,google.com,🔮 PROXY
 - DOMAIN-SUFFIX,github.com,🔮 PROXY

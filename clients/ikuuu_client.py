@@ -75,14 +75,35 @@ def get_subscription(email, password):
         except TimeoutException:
             logging.info("在指定时间内未找到'重要通知'弹窗，或弹窗未能关闭。继续执行...")
 
-        # 6. 点击Clash订阅下拉菜单
+        # 6. 尝试每日签到
+        logging.info("正在尝试执行每日签到...")
+        try:
+            # 使用更通用的定位器来找到签到按钮，因为ID可能会变化
+            # 常见的签到按钮可能包含 "checkin", "docheckin" 等关键词
+            checkin_button_locator = (By.CSS_SELECTOR, "a[onclick*='checkin'], button[onclick*='checkin'], #checkin, .checkin")
+            
+            checkin_button = wait.until(EC.element_to_be_clickable(checkin_button_locator))
+            
+            # 使用JS点击以确保执行
+            driver.execute_script("arguments[0].click();", checkin_button)
+            logging.info("成功点击签到按钮。")
+            
+            # 短暂等待，让签到结果的提示信息有机会加载
+            time.sleep(3)
+            
+        except TimeoutException:
+            logging.info("未找到可点击的签到按钮，可能已经签到过了。")
+        except Exception as e:
+            logging.warning(f"执行签到时发生意外错误: {e}")
+
+        # 7. 点击Clash订阅下拉菜单
         logging.info("正在点击Clash订阅下拉菜单...")
         dropdown_toggle_locator = (By.ID, "dropdownMenuButton")
         dropdown_toggle = wait.until(EC.element_to_be_clickable(dropdown_toggle_locator))
         dropdown_toggle.click()
         logging.info("Clash订阅下拉菜单已点击。")
 
-        # 7. 获取并解码订阅链接
+        # 8. 获取并解码订阅链接
         logging.info("正在获取并解码Clash订阅链接...")
         copy_link_locator = (By.CSS_SELECTOR, "a.copy-text[data-clipboard-text-encoded]")
         copy_link_element = wait.until(EC.presence_of_element_located(copy_link_locator))
@@ -103,7 +124,8 @@ def get_subscription(email, password):
             return None
 
     except (TimeoutException, NoSuchElementException) as e:
-        logging.error(f"操作超时或未能找到页面元素: {e}")
+        logging.error(f"操作超时或未能找到页面元素: {e.msg}")
+        logging.error(f"页面标题是: {driver.title if driver else 'N/A'}")
         if driver:
             # 保存截图和页面源码以供调试
             screenshot_path = "ikuuu_final_error.png"

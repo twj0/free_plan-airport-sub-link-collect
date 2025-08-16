@@ -100,6 +100,28 @@ Set the variables in the following format:
 - `WWN_EMAIL` / `WWN_PASSWORD`
 - `LOUWANGZHIYU_EMAIL` / `LOUWANGZHIYU_PASSWORD`
 
+**Method 3: GitHub Actions (Multi-Account Support)**
+
+To support multiple accounts for a single provider (e.g., ikuuu), the project introduces a new environment variable format. When this format is detected, the script will iterate through all accounts and fetch their subscriptions individually.
+
+You need to set an environment variable in the following format:
+- `IKUUU_CREDENTIALS`
+- `DABAI_CREDENTIALS`
+- ...
+
+**Format**:
+Combine multiple account credentials into a single string. Use a comma `,` to separate the email and password, and a semicolon `;` to separate different accounts.
+
+**Example**:
+If you have two ikuuu accounts, you should create a single environment variable named `IKUUU_CREDENTIALS` with the following value:
+```
+user1@example.com,password123;user2@another.com,password456
+```
+
+**Note**:
+- The `_CREDENTIALS` format has the **highest priority**. If you set both `IKUUU_CREDENTIALS` and `IKUUU_EMAIL`, only `IKUUU_CREDENTIALS` will be used.
+- This method is primarily intended for GitHub Actions. For local testing, please continue to use the `user_credentials.json` file.
+
 ### 4. Run the Script
 
 After configuring credentials, run the following command from the project root:

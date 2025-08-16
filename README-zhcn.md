@@ -99,6 +99,28 @@ pip install -r requirements.txt
 - `WWN_EMAIL` / `WWN_PASSWORD`
 - `LOUWANGZHIYU_EMAIL` / `LOUWANGZHIYU_PASSWORD`
 
+**方式三：GitHub Actions (多账户支持)**
+
+为了支持单个机场（例如ikuuu）的多个账户，项目引入了新的环境变量格式。当检测到这种格式的环境变量时，程序会自动遍历所有账户并分别获取订阅。
+
+你需要设置以下格式的环境变量：
+- `IKUUU_CREDENTIALS`
+- `DABAI_CREDENTIALS`
+- ...
+
+**格式说明**:
+将多个账户的 `邮箱,密码` 用逗号连接，不同账户之间用分号 `;` 分隔。
+
+**示例**:
+假设你有两个ikuuu账户，你应该创建一个名为 `IKUUU_CREDENTIALS` 的环境变量，其值为：
+```
+user1@example.com,password123;user2@another.com,password456
+```
+
+**注意**:
+- 这种 `_CREDENTIALS` 格式的环境变量**优先级最高**。如果同时设置了 `IKUUU_CREDENTIALS` 和 `IKUUU_EMAIL`，程序将只使用 `IKUUU_CREDENTIALS`。
+- 这种方式目前主要用于 GitHub Actions，本地测试请继续使用 `用户名和密码.json` 文件。
+
 ### 4. 运行脚本
 
 配置好凭据后，在项目根目录运行：
