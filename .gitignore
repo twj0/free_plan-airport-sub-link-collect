@@ -5,3 +5,8 @@ clients/__pycache__/ikuuu_client.cpython-311.pyc
 clients/__pycache__/dabai_client.cpython-311.pyc
 clients/__pycache__/louwangzhiyu_client.cpython-311.pyc
 clients/__pycache__/huaxia_client.cpython-311.pyc
+test_dabai_purchase.py
+user_credentials.json
+merged_subscription.yaml.backup
+proxy_merger.log
+
