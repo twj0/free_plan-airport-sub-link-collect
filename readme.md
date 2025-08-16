@@ -1,3 +1,7 @@
+# 项目最终生成订阅链接(个人使用)：[查看](https://raw.githubusercontent.com/twj0/free_plan-airport-sub-link-collect/refs/heads/main/merged_subscription.yaml)
+```
+https://raw.githubusercontent.com/twj0/free_plan-airport-sub-link-collect/refs/heads/main/merged_subscription.yaml
+```
 中文版点击：[chinese](README-zhcn.md) | english
 # Free Airport Node Subscription Collector
 
