@@ -1,0 +1,42 @@
+name: Monthly Plan Renewal
+
+on:
+  schedule:
+    # 每月1号UTC时间2:00运行 (北京时间上午10:00)
+    - cron: '0 2 1 * *'
+  workflow_dispatch:
+
+jobs:
+  renew:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write
+      
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run monthly renewal script
+        env:
+          # 只需要包含那些有购买/续订逻辑的客户端凭据
+          DABAI_CREDENTIALS: ${{ secrets.DABAI_CREDENTIALS }}
+          WWN_CREDENTIALS: ${{ secrets.WWN_CREDENTIALS }}
+          
+          # 向后兼容
+          DABAI_EMAIL: ${{ secrets.DABAI_EMAIL }}
+          DABAI_PASSWORD: ${{ secrets.DABAI_PASSWORD }}
+          WWN_EMAIL: ${{ secrets.WWN_EMAIL }}
+          WWN_PASSWORD: ${{ secrets.WWN_PASSWORD }}
+        run: python main.py monthly
+      - name: Commit and push changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "feat: Monthly renewal for free plans"
+          # 即使只续订，也可能会更新订阅文件，所以一并提交
+          file_pattern: "merged_subscription.yaml"

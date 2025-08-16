@@ -25,6 +25,15 @@ jobs:
         run: pip install -r requirements.txt
       - name: Run weekly script
         env:
+          # 使用新的多账户凭据格式
+          # 用户需要在 GitHub Secrets 中创建对应的 xxx_CREDENTIALS
+          # 格式为: email1,pass1;email2,pass2
+          DABAI_CREDENTIALS: ${{ secrets.DABAI_CREDENTIALS }}
+          IKUUU_CREDENTIALS: ${{ secrets.IKUUU_CREDENTIALS }}
+          LOUWANGZHIYU_CREDENTIALS: ${{ secrets.LOUWANGZHIYU_CREDENTIALS }}
+          WWN_CREDENTIALS: ${{ secrets.WWN_CREDENTIALS }}
+
+          # 保留旧的单账户格式作为回退选项，以实现向后兼容
           DABAI_EMAIL: ${{ secrets.DABAI_EMAIL }}
           DABAI_PASSWORD: ${{ secrets.DABAI_PASSWORD }}
           IKUUU_EMAIL: ${{ secrets.IKUUU_EMAIL }}

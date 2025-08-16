@@ -575,10 +575,11 @@ def save_final_config(config: Dict[str, Any]) -> bool:
 def main():
     """主函数"""
     # 验证命令行参数
-    if len(sys.argv) < 2 or sys.argv[1] not in ['daily', 'weekly']:
-        print("用法: python main.py [daily|weekly]")
-        print("  daily  - 仅运行blue2sea任务")
-        print("  weekly - 运行所有需要凭据的任务")
+    if len(sys.argv) < 2 or sys.argv[1] not in ['daily', 'weekly', 'monthly']:
+        print("用法: python main.py [daily|weekly|monthly]")
+        print("  daily   - 仅运行blue2sea任务")
+        print("  weekly  - 运行所有需要凭据的任务")
+        print("  monthly - 仅运行需要续订/购买免费套餐的任务")
         sys.exit(1)
     
     run_mode = sys.argv[1]
@@ -587,8 +588,11 @@ def main():
     # 确定要运行的任务
     if run_mode == 'daily':
         tasks_to_run = ['blue2sea']
+    elif run_mode == 'monthly':
+        # 每月任务只运行那些有购买/续订逻辑的客户端
+        tasks_to_run = ['dabai', 'wwn']
     else:  # weekly
-        tasks_to_run = ['dabai', 'ikuuu', 'louwangzhiyu']
+        tasks_to_run = ['dabai', 'ikuuu', 'louwangzhiyu', 'wwn']
     
     logging.info(f"将运行以下任务: {tasks_to_run}")
     
