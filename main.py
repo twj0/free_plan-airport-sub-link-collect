@@ -616,9 +616,11 @@ def main():
                 categorized_node_names[task_key].append(node_name)
                 break
     
-    # 更新代理组
+    # 更新代理组，并移除没有可用节点的组
+    valid_proxy_groups = []
     for group in base_config.get('proxy-groups', []):
         if not isinstance(group, dict) or 'proxies' not in group:
+            valid_proxy_groups.append(group)
             continue
             
         new_proxies = []
@@ -627,11 +629,21 @@ def main():
                 new_proxies.extend(all_node_names)
             elif proxy_name.startswith("[SITE:"):
                 site_key = proxy_name.replace("[SITE:", "").replace("]", "")
-                new_proxies.extend(categorized_node_names.get(site_key, []))
+                nodes_for_site = categorized_node_names.get(site_key, [])
+                if nodes_for_site:
+                    new_proxies.extend(nodes_for_site)
+                # 如果该站点没有节点，则不添加任何内容
             else:
                 new_proxies.append(proxy_name)
         
-        group['proxies'] = new_proxies
+        # 只有当代理列表不为空时，才更新并保留该组
+        if new_proxies:
+            group['proxies'] = new_proxies
+            valid_proxy_groups.append(group)
+        else:
+            logging.warning(f"代理组 '{group.get('name', 'Unnamed Group')}' 因没有可用的代理节点而被移除。")
+
+    base_config['proxy-groups'] = valid_proxy_groups
     
     # 保存最终配置
     if save_final_config(base_config):

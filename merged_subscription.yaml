@@ -17,7 +17,7 @@ dns:
   - https://doh.pub/dns-query
 proxies:
 - name: '[ikuuu] 🇯🇵 免费-日本1-Ver.7'
-  server: 65wi4-g04.jp01-nn-vm0.entry.fr0528.art
+  server: x0ajh-g04.jp01-nn-vm0.entry.fr0528.art
   port: 21584
   type: vmess
   uuid: 90889b29-9cef-36d5-a005-a8af2d969ca4
@@ -27,7 +27,7 @@ proxies:
   skip-cert-verify: false
   udp: true
 - name: '[ikuuu] 🇯🇵 免费-日本2-Ver.8'
-  server: ux9td-g04.jp02-e3-vm0.entry.fr0528.art
+  server: wy0nw-g04.jp02-e3-vm0.entry.fr0528.art
   port: 11776
   type: vmess
   uuid: 90889b29-9cef-36d5-a005-a8af2d969ca4
@@ -37,7 +37,7 @@ proxies:
   skip-cert-verify: false
   udp: true
 - name: '[ikuuu] 🇯🇵 免费-日本3-Ver.7'
-  server: l8cr5-g04.jp03-j7-vm0.entry.fr0528.art
+  server: 5mi3i-g04.jp03-j7-vm0.entry.fr0528.art
   port: 21584
   type: vmess
   uuid: 90889b29-9cef-36d5-a005-a8af2d969ca4
@@ -47,7 +47,7 @@ proxies:
   skip-cert-verify: false
   udp: true
 - name: '[ikuuu] 🇯🇵 免费-日本4-Ver.8'
-  server: 7a144-g04.jp04-1d-vm0.entry.fr0528.art
+  server: oitgf-g04.jp04-1d-vm0.entry.fr0528.art
   port: 447
   type: vmess
   uuid: 90889b29-9cef-36d5-a005-a8af2d969ca4
@@ -57,7 +57,7 @@ proxies:
   skip-cert-verify: false
   udp: true
 - name: '[ikuuu] 🇯🇵 免费-日本5-Ver.9'
-  server: bu9uc-g04.jp05-h6-vm0.entry.fr0528.art
+  server: hz6w6-g04.jp05-h6-vm0.entry.fr0528.art
   port: 46485
   type: vmess
   uuid: 90889b29-9cef-36d5-a005-a8af2d969ca4
@@ -67,7 +67,7 @@ proxies:
   skip-cert-verify: false
   udp: true
 - name: '[ikuuu] 🇯🇵 免费-日本6-Ver.8'
-  server: 2l8ca-g04.jp06-jz-vm0.entry.fr0528.art
+  server: eb3dw-g04.jp06-jz-vm0.entry.fr0528.art
   port: 28786
   type: vmess
   uuid: 90889b29-9cef-36d5-a005-a8af2d969ca4
@@ -77,7 +77,7 @@ proxies:
   skip-cert-verify: false
   udp: true
 - name: '[ikuuu] 🇯🇵 免费-日本7-Ver.2'
-  server: 8otr3-g04.jp07-sh-vm0.entry.fr0528.art
+  server: nihlw-g04.jp07-sh-vm0.entry.fr0528.art
   port: 28786
   type: vmess
   uuid: 90889b29-9cef-36d5-a005-a8af2d969ca4
@@ -118,9 +118,6 @@ proxy-groups:
   - '[ikuuu] 🇯🇵 免费-日本5-Ver.9'
   - '[ikuuu] 🇯🇵 免费-日本6-Ver.8'
   - '[ikuuu] 🇯🇵 免费-日本7-Ver.2'
-- name: 大白
-  type: select
-  proxies: []
 - name: ikuuu
   type: select
   proxies:
@@ -131,9 +128,6 @@ proxy-groups:
   - '[ikuuu] 🇯🇵 免费-日本5-Ver.9'
   - '[ikuuu] 🇯🇵 免费-日本6-Ver.8'
   - '[ikuuu] 🇯🇵 免费-日本7-Ver.2'
-- name: 漏网之鱼
-  type: select
-  proxies: []
 rules:
 - DOMAIN-SUFFIX,google.com,🔮 PROXY
 - DOMAIN-SUFFIX,github.com,🔮 PROXY
