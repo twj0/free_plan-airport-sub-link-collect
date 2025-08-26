@@ -1,9 +1,9 @@
 name: Daily Subscription Update (Blue2sea)
 
 on:
-  schedule:
+  # schedule:
     # 每天UTC时间18:00运行 (北京时间凌晨2点)
-    - cron: '0 18 * * *'
+    # - cron: '0 18 * * *'
   workflow_dispatch:
 
 jobs:
