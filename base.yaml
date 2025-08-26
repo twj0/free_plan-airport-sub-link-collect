@@ -58,20 +58,16 @@ proxy-groups:
     type: select
     proxies:
       - "[SITE:dabai]"
-      - "所有节点"
-      - "漏网之鱼"
-      - "ikuuu"
       - "🚀 Auto"
+      - "所有节点"
       - "DIRECT"
 
   - name: "ikuuu"
     type: select
     proxies:
       - "[SITE:ikuuu]"
-      - "所有节点"
-      - "漏网之鱼"
-      - "大白"
       - "🚀 Auto"
+      - "所有节点"
       - "DIRECT"
   
   # - name: "华夏联盟"
@@ -83,10 +79,8 @@ proxy-groups:
     type: select
     proxies:
       - "[SITE:louwangzhiyu]"
-      - "所有节点"
-      - "ikuuu"
-      - "大白"
       - "🚀 Auto"
+      - "所有节点"
       - "DIRECT"
 
 
