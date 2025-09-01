@@ -18,530 +18,452 @@ dns:
 proxies:
 - name: '[大白]_1 台湾入口1-🇺🇲 美国|【dabai.in】<<前往官网|GPT+流媒体|共享'
   type: vmess
-  server: s4.db-link02.top
-  port: 2082
-  uuid: a1b99cf4-234c-36a3-8d46-abfb2dd368cb
-  alterId: 0
-  cipher: auto
-  udp: true
-  network: ws
-  ws-path: /dabai.in104.24.202.48
-  ws-headers:
-    Host: 100-182-148-178.s4.db-link02.top
-  ws-opts:
-    path: /dabai.in104.24.202.48
-    headers:
-      Host: 100-182-148-178.s4.db-link02.top
-- name: '[大白]_1 台湾入口2-🇺🇲 美国|【dabai.in】<<前往官网|GPT+流媒体|共享'
-  type: vmess
-  server: s2.cn-db.top
-  port: 8080
-  uuid: a1b99cf4-234c-36a3-8d46-abfb2dd368cb
-  alterId: 0
-  cipher: auto
-  udp: true
-  network: ws
-  ws-path: /dabai.in104.24.192.147
-  ws-headers:
-    Host: 100-8-14-95.s2.cn-db.top
-  ws-opts:
-    path: /dabai.in104.24.192.147
-    headers:
-      Host: 100-8-14-95.s2.cn-db.top
-- name: '[大白]_1 台湾入口1-🇺🇲 美国|【db01.in】<<前往官网|GPT+流媒体|共享'
-  type: vmess
-  server: s5.db-link02.top
-  port: 2082
-  uuid: a1b99cf4-234c-36a3-8d46-abfb2dd368cb
-  alterId: 0
-  cipher: auto
-  udp: true
-  network: ws
-  ws-path: /dabai.in104.20.85.48
-  ws-headers:
-    Host: 100-51-55-254.s5.db-link02.top
-  ws-opts:
-    path: /dabai.in104.20.85.48
-    headers:
-      Host: 100-51-55-254.s5.db-link02.top
-- name: '[大白]_1 台湾入口2-🇺🇲 美国|【db01.in】<<前往官网|GPT+流媒体|共享'
-  type: vmess
-  server: s1.cn-db.top
-  port: 80
-  uuid: a1b99cf4-234c-36a3-8d46-abfb2dd368cb
-  alterId: 0
-  cipher: auto
-  udp: true
-  network: ws
-  ws-path: /dabai.in172.64.3.190
-  ws-headers:
-    Host: 100-66-137-84.s1.cn-db.top
-  ws-opts:
-    path: /dabai.in172.64.3.190
-    headers:
-      Host: 100-66-137-84.s1.cn-db.top
-- name: '[大白]_1 台湾入口1-🇺🇲 美国|【付费用户】油管秒开4K/8K|更多地区接入|GPT+流媒体|共享'
-  type: vmess
   server: s1.db-link01.top
-  port: 8880
-  uuid: a1b99cf4-234c-36a3-8d46-abfb2dd368cb
-  alterId: 0
-  cipher: auto
-  udp: true
-  network: ws
-  ws-path: /dabai.in172.67.73.98
-  ws-headers:
-    Host: 100-130-82-219.s1.db-link01.top
-  ws-opts:
-    path: /dabai.in172.67.73.98
-    headers:
-      Host: 100-130-82-219.s1.db-link01.top
-- name: '[大白]_1 台湾入口2-🇺🇲 美国|【付费用户】油管秒开4K/8K|更多地区接入|GPT+流媒体|共享'
-  type: vmess
-  server: s1.db-link02.top
   port: 2095
   uuid: a1b99cf4-234c-36a3-8d46-abfb2dd368cb
   alterId: 0
   cipher: auto
   udp: true
   network: ws
-  ws-path: /dabai.in104.21.38.183
+  ws-path: /dabai.in104.18.11.208
   ws-headers:
-    Host: 100-91-103-212.s1.db-link02.top
+    Host: 100-143-21-172.s1.db-link01.top
   ws-opts:
-    path: /dabai.in104.21.38.183
+    path: /dabai.in104.18.11.208
     headers:
-      Host: 100-91-103-212.s1.db-link02.top
-- name: '[大白]_1 台湾入口1-🇺🇲 美国|【使用前请更新订阅】每日会变更节点密码|GPT+流媒体|共享'
+      Host: 100-143-21-172.s1.db-link01.top
+- name: '[大白]_1 台湾入口2-🇺🇲 美国|【dabai.in】<<前往官网|GPT+流媒体|共享'
   type: vmess
-  server: s3.db-link01.top
+  server: s2.db-link02.top
   port: 2086
   uuid: a1b99cf4-234c-36a3-8d46-abfb2dd368cb
   alterId: 0
   cipher: auto
   udp: true
   network: ws
-  ws-path: /dabai.in172.67.89.184
+  ws-path: /dabai.in104.25.78.61
   ws-headers:
-    Host: 100-11-115-84.s3.db-link01.top
+    Host: 100-180-9-28.s2.db-link02.top
   ws-opts:
-    path: /dabai.in172.67.89.184
+    path: /dabai.in104.25.78.61
     headers:
-      Host: 100-11-115-84.s3.db-link01.top
+      Host: 100-180-9-28.s2.db-link02.top
+- name: '[大白]_1 台湾入口1-🇺🇲 美国|【db01.in】<<前往官网|GPT+流媒体|共享'
+  type: vmess
+  server: s3.cn-db.top
+  port: 2052
+  uuid: a1b99cf4-234c-36a3-8d46-abfb2dd368cb
+  alterId: 0
+  cipher: auto
+  udp: true
+  network: ws
+  ws-path: /dabai.in104.25.222.131
+  ws-headers:
+    Host: 100-74-163-45.s3.cn-db.top
+  ws-opts:
+    path: /dabai.in104.25.222.131
+    headers:
+      Host: 100-74-163-45.s3.cn-db.top
+- name: '[大白]_1 台湾入口2-🇺🇲 美国|【db01.in】<<前往官网|GPT+流媒体|共享'
+  type: vmess
+  server: s2.cn-db.top
+  port: 2095
+  uuid: a1b99cf4-234c-36a3-8d46-abfb2dd368cb
+  alterId: 0
+  cipher: auto
+  udp: true
+  network: ws
+  ws-path: /dabai.in172.67.65.58
+  ws-headers:
+    Host: 100-169-190-43.s2.cn-db.top
+  ws-opts:
+    path: /dabai.in172.67.65.58
+    headers:
+      Host: 100-169-190-43.s2.cn-db.top
+- name: '[大白]_1 台湾入口1-🇺🇲 美国|【付费用户】油管秒开4K/8K|更多地区接入|GPT+流媒体|共享'
+  type: vmess
+  server: s2.db-link02.top
+  port: 2052
+  uuid: a1b99cf4-234c-36a3-8d46-abfb2dd368cb
+  alterId: 0
+  cipher: auto
+  udp: true
+  network: ws
+  ws-path: /dabai.in104.21.136.248
+  ws-headers:
+    Host: 100-236-177-155.s2.db-link02.top
+  ws-opts:
+    path: /dabai.in104.21.136.248
+    headers:
+      Host: 100-236-177-155.s2.db-link02.top
+- name: '[大白]_1 台湾入口2-🇺🇲 美国|【付费用户】油管秒开4K/8K|更多地区接入|GPT+流媒体|共享'
+  type: vmess
+  server: s1.db-link01.top
+  port: 2095
+  uuid: a1b99cf4-234c-36a3-8d46-abfb2dd368cb
+  alterId: 0
+  cipher: auto
+  udp: true
+  network: ws
+  ws-path: /dabai.in104.21.199.232
+  ws-headers:
+    Host: 100-198-103-55.s1.db-link01.top
+  ws-opts:
+    path: /dabai.in104.21.199.232
+    headers:
+      Host: 100-198-103-55.s1.db-link01.top
+- name: '[大白]_1 台湾入口1-🇺🇲 美国|【使用前请更新订阅】每日会变更节点密码|GPT+流媒体|共享'
+  type: vmess
+  server: s4.db-link01.top
+  port: 2052
+  uuid: a1b99cf4-234c-36a3-8d46-abfb2dd368cb
+  alterId: 0
+  cipher: auto
+  udp: true
+  network: ws
+  ws-path: /dabai.in172.67.70.38
+  ws-headers:
+    Host: 100-3-256-56.s4.db-link01.top
+  ws-opts:
+    path: /dabai.in172.67.70.38
+    headers:
+      Host: 100-3-256-56.s4.db-link01.top
 - name: '[大白]_1 台湾入口2-🇺🇲 美国|【使用前请更新订阅】每日会变更节点密码|GPT+流媒体|共享'
   type: vmess
-  server: s1.cn-db.top
-  port: 2052
+  server: s2.db-link02.top
+  port: 80
   uuid: a1b99cf4-234c-36a3-8d46-abfb2dd368cb
   alterId: 0
   cipher: auto
   udp: true
   network: ws
-  ws-path: /dabai.in104.21.79.222
+  ws-path: /dabai.in104.20.24.180
   ws-headers:
-    Host: 100-158-25-37.s1.cn-db.top
+    Host: 100-175-234-143.s2.db-link02.top
   ws-opts:
-    path: /dabai.in104.21.79.222
+    path: /dabai.in104.20.24.180
     headers:
-      Host: 100-158-25-37.s1.cn-db.top
+      Host: 100-175-234-143.s2.db-link02.top
 - name: '[大白]_1 台湾入口1-🇺🇲 美国|【注册免费领1TB流量】前往-注册|共享'
   type: vmess
-  server: s5.db-link01.top
-  port: 8880
+  server: s3.db-link01.top
+  port: 2095
   uuid: a1b99cf4-234c-36a3-8d46-abfb2dd368cb
   alterId: 0
   cipher: auto
   udp: true
   network: ws
-  ws-path: /dabai.in172.64.46.140
+  ws-path: /dabai.in104.19.19.101
   ws-headers:
-    Host: 100-236-72-32.s5.db-link01.top
+    Host: 100-79-209-231.s3.db-link01.top
   ws-opts:
-    path: /dabai.in172.64.46.140
+    path: /dabai.in104.19.19.101
     headers:
-      Host: 100-236-72-32.s5.db-link01.top
+      Host: 100-79-209-231.s3.db-link01.top
 - name: '[大白]_1 台湾入口2-🇺🇲 美国|【注册免费领1TB流量】前往-注册|共享'
   type: vmess
-  server: s3.db-link01.top
-  port: 8880
+  server: s2.db-link02.top
+  port: 2086
   uuid: a1b99cf4-234c-36a3-8d46-abfb2dd368cb
   alterId: 0
   cipher: auto
   udp: true
   network: ws
-  ws-path: /dabai.in104.24.16.180
+  ws-path: /dabai.in104.21.47.229
   ws-headers:
-    Host: 100-148-12-185.s3.db-link01.top
+    Host: 100-119-197-107.s2.db-link02.top
   ws-opts:
-    path: /dabai.in104.24.16.180
+    path: /dabai.in104.21.47.229
     headers:
-      Host: 100-148-12-185.s3.db-link01.top
+      Host: 100-119-197-107.s2.db-link02.top
 - name: '[大白]_1 台湾入口1-🇺🇲 美国|【节点优先级】按量>[不限量]>[免费]>[公共订阅]|共享'
   type: vmess
-  server: s3.db-link01.top
-  port: 2095
+  server: s4.db-link02.top
+  port: 80
   uuid: a1b99cf4-234c-36a3-8d46-abfb2dd368cb
   alterId: 0
   cipher: auto
   udp: true
   network: ws
-  ws-path: /dabai.in104.21.160.195
+  ws-path: /dabai.in172.67.124.163
   ws-headers:
-    Host: 100-7-78-134.s3.db-link01.top
+    Host: 100-117-141-16.s4.db-link02.top
   ws-opts:
-    path: /dabai.in104.21.160.195
+    path: /dabai.in172.67.124.163
     headers:
-      Host: 100-7-78-134.s3.db-link01.top
+      Host: 100-117-141-16.s4.db-link02.top
 - name: '[大白]_1 台湾入口2-🇺🇲 美国|【节点优先级】按量>[不限量]>[免费]>[公共订阅]|共享'
   type: vmess
-  server: s4.db-link02.top
-  port: 2095
+  server: s5.db-link02.top
+  port: 80
   uuid: a1b99cf4-234c-36a3-8d46-abfb2dd368cb
   alterId: 0
   cipher: auto
   udp: true
   network: ws
-  ws-path: /dabai.in104.21.137.57
+  ws-path: /dabai.in172.64.61.131
   ws-headers:
-    Host: 100-122-253-189.s4.db-link02.top
+    Host: 100-32-197-153.s5.db-link02.top
   ws-opts:
-    path: /dabai.in104.21.137.57
+    path: /dabai.in172.64.61.131
     headers:
-      Host: 100-122-253-189.s4.db-link02.top
+      Host: 100-32-197-153.s5.db-link02.top
 - name: '[大白]_1 台湾入口1-🇺🇲 美国|最低35%-aff招募进行中|共享'
   type: vmess
-  server: s5.cn-db.top
-  port: 2052
+  server: s5.db-link02.top
+  port: 80
   uuid: a1b99cf4-234c-36a3-8d46-abfb2dd368cb
   alterId: 0
   cipher: auto
   udp: true
   network: ws
-  ws-path: /dabai.in104.20.247.199
+  ws-path: /dabai.in104.18.21.106
   ws-headers:
-    Host: 100-115-71-7.s5.cn-db.top
+    Host: 100-211-99-65.s5.db-link02.top
   ws-opts:
-    path: /dabai.in104.20.247.199
+    path: /dabai.in104.18.21.106
     headers:
-      Host: 100-115-71-7.s5.cn-db.top
+      Host: 100-211-99-65.s5.db-link02.top
 - name: '[大白]_1 台湾入口2-🇺🇲 美国|最低35%-aff招募进行中|共享'
   type: vmess
-  server: s5.cn-db.top
+  server: s1.db-link02.top
   port: 8880
   uuid: a1b99cf4-234c-36a3-8d46-abfb2dd368cb
   alterId: 0
   cipher: auto
   udp: true
   network: ws
-  ws-path: /dabai.in172.67.72.157
+  ws-path: /dabai.in104.18.217.245
   ws-headers:
-    Host: 100-4-226-84.s5.cn-db.top
+    Host: 100-65-208-215.s1.db-link02.top
   ws-opts:
-    path: /dabai.in172.67.72.157
+    path: /dabai.in104.18.217.245
     headers:
-      Host: 100-4-226-84.s5.cn-db.top
+      Host: 100-65-208-215.s1.db-link02.top
 - name: '[大白]_2 台湾入口1-🇺🇲 美国|【dabai.in】<<前往官网|GPT+流媒体|共享'
   type: vmess
-  server: s4.cn-db.top
-  port: 8080
+  server: s3.cn-db.top
+  port: 80
   uuid: 607e0ab1-6417-3b40-8937-1632c3b2aa4b
   alterId: 0
   cipher: auto
   udp: true
   network: ws
-  ws-path: /dabai.in172.64.61.59
+  ws-path: /dabai.in172.64.42.76
   ws-headers:
-    Host: 100-41-100-38.s4.cn-db.top
+    Host: 100-87-133-196.s3.cn-db.top
   ws-opts:
-    path: /dabai.in172.64.61.59
+    path: /dabai.in172.64.42.76
     headers:
-      Host: 100-41-100-38.s4.cn-db.top
+      Host: 100-87-133-196.s3.cn-db.top
 - name: '[大白]_2 台湾入口2-🇺🇲 美国|【dabai.in】<<前往官网|GPT+流媒体|共享'
   type: vmess
-  server: s4.db-link02.top
-  port: 8080
+  server: s4.cn-db.top
+  port: 80
   uuid: 607e0ab1-6417-3b40-8937-1632c3b2aa4b
   alterId: 0
   cipher: auto
   udp: true
   network: ws
-  ws-path: /dabai.in104.21.48.237
+  ws-path: /dabai.in104.16.161.172
   ws-headers:
-    Host: 100-230-178-256.s4.db-link02.top
+    Host: 100-242-245-150.s4.cn-db.top
   ws-opts:
-    path: /dabai.in104.21.48.237
+    path: /dabai.in104.16.161.172
     headers:
-      Host: 100-230-178-256.s4.db-link02.top
+      Host: 100-242-245-150.s4.cn-db.top
 - name: '[大白]_2 台湾入口1-🇺🇲 美国|【db01.in】<<前往官网|GPT+流媒体|共享'
   type: vmess
   server: s2.cn-db.top
-  port: 80
-  uuid: 607e0ab1-6417-3b40-8937-1632c3b2aa4b
-  alterId: 0
-  cipher: auto
-  udp: true
-  network: ws
-  ws-path: /dabai.in104.19.179.151
-  ws-headers:
-    Host: 100-34-250-54.s2.cn-db.top
-  ws-opts:
-    path: /dabai.in104.19.179.151
-    headers:
-      Host: 100-34-250-54.s2.cn-db.top
-- name: '[大白]_2 台湾入口2-🇺🇲 美国|【db01.in】<<前往官网|GPT+流媒体|共享'
-  type: vmess
-  server: s2.db-link02.top
-  port: 8080
-  uuid: 607e0ab1-6417-3b40-8937-1632c3b2aa4b
-  alterId: 0
-  cipher: auto
-  udp: true
-  network: ws
-  ws-path: /dabai.in172.64.25.185
-  ws-headers:
-    Host: 100-49-197-40.s2.db-link02.top
-  ws-opts:
-    path: /dabai.in172.64.25.185
-    headers:
-      Host: 100-49-197-40.s2.db-link02.top
-- name: '[大白]_2 台湾入口1-🇺🇲 美国|【付费用户】油管秒开4K/8K|更多地区接入|GPT+流媒体|共享'
-  type: vmess
-  server: s4.db-link01.top
-  port: 80
-  uuid: 607e0ab1-6417-3b40-8937-1632c3b2aa4b
-  alterId: 0
-  cipher: auto
-  udp: true
-  network: ws
-  ws-path: /dabai.in104.24.228.182
-  ws-headers:
-    Host: 100-43-178-207.s4.db-link01.top
-  ws-opts:
-    path: /dabai.in104.24.228.182
-    headers:
-      Host: 100-43-178-207.s4.db-link01.top
-- name: '[大白]_2 台湾入口2-🇺🇲 美国|【付费用户】油管秒开4K/8K|更多地区接入|GPT+流媒体|共享'
-  type: vmess
-  server: s4.db-link02.top
-  port: 8080
-  uuid: 607e0ab1-6417-3b40-8937-1632c3b2aa4b
-  alterId: 0
-  cipher: auto
-  udp: true
-  network: ws
-  ws-path: /dabai.in172.67.106.246
-  ws-headers:
-    Host: 100-113-238-72.s4.db-link02.top
-  ws-opts:
-    path: /dabai.in172.67.106.246
-    headers:
-      Host: 100-113-238-72.s4.db-link02.top
-- name: '[大白]_2 台湾入口1-🇺🇲 美国|【使用前请更新订阅】每日会变更节点密码|GPT+流媒体|共享'
-  type: vmess
-  server: s5.cn-db.top
-  port: 2052
-  uuid: 607e0ab1-6417-3b40-8937-1632c3b2aa4b
-  alterId: 0
-  cipher: auto
-  udp: true
-  network: ws
-  ws-path: /dabai.in104.17.10.48
-  ws-headers:
-    Host: 100-26-243-229.s5.cn-db.top
-  ws-opts:
-    path: /dabai.in104.17.10.48
-    headers:
-      Host: 100-26-243-229.s5.cn-db.top
-- name: '[大白]_2 台湾入口2-🇺🇲 美国|【使用前请更新订阅】每日会变更节点密码|GPT+流媒体|共享'
-  type: vmess
-  server: s4.db-link01.top
-  port: 2086
-  uuid: 607e0ab1-6417-3b40-8937-1632c3b2aa4b
-  alterId: 0
-  cipher: auto
-  udp: true
-  network: ws
-  ws-path: /dabai.in172.67.74.169
-  ws-headers:
-    Host: 100-234-146-66.s4.db-link01.top
-  ws-opts:
-    path: /dabai.in172.67.74.169
-    headers:
-      Host: 100-234-146-66.s4.db-link01.top
-- name: '[大白]_2 台湾入口1-🇺🇲 美国|【注册免费领1TB流量】前往-注册|共享'
-  type: vmess
-  server: s1.db-link01.top
-  port: 8080
-  uuid: 607e0ab1-6417-3b40-8937-1632c3b2aa4b
-  alterId: 0
-  cipher: auto
-  udp: true
-  network: ws
-  ws-path: /dabai.in104.19.40.249
-  ws-headers:
-    Host: 100-163-131-159.s1.db-link01.top
-  ws-opts:
-    path: /dabai.in104.19.40.249
-    headers:
-      Host: 100-163-131-159.s1.db-link01.top
-- name: '[大白]_2 台湾入口2-🇺🇲 美国|【注册免费领1TB流量】前往-注册|共享'
-  type: vmess
-  server: s4.cn-db.top
   port: 2082
   uuid: 607e0ab1-6417-3b40-8937-1632c3b2aa4b
   alterId: 0
   cipher: auto
   udp: true
   network: ws
-  ws-path: /dabai.in172.64.15.123
+  ws-path: /dabai.in104.18.195.242
   ws-headers:
-    Host: 100-242-223-161.s4.cn-db.top
+    Host: 100-89-190-121.s2.cn-db.top
   ws-opts:
-    path: /dabai.in172.64.15.123
+    path: /dabai.in104.18.195.242
     headers:
-      Host: 100-242-223-161.s4.cn-db.top
-- name: '[大白]_2 台湾入口1-🇺🇲 美国|【节点优先级】按量>[不限量]>[免费]>[公共订阅]|共享'
+      Host: 100-89-190-121.s2.cn-db.top
+- name: '[大白]_2 台湾入口2-🇺🇲 美国|【db01.in】<<前往官网|GPT+流媒体|共享'
+  type: vmess
+  server: s5.db-link01.top
+  port: 2086
+  uuid: 607e0ab1-6417-3b40-8937-1632c3b2aa4b
+  alterId: 0
+  cipher: auto
+  udp: true
+  network: ws
+  ws-path: /dabai.in172.67.3.76
+  ws-headers:
+    Host: 100-28-67-136.s5.db-link01.top
+  ws-opts:
+    path: /dabai.in172.67.3.76
+    headers:
+      Host: 100-28-67-136.s5.db-link01.top
+- name: '[大白]_2 台湾入口1-🇺🇲 美国|【付费用户】油管秒开4K/8K|更多地区接入|GPT+流媒体|共享'
+  type: vmess
+  server: s2.cn-db.top
+  port: 80
+  uuid: 607e0ab1-6417-3b40-8937-1632c3b2aa4b
+  alterId: 0
+  cipher: auto
+  udp: true
+  network: ws
+  ws-path: /dabai.in104.20.249.187
+  ws-headers:
+    Host: 100-81-50-216.s2.cn-db.top
+  ws-opts:
+    path: /dabai.in104.20.249.187
+    headers:
+      Host: 100-81-50-216.s2.cn-db.top
+- name: '[大白]_2 台湾入口2-🇺🇲 美国|【付费用户】油管秒开4K/8K|更多地区接入|GPT+流媒体|共享'
+  type: vmess
+  server: s3.cn-db.top
+  port: 80
+  uuid: 607e0ab1-6417-3b40-8937-1632c3b2aa4b
+  alterId: 0
+  cipher: auto
+  udp: true
+  network: ws
+  ws-path: /dabai.in104.24.11.34
+  ws-headers:
+    Host: 100-105-172-200.s3.cn-db.top
+  ws-opts:
+    path: /dabai.in104.24.11.34
+    headers:
+      Host: 100-105-172-200.s3.cn-db.top
+- name: '[大白]_2 台湾入口1-🇺🇲 美国|【使用前请更新订阅】每日会变更节点密码|GPT+流媒体|共享'
+  type: vmess
+  server: s3.cn-db.top
+  port: 80
+  uuid: 607e0ab1-6417-3b40-8937-1632c3b2aa4b
+  alterId: 0
+  cipher: auto
+  udp: true
+  network: ws
+  ws-path: /dabai.in172.64.21.90
+  ws-headers:
+    Host: 100-233-148-57.s3.cn-db.top
+  ws-opts:
+    path: /dabai.in172.64.21.90
+    headers:
+      Host: 100-233-148-57.s3.cn-db.top
+- name: '[大白]_2 台湾入口2-🇺🇲 美国|【使用前请更新订阅】每日会变更节点密码|GPT+流媒体|共享'
   type: vmess
   server: s5.cn-db.top
+  port: 2095
+  uuid: 607e0ab1-6417-3b40-8937-1632c3b2aa4b
+  alterId: 0
+  cipher: auto
+  udp: true
+  network: ws
+  ws-path: /dabai.in104.21.23.199
+  ws-headers:
+    Host: 100-63-165-243.s5.cn-db.top
+  ws-opts:
+    path: /dabai.in104.21.23.199
+    headers:
+      Host: 100-63-165-243.s5.cn-db.top
+- name: '[大白]_2 台湾入口1-🇺🇲 美国|【注册免费领1TB流量】前往-注册|共享'
+  type: vmess
+  server: s5.db-link01.top
+  port: 2095
+  uuid: 607e0ab1-6417-3b40-8937-1632c3b2aa4b
+  alterId: 0
+  cipher: auto
+  udp: true
+  network: ws
+  ws-path: /dabai.in104.25.121.120
+  ws-headers:
+    Host: 100-181-180-15.s5.db-link01.top
+  ws-opts:
+    path: /dabai.in104.25.121.120
+    headers:
+      Host: 100-181-180-15.s5.db-link01.top
+- name: '[大白]_2 台湾入口2-🇺🇲 美国|【注册免费领1TB流量】前往-注册|共享'
+  type: vmess
+  server: s3.cn-db.top
+  port: 80
+  uuid: 607e0ab1-6417-3b40-8937-1632c3b2aa4b
+  alterId: 0
+  cipher: auto
+  udp: true
+  network: ws
+  ws-path: /dabai.in172.67.104.132
+  ws-headers:
+    Host: 100-216-175-134.s3.cn-db.top
+  ws-opts:
+    path: /dabai.in172.67.104.132
+    headers:
+      Host: 100-216-175-134.s3.cn-db.top
+- name: '[大白]_2 台湾入口1-🇺🇲 美国|【节点优先级】按量>[不限量]>[免费]>[公共订阅]|共享'
+  type: vmess
+  server: s1.cn-db.top
+  port: 8080
+  uuid: 607e0ab1-6417-3b40-8937-1632c3b2aa4b
+  alterId: 0
+  cipher: auto
+  udp: true
+  network: ws
+  ws-path: /dabai.in104.25.183.219
+  ws-headers:
+    Host: 100-38-253-150.s1.cn-db.top
+  ws-opts:
+    path: /dabai.in104.25.183.219
+    headers:
+      Host: 100-38-253-150.s1.cn-db.top
+- name: '[大白]_2 台湾入口2-🇺🇲 美国|【节点优先级】按量>[不限量]>[免费]>[公共订阅]|共享'
+  type: vmess
+  server: s5.db-link02.top
   port: 8880
   uuid: 607e0ab1-6417-3b40-8937-1632c3b2aa4b
   alterId: 0
   cipher: auto
   udp: true
   network: ws
-  ws-path: /dabai.in104.18.7.131
+  ws-path: /dabai.in104.24.54.155
   ws-headers:
-    Host: 100-156-192-217.s5.cn-db.top
+    Host: 100-71-112-151.s5.db-link02.top
   ws-opts:
-    path: /dabai.in104.18.7.131
+    path: /dabai.in104.24.54.155
     headers:
-      Host: 100-156-192-217.s5.cn-db.top
-- name: '[大白]_2 台湾入口2-🇺🇲 美国|【节点优先级】按量>[不限量]>[免费]>[公共订阅]|共享'
+      Host: 100-71-112-151.s5.db-link02.top
+- name: '[大白]_2 台湾入口1-🇺🇲 美国|最低35%-aff招募进行中|共享'
   type: vmess
-  server: s3.db-link01.top
+  server: s4.db-link02.top
   port: 2086
   uuid: 607e0ab1-6417-3b40-8937-1632c3b2aa4b
   alterId: 0
   cipher: auto
   udp: true
   network: ws
-  ws-path: /dabai.in172.67.34.25
+  ws-path: /dabai.in172.64.39.1
   ws-headers:
-    Host: 100-49-187-214.s3.db-link01.top
+    Host: 100-128-58-100.s4.db-link02.top
   ws-opts:
-    path: /dabai.in172.67.34.25
+    path: /dabai.in172.64.39.1
     headers:
-      Host: 100-49-187-214.s3.db-link01.top
-- name: '[大白]_2 台湾入口1-🇺🇲 美国|最低35%-aff招募进行中|共享'
-  type: vmess
-  server: s2.db-link02.top
-  port: 2082
-  uuid: 607e0ab1-6417-3b40-8937-1632c3b2aa4b
-  alterId: 0
-  cipher: auto
-  udp: true
-  network: ws
-  ws-path: /dabai.in104.21.155.228
-  ws-headers:
-    Host: 100-53-76-168.s2.db-link02.top
-  ws-opts:
-    path: /dabai.in104.21.155.228
-    headers:
-      Host: 100-53-76-168.s2.db-link02.top
+      Host: 100-128-58-100.s4.db-link02.top
 - name: '[大白]_2 台湾入口2-🇺🇲 美国|最低35%-aff招募进行中|共享'
   type: vmess
-  server: s3.db-link01.top
+  server: s1.cn-db.top
   port: 2052
   uuid: 607e0ab1-6417-3b40-8937-1632c3b2aa4b
   alterId: 0
   cipher: auto
   udp: true
   network: ws
-  ws-path: /dabai.in104.24.184.67
+  ws-path: /dabai.in172.67.62.228
   ws-headers:
-    Host: 100-129-162-95.s3.db-link01.top
+    Host: 100-179-152-157.s1.cn-db.top
   ws-opts:
-    path: /dabai.in104.24.184.67
+    path: /dabai.in172.67.62.228
     headers:
-      Host: 100-129-162-95.s3.db-link01.top
-- name: '[漏网之鱼]_1 剩余流量：100 GB'
-  type: vmess
-  server: 46.17.41.73
-  port: 23168
-  uuid: e68799d7-c43c-428f-8a17-3c5c9cbe5142
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: false
-  ws-opts:
-    path: ''
-    headers:
-      Host: ''
-- name: '[漏网之鱼]_1 套餐到期：长期有效'
-  type: vmess
-  server: 46.17.41.73
-  port: 23168
-  uuid: e68799d7-c43c-428f-8a17-3c5c9cbe5142
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: false
-  ws-opts:
-    path: ''
-    headers:
-      Host: ''
-- name: '[漏网之鱼]_1 过滤掉3条线路'
-  type: vmess
-  server: 46.17.41.73
-  port: 23168
-  uuid: e68799d7-c43c-428f-8a17-3c5c9cbe5142
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: false
-  ws-opts:
-    path: ''
-    headers:
-      Host: ''
-- name: '[漏网之鱼]_1 美国-拉斯维加斯-001'
-  type: vmess
-  server: 46.17.41.73
-  port: 23168
-  uuid: e68799d7-c43c-428f-8a17-3c5c9cbe5142
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: false
-  ws-opts:
-    path: ''
-    headers:
-      Host: ''
-- name: '[漏网之鱼]_1 美国-拉斯维加斯-002'
-  type: vmess
-  server: 46.17.41.73
-  port: 25039
-  uuid: e68799d7-c43c-428f-8a17-3c5c9cbe5142
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: false
-  ws-opts:
-    path: ''
-    headers:
-      Host: ''
-- name: '[漏网之鱼]_1 美国-纽约-001'
-  type: vmess
-  server: 46.17.41.73
-  port: 22105
-  uuid: e68799d7-c43c-428f-8a17-3c5c9cbe5142
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: false
-  ws-opts:
-    path: ''
-    headers:
-      Host: ''
+      Host: 100-179-152-157.s1.cn-db.top
 proxy-groups:
 - name: 🔮 PROXY
   type: select
@@ -583,12 +505,6 @@ proxy-groups:
   - '[大白]_2 台湾入口2-🇺🇲 美国|【节点优先级】按量>[不限量]>[免费]>[公共订阅]|共享'
   - '[大白]_2 台湾入口1-🇺🇲 美国|最低35%-aff招募进行中|共享'
   - '[大白]_2 台湾入口2-🇺🇲 美国|最低35%-aff招募进行中|共享'
-  - '[漏网之鱼]_1 剩余流量：100 GB'
-  - '[漏网之鱼]_1 套餐到期：长期有效'
-  - '[漏网之鱼]_1 过滤掉3条线路'
-  - '[漏网之鱼]_1 美国-拉斯维加斯-001'
-  - '[漏网之鱼]_1 美国-拉斯维加斯-002'
-  - '[漏网之鱼]_1 美国-纽约-001'
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: 所有节点
@@ -622,12 +538,6 @@ proxy-groups:
   - '[大白]_2 台湾入口2-🇺🇲 美国|【节点优先级】按量>[不限量]>[免费]>[公共订阅]|共享'
   - '[大白]_2 台湾入口1-🇺🇲 美国|最低35%-aff招募进行中|共享'
   - '[大白]_2 台湾入口2-🇺🇲 美国|最低35%-aff招募进行中|共享'
-  - '[漏网之鱼]_1 剩余流量：100 GB'
-  - '[漏网之鱼]_1 套餐到期：长期有效'
-  - '[漏网之鱼]_1 过滤掉3条线路'
-  - '[漏网之鱼]_1 美国-拉斯维加斯-001'
-  - '[漏网之鱼]_1 美国-拉斯维加斯-002'
-  - '[漏网之鱼]_1 美国-纽约-001'
 - name: 大白
   type: select
   proxies:
@@ -671,12 +581,6 @@ proxy-groups:
 - name: 漏网之鱼
   type: select
   proxies:
-  - '[漏网之鱼]_1 剩余流量：100 GB'
-  - '[漏网之鱼]_1 套餐到期：长期有效'
-  - '[漏网之鱼]_1 过滤掉3条线路'
-  - '[漏网之鱼]_1 美国-拉斯维加斯-001'
-  - '[漏网之鱼]_1 美国-拉斯维加斯-002'
-  - '[漏网之鱼]_1 美国-纽约-001'
   - 🚀 Auto
   - 所有节点
   - DIRECT
