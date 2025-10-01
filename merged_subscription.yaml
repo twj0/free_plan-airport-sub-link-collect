@@ -16,12 +16,12 @@ dns:
   - https://dns.alidns.com/dns-query
   - https://doh.pub/dns-query
 proxies:
-- name: '[大白]_1 CF优选1-🇺🇲 美国|【注册免费领1TB流量】前往-注册|共享'
+- name: '[大白]_1 WEB限速1-🇺🇲 美国|【注册免费领1TB流量】前往-注册|共享'
   type: vless
-  server: e102df206c.hhouge123.ggff.net
+  server: s4.db-link.in
   port: 443
   uuid: a1b99cf4-234c-36a3-8d46-abfb2dd368cb
-  fragment: 1307
+  fragment: 1274
   client-fingerprint: chrome
   packet-encoding: xudp
   udp: true
@@ -30,27 +30,27 @@ proxies:
   - h2
   - h3
   - http/1.1
-  servername: e102df206c.hhouge123.ggff.net
+  servername: 47c096fe46.shopify.com
   network: ws
-  ws-path: /db1024e102df206c
+  ws-path: /db102447c096fe46
   ws-headers:
-    Host: e102df206c.hhouge123.ggff.net
+    Host: 47c096fe46.shopify.com
     User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-      like Gecko) Chrome/91.0.1307.124 Safari/537.36
+      like Gecko) Opera/75.0.1274.149 Safari/537.36
   ws-opts:
     headers:
-      Host: e102df206c.hhouge123.ggff.net
+      Host: 47c096fe46.shopify.com
       User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/90.0.1307.212 Safari/537.36
-    path: /db1024e102df206c
+        like Gecko) Chrome/91.0.1274.124 Safari/537.36
+    path: /db102447c096fe46
   tls: true
   skip-cert-verify: true
-- name: '[大白]_1 CF优选2-🇺🇲 美国|【注册免费领1TB流量】前往-注册|共享'
+- name: '[大白]_1 WEB限速1-🇺🇲 美国|【节点优先级】按量>[不限量]>[免费]>[公共订阅]|共享'
   type: vless
-  server: bb86b4c03a.dabaius2.sylu.net
+  server: s4.db-link.in
   port: 443
   uuid: a1b99cf4-234c-36a3-8d46-abfb2dd368cb
-  fragment: 1428
+  fragment: 1191
   client-fingerprint: chrome
   packet-encoding: xudp
   udp: true
@@ -59,143 +59,27 @@ proxies:
   - h2
   - h3
   - http/1.1
-  servername: bb86b4c03a.dabaius2.sylu.net
+  servername: b593b077e4.shopify.com
   network: ws
-  ws-path: /db1024bb86b4c03a
+  ws-path: /db1024b593b077e4
   ws-headers:
-    Host: bb86b4c03a.dabaius2.sylu.net
-    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-      like Gecko) Chrome/90.0.1428.212 Safari/537.36
-  ws-opts:
-    headers:
-      Host: bb86b4c03a.dabaius2.sylu.net
-      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Opera/75.0.1428.149 Safari/537.36
-    path: /db1024bb86b4c03a
-  tls: true
-  skip-cert-verify: true
-- name: '[大白]_1 CF优选1-🇺🇲 美国|【节点优先级】按量>[不限量]>[免费]>[公共订阅]|共享'
-  type: vless
-  server: 4b5a2aa9c7.hhouge123.ggff.net
-  port: 443
-  uuid: a1b99cf4-234c-36a3-8d46-abfb2dd368cb
-  fragment: 1326
-  client-fingerprint: chrome
-  packet-encoding: xudp
-  udp: true
-  http3: true
-  alpn:
-  - h2
-  - h3
-  - http/1.1
-  servername: 4b5a2aa9c7.hhouge123.ggff.net
-  network: ws
-  ws-path: /db10244b5a2aa9c7
-  ws-headers:
-    Host: 4b5a2aa9c7.hhouge123.ggff.net
-    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-      like Gecko) Chrome/90.0.1326.212 Safari/537.36
-  ws-opts:
-    headers:
-      Host: 4b5a2aa9c7.hhouge123.ggff.net
-      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/90.0.1326.212 Safari/537.36
-    path: /db10244b5a2aa9c7
-  tls: true
-  skip-cert-verify: true
-- name: '[大白]_1 CF优选2-🇺🇲 美国|【节点优先级】按量>[不限量]>[免费]>[公共订阅]|共享'
-  type: vless
-  server: b303388751.dabaius2.sylu.net
-  port: 443
-  uuid: a1b99cf4-234c-36a3-8d46-abfb2dd368cb
-  fragment: 1437
-  client-fingerprint: chrome
-  packet-encoding: xudp
-  udp: true
-  http3: true
-  alpn:
-  - h2
-  - h3
-  - http/1.1
-  servername: b303388751.dabaius2.sylu.net
-  network: ws
-  ws-path: /db1024b303388751
-  ws-headers:
-    Host: b303388751.dabaius2.sylu.net
-    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-      like Gecko) Chrome/91.0.1437.124 Safari/537.36
-  ws-opts:
-    headers:
-      Host: b303388751.dabaius2.sylu.net
-      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Edge/91.0.1437.59 Safari/537.36
-    path: /db1024b303388751
-  tls: true
-  skip-cert-verify: true
-- name: '[大白]_1 CF优选1-🇺🇲 美国|【dabai.in】<<前往官网|GPT+流媒体|共享'
-  type: vless
-  server: 04e997424b.hhouge123.ggff.net
-  port: 443
-  uuid: a1b99cf4-234c-36a3-8d46-abfb2dd368cb
-  fragment: 1135
-  client-fingerprint: chrome
-  packet-encoding: xudp
-  udp: true
-  http3: true
-  alpn:
-  - h2
-  - h3
-  - http/1.1
-  servername: 04e997424b.hhouge123.ggff.net
-  network: ws
-  ws-path: /db102404e997424b
-  ws-headers:
-    Host: 04e997424b.hhouge123.ggff.net
-    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-      like Gecko) Opera/75.0.1135.149 Safari/537.36
-  ws-opts:
-    headers:
-      Host: 04e997424b.hhouge123.ggff.net
-      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/90.0.1135.212 Safari/537.36
-    path: /db102404e997424b
-  tls: true
-  skip-cert-verify: true
-- name: '[大白]_1 CF优选2-🇺🇲 美国|【dabai.in】<<前往官网|GPT+流媒体|共享'
-  type: vless
-  server: 5ef96de885.dabaius2.sylu.net
-  port: 443
-  uuid: a1b99cf4-234c-36a3-8d46-abfb2dd368cb
-  fragment: 1115
-  client-fingerprint: chrome
-  packet-encoding: xudp
-  udp: true
-  http3: true
-  alpn:
-  - h2
-  - h3
-  - http/1.1
-  servername: 5ef96de885.dabaius2.sylu.net
-  network: ws
-  ws-path: /db10245ef96de885
-  ws-headers:
-    Host: 5ef96de885.dabaius2.sylu.net
-    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:87.0) Gecko/20151115
+    Host: b593b077e4.shopify.com
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:87.0) Gecko/20151191
       Firefox/87.0
   ws-opts:
     headers:
-      Host: 5ef96de885.dabaius2.sylu.net
+      Host: b593b077e4.shopify.com
       User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Opera/75.0.1115.149 Safari/537.36
-    path: /db10245ef96de885
+        like Gecko) Edge/91.0.1191.59 Safari/537.36
+    path: /db1024b593b077e4
   tls: true
   skip-cert-verify: true
-- name: '[大白]_1 CF优选1-🇺🇲 美国|【db01.in】<<前往官网|GPT+流媒体|共享'
+- name: '[大白]_1 WEB限速1-🇺🇲 美国|【dabai.in】<<前往官网|GPT+流媒体|共享'
   type: vless
-  server: a5500b605a.hhouge123.ggff.net
+  server: s4.db-link.in
   port: 443
   uuid: a1b99cf4-234c-36a3-8d46-abfb2dd368cb
-  fragment: 1218
+  fragment: 1243
   client-fingerprint: chrome
   packet-encoding: xudp
   udp: true
@@ -204,27 +88,27 @@ proxies:
   - h2
   - h3
   - http/1.1
-  servername: a5500b605a.hhouge123.ggff.net
+  servername: 5e5de6c296.shopify.com
   network: ws
-  ws-path: /db1024a5500b605a
+  ws-path: /db10245e5de6c296
   ws-headers:
-    Host: a5500b605a.hhouge123.ggff.net
+    Host: 5e5de6c296.shopify.com
     User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-      like Gecko) Opera/75.0.1218.149 Safari/537.36
+      like Gecko) Edge/91.0.1243.59 Safari/537.36
   ws-opts:
     headers:
-      Host: a5500b605a.hhouge123.ggff.net
+      Host: 5e5de6c296.shopify.com
       User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Edge/91.0.1218.59 Safari/537.36
-    path: /db1024a5500b605a
+        like Gecko) Edge/91.0.1243.59 Safari/537.36
+    path: /db10245e5de6c296
   tls: true
   skip-cert-verify: true
-- name: '[大白]_1 CF优选2-🇺🇲 美国|【db01.in】<<前往官网|GPT+流媒体|共享'
+- name: '[大白]_1 WEB限速1-🇺🇲 美国|【db01.in】<<前往官网|GPT+流媒体|共享'
   type: vless
-  server: 00ddaee23b.dabaius2.sylu.net
+  server: s4.db-link.in
   port: 443
   uuid: a1b99cf4-234c-36a3-8d46-abfb2dd368cb
-  fragment: 1360
+  fragment: 1383
   client-fingerprint: chrome
   packet-encoding: xudp
   udp: true
@@ -233,259 +117,27 @@ proxies:
   - h2
   - h3
   - http/1.1
-  servername: 00ddaee23b.dabaius2.sylu.net
+  servername: d3e7b44f09.shopify.com
   network: ws
-  ws-path: /db102400ddaee23b
+  ws-path: /db1024d3e7b44f09
   ws-headers:
-    Host: 00ddaee23b.dabaius2.sylu.net
-    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:87.0) Gecko/20151360
-      Firefox/87.0
-  ws-opts:
-    headers:
-      Host: 00ddaee23b.dabaius2.sylu.net
-      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Edge/91.0.1360.59 Safari/537.36
-    path: /db102400ddaee23b
-  tls: true
-  skip-cert-verify: true
-- name: '[大白]_1 CF优选1-🇺🇲 美国|【使用前请更新订阅】每日会变更节点密码|GPT+流媒体|共享'
-  type: vless
-  server: e1628f09cb.hhouge123.ggff.net
-  port: 443
-  uuid: a1b99cf4-234c-36a3-8d46-abfb2dd368cb
-  fragment: 1428
-  client-fingerprint: chrome
-  packet-encoding: xudp
-  udp: true
-  http3: true
-  alpn:
-  - h2
-  - h3
-  - http/1.1
-  servername: e1628f09cb.hhouge123.ggff.net
-  network: ws
-  ws-path: /db1024e1628f09cb
-  ws-headers:
-    Host: e1628f09cb.hhouge123.ggff.net
+    Host: d3e7b44f09.shopify.com
     User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-      like Gecko) Chrome/90.0.1428.212 Safari/537.36
+      like Gecko) Chrome/90.0.1383.212 Safari/537.36
   ws-opts:
     headers:
-      Host: e1628f09cb.hhouge123.ggff.net
-      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Edge/91.0.1428.59 Safari/537.36
-    path: /db1024e1628f09cb
-  tls: true
-  skip-cert-verify: true
-- name: '[大白]_1 CF优选2-🇺🇲 美国|【使用前请更新订阅】每日会变更节点密码|GPT+流媒体|共享'
-  type: vless
-  server: bcb575dcad.dabaius2.sylu.net
-  port: 443
-  uuid: a1b99cf4-234c-36a3-8d46-abfb2dd368cb
-  fragment: 1331
-  client-fingerprint: chrome
-  packet-encoding: xudp
-  udp: true
-  http3: true
-  alpn:
-  - h2
-  - h3
-  - http/1.1
-  servername: bcb575dcad.dabaius2.sylu.net
-  network: ws
-  ws-path: /db1024bcb575dcad
-  ws-headers:
-    Host: bcb575dcad.dabaius2.sylu.net
-    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-      like Gecko) Opera/75.0.1331.149 Safari/537.36
-  ws-opts:
-    headers:
-      Host: bcb575dcad.dabaius2.sylu.net
-      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Edge/91.0.1331.59 Safari/537.36
-    path: /db1024bcb575dcad
-  tls: true
-  skip-cert-verify: true
-- name: '[大白]_1 CF优选1-🇺🇲 美国|最低35%-aff招募进行中|共享'
-  type: vless
-  server: 2ab9451cc2.hhouge123.ggff.net
-  port: 443
-  uuid: a1b99cf4-234c-36a3-8d46-abfb2dd368cb
-  fragment: 1298
-  client-fingerprint: chrome
-  packet-encoding: xudp
-  udp: true
-  http3: true
-  alpn:
-  - h2
-  - h3
-  - http/1.1
-  servername: 2ab9451cc2.hhouge123.ggff.net
-  network: ws
-  ws-path: /db10242ab9451cc2
-  ws-headers:
-    Host: 2ab9451cc2.hhouge123.ggff.net
-    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-      like Gecko) Opera/75.0.1298.149 Safari/537.36
-  ws-opts:
-    headers:
-      Host: 2ab9451cc2.hhouge123.ggff.net
-      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Edge/91.0.1298.59 Safari/537.36
-    path: /db10242ab9451cc2
-  tls: true
-  skip-cert-verify: true
-- name: '[大白]_1 CF优选2-🇺🇲 美国|最低35%-aff招募进行中|共享'
-  type: vless
-  server: 4e26d4ae6d.dabaius2.sylu.net
-  port: 443
-  uuid: a1b99cf4-234c-36a3-8d46-abfb2dd368cb
-  fragment: 1141
-  client-fingerprint: chrome
-  packet-encoding: xudp
-  udp: true
-  http3: true
-  alpn:
-  - h2
-  - h3
-  - http/1.1
-  servername: 4e26d4ae6d.dabaius2.sylu.net
-  network: ws
-  ws-path: /db10244e26d4ae6d
-  ws-headers:
-    Host: 4e26d4ae6d.dabaius2.sylu.net
-    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:87.0) Gecko/20151141
-      Firefox/87.0
-  ws-opts:
-    headers:
-      Host: 4e26d4ae6d.dabaius2.sylu.net
-      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Opera/75.0.1141.149 Safari/537.36
-    path: /db10244e26d4ae6d
-  tls: true
-  skip-cert-verify: true
-- name: '[大白]_2 CF优选1-🇺🇲 美国|【注册免费领1TB流量】前往-注册|共享'
-  type: vless
-  server: 0cdd02d78a.hhouge123.ggff.net
-  port: 443
-  uuid: 607e0ab1-6417-3b40-8937-1632c3b2aa4b
-  fragment: 1250
-  client-fingerprint: chrome
-  packet-encoding: xudp
-  udp: true
-  http3: true
-  alpn:
-  - h2
-  - h3
-  - http/1.1
-  servername: 0cdd02d78a.hhouge123.ggff.net
-  network: ws
-  ws-path: /db10240cdd02d78a
-  ws-headers:
-    Host: 0cdd02d78a.hhouge123.ggff.net
-    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-      like Gecko) Chrome/90.0.1250.212 Safari/537.36
-  ws-opts:
-    headers:
-      Host: 0cdd02d78a.hhouge123.ggff.net
-      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Opera/75.0.1250.149 Safari/537.36
-    path: /db10240cdd02d78a
-  tls: true
-  skip-cert-verify: true
-- name: '[大白]_2 CF优选2-🇺🇲 美国|【注册免费领1TB流量】前往-注册|共享'
-  type: vless
-  server: db9f6b9cf0.dabaius2.sylu.net
-  port: 443
-  uuid: 607e0ab1-6417-3b40-8937-1632c3b2aa4b
-  fragment: 1475
-  client-fingerprint: chrome
-  packet-encoding: xudp
-  udp: true
-  http3: true
-  alpn:
-  - h2
-  - h3
-  - http/1.1
-  servername: db9f6b9cf0.dabaius2.sylu.net
-  network: ws
-  ws-path: /db1024db9f6b9cf0
-  ws-headers:
-    Host: db9f6b9cf0.dabaius2.sylu.net
-    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:87.0) Gecko/20151475
-      Firefox/87.0
-  ws-opts:
-    headers:
-      Host: db9f6b9cf0.dabaius2.sylu.net
-      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Opera/75.0.1475.149 Safari/537.36
-    path: /db1024db9f6b9cf0
-  tls: true
-  skip-cert-verify: true
-- name: '[大白]_2 CF优选1-🇺🇲 美国|【节点优先级】按量>[不限量]>[免费]>[公共订阅]|共享'
-  type: vless
-  server: 92d130c0ef.hhouge123.ggff.net
-  port: 443
-  uuid: 607e0ab1-6417-3b40-8937-1632c3b2aa4b
-  fragment: 1241
-  client-fingerprint: chrome
-  packet-encoding: xudp
-  udp: true
-  http3: true
-  alpn:
-  - h2
-  - h3
-  - http/1.1
-  servername: 92d130c0ef.hhouge123.ggff.net
-  network: ws
-  ws-path: /db102492d130c0ef
-  ws-headers:
-    Host: 92d130c0ef.hhouge123.ggff.net
-    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-      like Gecko) Edge/91.0.1241.59 Safari/537.36
-  ws-opts:
-    headers:
-      Host: 92d130c0ef.hhouge123.ggff.net
-      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/91.0.1241.124 Safari/537.36
-    path: /db102492d130c0ef
-  tls: true
-  skip-cert-verify: true
-- name: '[大白]_2 CF优选2-🇺🇲 美国|【节点优先级】按量>[不限量]>[免费]>[公共订阅]|共享'
-  type: vless
-  server: aa1218ab8a.dabaius2.sylu.net
-  port: 443
-  uuid: 607e0ab1-6417-3b40-8937-1632c3b2aa4b
-  fragment: 1388
-  client-fingerprint: chrome
-  packet-encoding: xudp
-  udp: true
-  http3: true
-  alpn:
-  - h2
-  - h3
-  - http/1.1
-  servername: aa1218ab8a.dabaius2.sylu.net
-  network: ws
-  ws-path: /db1024aa1218ab8a
-  ws-headers:
-    Host: aa1218ab8a.dabaius2.sylu.net
-    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-      like Gecko) Chrome/90.0.1388.212 Safari/537.36
-  ws-opts:
-    headers:
-      Host: aa1218ab8a.dabaius2.sylu.net
-      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:87.0) Gecko/20151388
+      Host: d3e7b44f09.shopify.com
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:87.0) Gecko/20151383
         Firefox/87.0
-    path: /db1024aa1218ab8a
+    path: /db1024d3e7b44f09
   tls: true
   skip-cert-verify: true
-- name: '[大白]_2 CF优选1-🇺🇲 美国|【dabai.in】<<前往官网|GPT+流媒体|共享'
+- name: '[大白]_1 WEB限速1-🇺🇲 美国|【使用前请更新订阅】每日会变更节点密码|GPT+流媒体|共享'
   type: vless
-  server: f970a48112.hhouge123.ggff.net
+  server: s4.db-link.in
   port: 443
-  uuid: 607e0ab1-6417-3b40-8937-1632c3b2aa4b
-  fragment: 1135
+  uuid: a1b99cf4-234c-36a3-8d46-abfb2dd368cb
+  fragment: 1481
   client-fingerprint: chrome
   packet-encoding: xudp
   udp: true
@@ -494,114 +146,27 @@ proxies:
   - h2
   - h3
   - http/1.1
-  servername: f970a48112.hhouge123.ggff.net
+  servername: c49fe6e527.shopify.com
   network: ws
-  ws-path: /db1024f970a48112
+  ws-path: /db1024c49fe6e527
   ws-headers:
-    Host: f970a48112.hhouge123.ggff.net
-    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-      like Gecko) Chrome/90.0.1135.212 Safari/537.36
-  ws-opts:
-    headers:
-      Host: f970a48112.hhouge123.ggff.net
-      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/91.0.1135.124 Safari/537.36
-    path: /db1024f970a48112
-  tls: true
-  skip-cert-verify: true
-- name: '[大白]_2 CF优选2-🇺🇲 美国|【dabai.in】<<前往官网|GPT+流媒体|共享'
-  type: vless
-  server: 182520e8cd.dabaius2.sylu.net
-  port: 443
-  uuid: 607e0ab1-6417-3b40-8937-1632c3b2aa4b
-  fragment: 1111
-  client-fingerprint: chrome
-  packet-encoding: xudp
-  udp: true
-  http3: true
-  alpn:
-  - h2
-  - h3
-  - http/1.1
-  servername: 182520e8cd.dabaius2.sylu.net
-  network: ws
-  ws-path: /db1024182520e8cd
-  ws-headers:
-    Host: 182520e8cd.dabaius2.sylu.net
-    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-      like Gecko) Edge/91.0.1111.59 Safari/537.36
-  ws-opts:
-    headers:
-      Host: 182520e8cd.dabaius2.sylu.net
-      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/91.0.1111.124 Safari/537.36
-    path: /db1024182520e8cd
-  tls: true
-  skip-cert-verify: true
-- name: '[大白]_2 CF优选1-🇺🇲 美国|【db01.in】<<前往官网|GPT+流媒体|共享'
-  type: vless
-  server: c55c5cd3e6.hhouge123.ggff.net
-  port: 443
-  uuid: 607e0ab1-6417-3b40-8937-1632c3b2aa4b
-  fragment: 1258
-  client-fingerprint: chrome
-  packet-encoding: xudp
-  udp: true
-  http3: true
-  alpn:
-  - h2
-  - h3
-  - http/1.1
-  servername: c55c5cd3e6.hhouge123.ggff.net
-  network: ws
-  ws-path: /db1024c55c5cd3e6
-  ws-headers:
-    Host: c55c5cd3e6.hhouge123.ggff.net
-    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-      like Gecko) Chrome/90.0.1258.212 Safari/537.36
-  ws-opts:
-    headers:
-      Host: c55c5cd3e6.hhouge123.ggff.net
-      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/90.0.1258.212 Safari/537.36
-    path: /db1024c55c5cd3e6
-  tls: true
-  skip-cert-verify: true
-- name: '[大白]_2 CF优选2-🇺🇲 美国|【db01.in】<<前往官网|GPT+流媒体|共享'
-  type: vless
-  server: aa100ba547.dabaius2.sylu.net
-  port: 443
-  uuid: 607e0ab1-6417-3b40-8937-1632c3b2aa4b
-  fragment: 1048
-  client-fingerprint: chrome
-  packet-encoding: xudp
-  udp: true
-  http3: true
-  alpn:
-  - h2
-  - h3
-  - http/1.1
-  servername: aa100ba547.dabaius2.sylu.net
-  network: ws
-  ws-path: /db1024aa100ba547
-  ws-headers:
-    Host: aa100ba547.dabaius2.sylu.net
-    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:87.0) Gecko/20151048
+    Host: c49fe6e527.shopify.com
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:87.0) Gecko/20151481
       Firefox/87.0
   ws-opts:
     headers:
-      Host: aa100ba547.dabaius2.sylu.net
+      Host: c49fe6e527.shopify.com
       User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Opera/75.0.1048.149 Safari/537.36
-    path: /db1024aa100ba547
+        like Gecko) Edge/91.0.1481.59 Safari/537.36
+    path: /db1024c49fe6e527
   tls: true
   skip-cert-verify: true
-- name: '[大白]_2 CF优选1-🇺🇲 美国|【使用前请更新订阅】每日会变更节点密码|GPT+流媒体|共享'
+- name: '[大白]_1 WEB限速1-🇺🇲 美国|最低35%-aff招募进行中|共享'
   type: vless
-  server: 45610a3c8c.hhouge123.ggff.net
+  server: s4.db-link.in
   port: 443
-  uuid: 607e0ab1-6417-3b40-8937-1632c3b2aa4b
-  fragment: 1099
+  uuid: a1b99cf4-234c-36a3-8d46-abfb2dd368cb
+  fragment: 1283
   client-fingerprint: chrome
   packet-encoding: xudp
   udp: true
@@ -610,27 +175,27 @@ proxies:
   - h2
   - h3
   - http/1.1
-  servername: 45610a3c8c.hhouge123.ggff.net
+  servername: 022511da04.shopify.com
   network: ws
-  ws-path: /db102445610a3c8c
+  ws-path: /db1024022511da04
   ws-headers:
-    Host: 45610a3c8c.hhouge123.ggff.net
+    Host: 022511da04.shopify.com
     User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-      like Gecko) Opera/75.0.1099.149 Safari/537.36
+      like Gecko) Chrome/91.0.1283.124 Safari/537.36
   ws-opts:
     headers:
-      Host: 45610a3c8c.hhouge123.ggff.net
+      Host: 022511da04.shopify.com
       User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Opera/75.0.1099.149 Safari/537.36
-    path: /db102445610a3c8c
+        like Gecko) Edge/91.0.1283.59 Safari/537.36
+    path: /db1024022511da04
   tls: true
   skip-cert-verify: true
-- name: '[大白]_2 CF优选2-🇺🇲 美国|【使用前请更新订阅】每日会变更节点密码|GPT+流媒体|共享'
+- name: '[大白]_2 WEB限速1-🇺🇲 美国|【注册免费领1TB流量】前往-注册|共享'
   type: vless
-  server: e014d2c857.dabaius2.sylu.net
+  server: s4.db-link.in
   port: 443
   uuid: 607e0ab1-6417-3b40-8937-1632c3b2aa4b
-  fragment: 1491
+  fragment: 1046
   client-fingerprint: chrome
   packet-encoding: xudp
   udp: true
@@ -639,27 +204,85 @@ proxies:
   - h2
   - h3
   - http/1.1
-  servername: e014d2c857.dabaius2.sylu.net
+  servername: fff9c213a1.shopify.com
   network: ws
-  ws-path: /db1024e014d2c857
+  ws-path: /db1024fff9c213a1
   ws-headers:
-    Host: e014d2c857.dabaius2.sylu.net
+    Host: fff9c213a1.shopify.com
     User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-      like Gecko) Edge/91.0.1491.59 Safari/537.36
+      like Gecko) Opera/75.0.1046.149 Safari/537.36
   ws-opts:
     headers:
-      Host: e014d2c857.dabaius2.sylu.net
-      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:87.0) Gecko/20151491
+      Host: fff9c213a1.shopify.com
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
+        like Gecko) Opera/75.0.1046.149 Safari/537.36
+    path: /db1024fff9c213a1
+  tls: true
+  skip-cert-verify: true
+- name: '[大白]_2 WEB限速1-🇺🇲 美国|【节点优先级】按量>[不限量]>[免费]>[公共订阅]|共享'
+  type: vless
+  server: s4.db-link.in
+  port: 443
+  uuid: 607e0ab1-6417-3b40-8937-1632c3b2aa4b
+  fragment: 1257
+  client-fingerprint: chrome
+  packet-encoding: xudp
+  udp: true
+  http3: true
+  alpn:
+  - h2
+  - h3
+  - http/1.1
+  servername: 7a5621a256.shopify.com
+  network: ws
+  ws-path: /db10247a5621a256
+  ws-headers:
+    Host: 7a5621a256.shopify.com
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
+      like Gecko) Opera/75.0.1257.149 Safari/537.36
+  ws-opts:
+    headers:
+      Host: 7a5621a256.shopify.com
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
+        like Gecko) Edge/91.0.1257.59 Safari/537.36
+    path: /db10247a5621a256
+  tls: true
+  skip-cert-verify: true
+- name: '[大白]_2 WEB限速1-🇺🇲 美国|【dabai.in】<<前往官网|GPT+流媒体|共享'
+  type: vless
+  server: s4.db-link.in
+  port: 443
+  uuid: 607e0ab1-6417-3b40-8937-1632c3b2aa4b
+  fragment: 1447
+  client-fingerprint: chrome
+  packet-encoding: xudp
+  udp: true
+  http3: true
+  alpn:
+  - h2
+  - h3
+  - http/1.1
+  servername: 02eece81a2.shopify.com
+  network: ws
+  ws-path: /db102402eece81a2
+  ws-headers:
+    Host: 02eece81a2.shopify.com
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
+      like Gecko) Chrome/90.0.1447.212 Safari/537.36
+  ws-opts:
+    headers:
+      Host: 02eece81a2.shopify.com
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:87.0) Gecko/20151447
         Firefox/87.0
-    path: /db1024e014d2c857
+    path: /db102402eece81a2
   tls: true
   skip-cert-verify: true
-- name: '[大白]_2 CF优选1-🇺🇲 美国|最低35%-aff招募进行中|共享'
+- name: '[大白]_2 WEB限速1-🇺🇲 美国|【db01.in】<<前往官网|GPT+流媒体|共享'
   type: vless
-  server: 26b4bf9997.hhouge123.ggff.net
+  server: s4.db-link.in
   port: 443
   uuid: 607e0ab1-6417-3b40-8937-1632c3b2aa4b
-  fragment: 1052
+  fragment: 1126
   client-fingerprint: chrome
   packet-encoding: xudp
   udp: true
@@ -668,27 +291,27 @@ proxies:
   - h2
   - h3
   - http/1.1
-  servername: 26b4bf9997.hhouge123.ggff.net
+  servername: 03664ac7d6.shopify.com
   network: ws
-  ws-path: /db102426b4bf9997
+  ws-path: /db102403664ac7d6
   ws-headers:
-    Host: 26b4bf9997.hhouge123.ggff.net
+    Host: 03664ac7d6.shopify.com
     User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-      like Gecko) Chrome/91.0.1052.124 Safari/537.36
+      like Gecko) Chrome/91.0.1126.124 Safari/537.36
   ws-opts:
     headers:
-      Host: 26b4bf9997.hhouge123.ggff.net
+      Host: 03664ac7d6.shopify.com
       User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Opera/75.0.1052.149 Safari/537.36
-    path: /db102426b4bf9997
+        like Gecko) Chrome/91.0.1126.124 Safari/537.36
+    path: /db102403664ac7d6
   tls: true
   skip-cert-verify: true
-- name: '[大白]_2 CF优选2-🇺🇲 美国|最低35%-aff招募进行中|共享'
+- name: '[大白]_2 WEB限速1-🇺🇲 美国|【使用前请更新订阅】每日会变更节点密码|GPT+流媒体|共享'
   type: vless
-  server: 1ed220ca76.dabaius2.sylu.net
+  server: s4.db-link.in
   port: 443
   uuid: 607e0ab1-6417-3b40-8937-1632c3b2aa4b
-  fragment: 1127
+  fragment: 1425
   client-fingerprint: chrome
   packet-encoding: xudp
   udp: true
@@ -697,99 +320,50 @@ proxies:
   - h2
   - h3
   - http/1.1
-  servername: 1ed220ca76.dabaius2.sylu.net
+  servername: af2397156d.shopify.com
   network: ws
-  ws-path: /db10241ed220ca76
+  ws-path: /db1024af2397156d
   ws-headers:
-    Host: 1ed220ca76.dabaius2.sylu.net
+    Host: af2397156d.shopify.com
     User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-      like Gecko) Opera/75.0.1127.149 Safari/537.36
+      like Gecko) Opera/75.0.1425.149 Safari/537.36
   ws-opts:
     headers:
-      Host: 1ed220ca76.dabaius2.sylu.net
-      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Opera/75.0.1127.149 Safari/537.36
-    path: /db10241ed220ca76
+      Host: af2397156d.shopify.com
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:87.0) Gecko/20151425
+        Firefox/87.0
+    path: /db1024af2397156d
   tls: true
   skip-cert-verify: true
-- name: '[漏网之鱼]_1 剩余流量：100 GB'
-  type: vmess
-  server: 212.192.12.251
-  port: 23183
-  uuid: e68799d7-c43c-428f-8a17-3c5c9cbe5142
-  alterId: 0
-  cipher: auto
+- name: '[大白]_2 WEB限速1-🇺🇲 美国|最低35%-aff招募进行中|共享'
+  type: vless
+  server: s4.db-link.in
+  port: 443
+  uuid: 607e0ab1-6417-3b40-8937-1632c3b2aa4b
+  fragment: 1054
+  client-fingerprint: chrome
+  packet-encoding: xudp
+  udp: true
+  http3: true
+  alpn:
+  - h2
+  - h3
+  - http/1.1
+  servername: ab143d2983.shopify.com
   network: ws
-  tls: false
+  ws-path: /db1024ab143d2983
+  ws-headers:
+    Host: ab143d2983.shopify.com
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
+      like Gecko) Opera/75.0.1054.149 Safari/537.36
   ws-opts:
-    path: ''
     headers:
-      Host: ''
-- name: '[漏网之鱼]_1 套餐到期：长期有效'
-  type: vmess
-  server: 212.192.12.251
-  port: 23183
-  uuid: e68799d7-c43c-428f-8a17-3c5c9cbe5142
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: false
-  ws-opts:
-    path: ''
-    headers:
-      Host: ''
-- name: '[漏网之鱼]_1 过滤掉3条线路'
-  type: vmess
-  server: 212.192.12.251
-  port: 23183
-  uuid: e68799d7-c43c-428f-8a17-3c5c9cbe5142
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: false
-  ws-opts:
-    path: ''
-    headers:
-      Host: ''
-- name: '[漏网之鱼]_1 美国-拉斯维加斯-001'
-  type: vmess
-  server: 212.192.12.251
-  port: 23183
-  uuid: e68799d7-c43c-428f-8a17-3c5c9cbe5142
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: false
-  ws-opts:
-    path: ''
-    headers:
-      Host: ''
-- name: '[漏网之鱼]_1 美国-拉斯维加斯-002'
-  type: vmess
-  server: 212.192.12.251
-  port: 25167
-  uuid: e68799d7-c43c-428f-8a17-3c5c9cbe5142
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: false
-  ws-opts:
-    path: ''
-    headers:
-      Host: ''
-- name: '[漏网之鱼]_1 美国-纽约-001'
-  type: vmess
-  server: 212.192.12.251
-  port: 22122
-  uuid: e68799d7-c43c-428f-8a17-3c5c9cbe5142
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: false
-  ws-opts:
-    path: ''
-    headers:
-      Host: ''
+      Host: ab143d2983.shopify.com
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:87.0) Gecko/20151054
+        Firefox/87.0
+    path: /db1024ab143d2983
+  tls: true
+  skip-cert-verify: true
 proxy-groups:
 - name: 🔮 PROXY
   type: select
@@ -803,98 +377,50 @@ proxy-groups:
 - name: 🚀 Auto
   type: url-test
   proxies:
-  - '[大白]_1 CF优选1-🇺🇲 美国|【注册免费领1TB流量】前往-注册|共享'
-  - '[大白]_1 CF优选2-🇺🇲 美国|【注册免费领1TB流量】前往-注册|共享'
-  - '[大白]_1 CF优选1-🇺🇲 美国|【节点优先级】按量>[不限量]>[免费]>[公共订阅]|共享'
-  - '[大白]_1 CF优选2-🇺🇲 美国|【节点优先级】按量>[不限量]>[免费]>[公共订阅]|共享'
-  - '[大白]_1 CF优选1-🇺🇲 美国|【dabai.in】<<前往官网|GPT+流媒体|共享'
-  - '[大白]_1 CF优选2-🇺🇲 美国|【dabai.in】<<前往官网|GPT+流媒体|共享'
-  - '[大白]_1 CF优选1-🇺🇲 美国|【db01.in】<<前往官网|GPT+流媒体|共享'
-  - '[大白]_1 CF优选2-🇺🇲 美国|【db01.in】<<前往官网|GPT+流媒体|共享'
-  - '[大白]_1 CF优选1-🇺🇲 美国|【使用前请更新订阅】每日会变更节点密码|GPT+流媒体|共享'
-  - '[大白]_1 CF优选2-🇺🇲 美国|【使用前请更新订阅】每日会变更节点密码|GPT+流媒体|共享'
-  - '[大白]_1 CF优选1-🇺🇲 美国|最低35%-aff招募进行中|共享'
-  - '[大白]_1 CF优选2-🇺🇲 美国|最低35%-aff招募进行中|共享'
-  - '[大白]_2 CF优选1-🇺🇲 美国|【注册免费领1TB流量】前往-注册|共享'
-  - '[大白]_2 CF优选2-🇺🇲 美国|【注册免费领1TB流量】前往-注册|共享'
-  - '[大白]_2 CF优选1-🇺🇲 美国|【节点优先级】按量>[不限量]>[免费]>[公共订阅]|共享'
-  - '[大白]_2 CF优选2-🇺🇲 美国|【节点优先级】按量>[不限量]>[免费]>[公共订阅]|共享'
-  - '[大白]_2 CF优选1-🇺🇲 美国|【dabai.in】<<前往官网|GPT+流媒体|共享'
-  - '[大白]_2 CF优选2-🇺🇲 美国|【dabai.in】<<前往官网|GPT+流媒体|共享'
-  - '[大白]_2 CF优选1-🇺🇲 美国|【db01.in】<<前往官网|GPT+流媒体|共享'
-  - '[大白]_2 CF优选2-🇺🇲 美国|【db01.in】<<前往官网|GPT+流媒体|共享'
-  - '[大白]_2 CF优选1-🇺🇲 美国|【使用前请更新订阅】每日会变更节点密码|GPT+流媒体|共享'
-  - '[大白]_2 CF优选2-🇺🇲 美国|【使用前请更新订阅】每日会变更节点密码|GPT+流媒体|共享'
-  - '[大白]_2 CF优选1-🇺🇲 美国|最低35%-aff招募进行中|共享'
-  - '[大白]_2 CF优选2-🇺🇲 美国|最低35%-aff招募进行中|共享'
-  - '[漏网之鱼]_1 剩余流量：100 GB'
-  - '[漏网之鱼]_1 套餐到期：长期有效'
-  - '[漏网之鱼]_1 过滤掉3条线路'
-  - '[漏网之鱼]_1 美国-拉斯维加斯-001'
-  - '[漏网之鱼]_1 美国-拉斯维加斯-002'
-  - '[漏网之鱼]_1 美国-纽约-001'
+  - '[大白]_1 WEB限速1-🇺🇲 美国|【注册免费领1TB流量】前往-注册|共享'
+  - '[大白]_1 WEB限速1-🇺🇲 美国|【节点优先级】按量>[不限量]>[免费]>[公共订阅]|共享'
+  - '[大白]_1 WEB限速1-🇺🇲 美国|【dabai.in】<<前往官网|GPT+流媒体|共享'
+  - '[大白]_1 WEB限速1-🇺🇲 美国|【db01.in】<<前往官网|GPT+流媒体|共享'
+  - '[大白]_1 WEB限速1-🇺🇲 美国|【使用前请更新订阅】每日会变更节点密码|GPT+流媒体|共享'
+  - '[大白]_1 WEB限速1-🇺🇲 美国|最低35%-aff招募进行中|共享'
+  - '[大白]_2 WEB限速1-🇺🇲 美国|【注册免费领1TB流量】前往-注册|共享'
+  - '[大白]_2 WEB限速1-🇺🇲 美国|【节点优先级】按量>[不限量]>[免费]>[公共订阅]|共享'
+  - '[大白]_2 WEB限速1-🇺🇲 美国|【dabai.in】<<前往官网|GPT+流媒体|共享'
+  - '[大白]_2 WEB限速1-🇺🇲 美国|【db01.in】<<前往官网|GPT+流媒体|共享'
+  - '[大白]_2 WEB限速1-🇺🇲 美国|【使用前请更新订阅】每日会变更节点密码|GPT+流媒体|共享'
+  - '[大白]_2 WEB限速1-🇺🇲 美国|最低35%-aff招募进行中|共享'
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: 所有节点
   type: select
   proxies:
-  - '[大白]_1 CF优选1-🇺🇲 美国|【注册免费领1TB流量】前往-注册|共享'
-  - '[大白]_1 CF优选2-🇺🇲 美国|【注册免费领1TB流量】前往-注册|共享'
-  - '[大白]_1 CF优选1-🇺🇲 美国|【节点优先级】按量>[不限量]>[免费]>[公共订阅]|共享'
-  - '[大白]_1 CF优选2-🇺🇲 美国|【节点优先级】按量>[不限量]>[免费]>[公共订阅]|共享'
-  - '[大白]_1 CF优选1-🇺🇲 美国|【dabai.in】<<前往官网|GPT+流媒体|共享'
-  - '[大白]_1 CF优选2-🇺🇲 美国|【dabai.in】<<前往官网|GPT+流媒体|共享'
-  - '[大白]_1 CF优选1-🇺🇲 美国|【db01.in】<<前往官网|GPT+流媒体|共享'
-  - '[大白]_1 CF优选2-🇺🇲 美国|【db01.in】<<前往官网|GPT+流媒体|共享'
-  - '[大白]_1 CF优选1-🇺🇲 美国|【使用前请更新订阅】每日会变更节点密码|GPT+流媒体|共享'
-  - '[大白]_1 CF优选2-🇺🇲 美国|【使用前请更新订阅】每日会变更节点密码|GPT+流媒体|共享'
-  - '[大白]_1 CF优选1-🇺🇲 美国|最低35%-aff招募进行中|共享'
-  - '[大白]_1 CF优选2-🇺🇲 美国|最低35%-aff招募进行中|共享'
-  - '[大白]_2 CF优选1-🇺🇲 美国|【注册免费领1TB流量】前往-注册|共享'
-  - '[大白]_2 CF优选2-🇺🇲 美国|【注册免费领1TB流量】前往-注册|共享'
-  - '[大白]_2 CF优选1-🇺🇲 美国|【节点优先级】按量>[不限量]>[免费]>[公共订阅]|共享'
-  - '[大白]_2 CF优选2-🇺🇲 美国|【节点优先级】按量>[不限量]>[免费]>[公共订阅]|共享'
-  - '[大白]_2 CF优选1-🇺🇲 美国|【dabai.in】<<前往官网|GPT+流媒体|共享'
-  - '[大白]_2 CF优选2-🇺🇲 美国|【dabai.in】<<前往官网|GPT+流媒体|共享'
-  - '[大白]_2 CF优选1-🇺🇲 美国|【db01.in】<<前往官网|GPT+流媒体|共享'
-  - '[大白]_2 CF优选2-🇺🇲 美国|【db01.in】<<前往官网|GPT+流媒体|共享'
-  - '[大白]_2 CF优选1-🇺🇲 美国|【使用前请更新订阅】每日会变更节点密码|GPT+流媒体|共享'
-  - '[大白]_2 CF优选2-🇺🇲 美国|【使用前请更新订阅】每日会变更节点密码|GPT+流媒体|共享'
-  - '[大白]_2 CF优选1-🇺🇲 美国|最低35%-aff招募进行中|共享'
-  - '[大白]_2 CF优选2-🇺🇲 美国|最低35%-aff招募进行中|共享'
-  - '[漏网之鱼]_1 剩余流量：100 GB'
-  - '[漏网之鱼]_1 套餐到期：长期有效'
-  - '[漏网之鱼]_1 过滤掉3条线路'
-  - '[漏网之鱼]_1 美国-拉斯维加斯-001'
-  - '[漏网之鱼]_1 美国-拉斯维加斯-002'
-  - '[漏网之鱼]_1 美国-纽约-001'
+  - '[大白]_1 WEB限速1-🇺🇲 美国|【注册免费领1TB流量】前往-注册|共享'
+  - '[大白]_1 WEB限速1-🇺🇲 美国|【节点优先级】按量>[不限量]>[免费]>[公共订阅]|共享'
+  - '[大白]_1 WEB限速1-🇺🇲 美国|【dabai.in】<<前往官网|GPT+流媒体|共享'
+  - '[大白]_1 WEB限速1-🇺🇲 美国|【db01.in】<<前往官网|GPT+流媒体|共享'
+  - '[大白]_1 WEB限速1-🇺🇲 美国|【使用前请更新订阅】每日会变更节点密码|GPT+流媒体|共享'
+  - '[大白]_1 WEB限速1-🇺🇲 美国|最低35%-aff招募进行中|共享'
+  - '[大白]_2 WEB限速1-🇺🇲 美国|【注册免费领1TB流量】前往-注册|共享'
+  - '[大白]_2 WEB限速1-🇺🇲 美国|【节点优先级】按量>[不限量]>[免费]>[公共订阅]|共享'
+  - '[大白]_2 WEB限速1-🇺🇲 美国|【dabai.in】<<前往官网|GPT+流媒体|共享'
+  - '[大白]_2 WEB限速1-🇺🇲 美国|【db01.in】<<前往官网|GPT+流媒体|共享'
+  - '[大白]_2 WEB限速1-🇺🇲 美国|【使用前请更新订阅】每日会变更节点密码|GPT+流媒体|共享'
+  - '[大白]_2 WEB限速1-🇺🇲 美国|最低35%-aff招募进行中|共享'
 - name: 大白
   type: select
   proxies:
-  - '[大白]_1 CF优选1-🇺🇲 美国|【注册免费领1TB流量】前往-注册|共享'
-  - '[大白]_1 CF优选2-🇺🇲 美国|【注册免费领1TB流量】前往-注册|共享'
-  - '[大白]_1 CF优选1-🇺🇲 美国|【节点优先级】按量>[不限量]>[免费]>[公共订阅]|共享'
-  - '[大白]_1 CF优选2-🇺🇲 美国|【节点优先级】按量>[不限量]>[免费]>[公共订阅]|共享'
-  - '[大白]_1 CF优选1-🇺🇲 美国|【dabai.in】<<前往官网|GPT+流媒体|共享'
-  - '[大白]_1 CF优选2-🇺🇲 美国|【dabai.in】<<前往官网|GPT+流媒体|共享'
-  - '[大白]_1 CF优选1-🇺🇲 美国|【db01.in】<<前往官网|GPT+流媒体|共享'
-  - '[大白]_1 CF优选2-🇺🇲 美国|【db01.in】<<前往官网|GPT+流媒体|共享'
-  - '[大白]_1 CF优选1-🇺🇲 美国|【使用前请更新订阅】每日会变更节点密码|GPT+流媒体|共享'
-  - '[大白]_1 CF优选2-🇺🇲 美国|【使用前请更新订阅】每日会变更节点密码|GPT+流媒体|共享'
-  - '[大白]_1 CF优选1-🇺🇲 美国|最低35%-aff招募进行中|共享'
-  - '[大白]_1 CF优选2-🇺🇲 美国|最低35%-aff招募进行中|共享'
-  - '[大白]_2 CF优选1-🇺🇲 美国|【注册免费领1TB流量】前往-注册|共享'
-  - '[大白]_2 CF优选2-🇺🇲 美国|【注册免费领1TB流量】前往-注册|共享'
-  - '[大白]_2 CF优选1-🇺🇲 美国|【节点优先级】按量>[不限量]>[免费]>[公共订阅]|共享'
-  - '[大白]_2 CF优选2-🇺🇲 美国|【节点优先级】按量>[不限量]>[免费]>[公共订阅]|共享'
-  - '[大白]_2 CF优选1-🇺🇲 美国|【dabai.in】<<前往官网|GPT+流媒体|共享'
-  - '[大白]_2 CF优选2-🇺🇲 美国|【dabai.in】<<前往官网|GPT+流媒体|共享'
-  - '[大白]_2 CF优选1-🇺🇲 美国|【db01.in】<<前往官网|GPT+流媒体|共享'
-  - '[大白]_2 CF优选2-🇺🇲 美国|【db01.in】<<前往官网|GPT+流媒体|共享'
-  - '[大白]_2 CF优选1-🇺🇲 美国|【使用前请更新订阅】每日会变更节点密码|GPT+流媒体|共享'
-  - '[大白]_2 CF优选2-🇺🇲 美国|【使用前请更新订阅】每日会变更节点密码|GPT+流媒体|共享'
-  - '[大白]_2 CF优选1-🇺🇲 美国|最低35%-aff招募进行中|共享'
-  - '[大白]_2 CF优选2-🇺🇲 美国|最低35%-aff招募进行中|共享'
+  - '[大白]_1 WEB限速1-🇺🇲 美国|【注册免费领1TB流量】前往-注册|共享'
+  - '[大白]_1 WEB限速1-🇺🇲 美国|【节点优先级】按量>[不限量]>[免费]>[公共订阅]|共享'
+  - '[大白]_1 WEB限速1-🇺🇲 美国|【dabai.in】<<前往官网|GPT+流媒体|共享'
+  - '[大白]_1 WEB限速1-🇺🇲 美国|【db01.in】<<前往官网|GPT+流媒体|共享'
+  - '[大白]_1 WEB限速1-🇺🇲 美国|【使用前请更新订阅】每日会变更节点密码|GPT+流媒体|共享'
+  - '[大白]_1 WEB限速1-🇺🇲 美国|最低35%-aff招募进行中|共享'
+  - '[大白]_2 WEB限速1-🇺🇲 美国|【注册免费领1TB流量】前往-注册|共享'
+  - '[大白]_2 WEB限速1-🇺🇲 美国|【节点优先级】按量>[不限量]>[免费]>[公共订阅]|共享'
+  - '[大白]_2 WEB限速1-🇺🇲 美国|【dabai.in】<<前往官网|GPT+流媒体|共享'
+  - '[大白]_2 WEB限速1-🇺🇲 美国|【db01.in】<<前往官网|GPT+流媒体|共享'
+  - '[大白]_2 WEB限速1-🇺🇲 美国|【使用前请更新订阅】每日会变更节点密码|GPT+流媒体|共享'
+  - '[大白]_2 WEB限速1-🇺🇲 美国|最低35%-aff招募进行中|共享'
   - 🚀 Auto
   - 所有节点
   - DIRECT
@@ -907,12 +433,6 @@ proxy-groups:
 - name: 漏网之鱼
   type: select
   proxies:
-  - '[漏网之鱼]_1 剩余流量：100 GB'
-  - '[漏网之鱼]_1 套餐到期：长期有效'
-  - '[漏网之鱼]_1 过滤掉3条线路'
-  - '[漏网之鱼]_1 美国-拉斯维加斯-001'
-  - '[漏网之鱼]_1 美国-拉斯维加斯-002'
-  - '[漏网之鱼]_1 美国-纽约-001'
   - 🚀 Auto
   - 所有节点
   - DIRECT
