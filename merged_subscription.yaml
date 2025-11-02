@@ -21,7 +21,7 @@ proxies:
   server: s4.db-link.in
   port: 443
   uuid: a1b99cf4-234c-36a3-8d46-abfb2dd368cb
-  fragment: 1081
+  fragment: 1054
   client-fingerprint: chrome
   packet-encoding: xudp
   udp: true
@@ -30,19 +30,19 @@ proxies:
   - h2
   - h3
   - http/1.1
-  servername: 905d51778b.shopify.com
+  servername: 3e24cf187f.shopify.com
   network: ws
-  ws-path: /db1024905d51778b
+  ws-path: /db10243e24cf187f
   ws-headers:
-    Host: 905d51778b.shopify.com
+    Host: 3e24cf187f.shopify.com
     User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-      like Gecko) Chrome/90.0.1081.212 Safari/537.36
+      like Gecko) Chrome/90.0.1054.212 Safari/537.36
   ws-opts:
     headers:
-      Host: 905d51778b.shopify.com
+      Host: 3e24cf187f.shopify.com
       User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/90.0.1081.212 Safari/537.36
-    path: /db1024905d51778b
+        like Gecko) Opera/75.0.1054.149 Safari/537.36
+    path: /db10243e24cf187f
   tls: true
   skip-cert-verify: true
 - name: '[大白]_1 WEB限速1-🇭🇰 香港|【节点优先级】按量>[不限量]>[免费]>[公共订阅]|共享'
@@ -50,7 +50,7 @@ proxies:
   server: s4.db-link.in
   port: 443
   uuid: a1b99cf4-234c-36a3-8d46-abfb2dd368cb
-  fragment: 1079
+  fragment: 1069
   client-fingerprint: chrome
   packet-encoding: xudp
   udp: true
@@ -59,19 +59,19 @@ proxies:
   - h2
   - h3
   - http/1.1
-  servername: 45429ac944.shopify.com
+  servername: 4d4e2c8d02.shopify.com
   network: ws
-  ws-path: /db102445429ac944
+  ws-path: /db10244d4e2c8d02
   ws-headers:
-    Host: 45429ac944.shopify.com
+    Host: 4d4e2c8d02.shopify.com
     User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-      like Gecko) Chrome/91.0.1079.124 Safari/537.36
+      like Gecko) Edge/91.0.1069.59 Safari/537.36
   ws-opts:
     headers:
-      Host: 45429ac944.shopify.com
+      Host: 4d4e2c8d02.shopify.com
       User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/90.0.1079.212 Safari/537.36
-    path: /db102445429ac944
+        like Gecko) Opera/75.0.1069.149 Safari/537.36
+    path: /db10244d4e2c8d02
   tls: true
   skip-cert-verify: true
 - name: '[大白]_1 WEB限速1-🇭🇰 香港|【dabai.in】<<前往官网|GPT+流媒体|共享'
@@ -79,7 +79,7 @@ proxies:
   server: s4.db-link.in
   port: 443
   uuid: a1b99cf4-234c-36a3-8d46-abfb2dd368cb
-  fragment: 1307
+  fragment: 1362
   client-fingerprint: chrome
   packet-encoding: xudp
   udp: true
@@ -88,19 +88,19 @@ proxies:
   - h2
   - h3
   - http/1.1
-  servername: 5d74e57348.shopify.com
+  servername: 6d661233b0.shopify.com
   network: ws
-  ws-path: /db10245d74e57348
+  ws-path: /db10246d661233b0
   ws-headers:
-    Host: 5d74e57348.shopify.com
-    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:87.0) Gecko/20151307
+    Host: 6d661233b0.shopify.com
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:87.0) Gecko/20151362
       Firefox/87.0
   ws-opts:
     headers:
-      Host: 5d74e57348.shopify.com
+      Host: 6d661233b0.shopify.com
       User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Edge/91.0.1307.59 Safari/537.36
-    path: /db10245d74e57348
+        like Gecko) Chrome/90.0.1362.212 Safari/537.36
+    path: /db10246d661233b0
   tls: true
   skip-cert-verify: true
 - name: '[大白]_1 WEB限速1-🇭🇰 香港|【db01.in】<<前往官网|GPT+流媒体|共享'
@@ -108,7 +108,7 @@ proxies:
   server: s4.db-link.in
   port: 443
   uuid: a1b99cf4-234c-36a3-8d46-abfb2dd368cb
-  fragment: 1401
+  fragment: 1169
   client-fingerprint: chrome
   packet-encoding: xudp
   udp: true
@@ -117,19 +117,19 @@ proxies:
   - h2
   - h3
   - http/1.1
-  servername: 88aa53d5d4.shopify.com
+  servername: 2b059db084.shopify.com
   network: ws
-  ws-path: /db102488aa53d5d4
+  ws-path: /db10242b059db084
   ws-headers:
-    Host: 88aa53d5d4.shopify.com
+    Host: 2b059db084.shopify.com
     User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-      like Gecko) Chrome/91.0.1401.124 Safari/537.36
+      like Gecko) Opera/75.0.1169.149 Safari/537.36
   ws-opts:
     headers:
-      Host: 88aa53d5d4.shopify.com
+      Host: 2b059db084.shopify.com
       User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Opera/75.0.1401.149 Safari/537.36
-    path: /db102488aa53d5d4
+        like Gecko) Edge/91.0.1169.59 Safari/537.36
+    path: /db10242b059db084
   tls: true
   skip-cert-verify: true
 - name: '[大白]_1 WEB限速1-🇭🇰 香港|【使用前请更新订阅】每日会变更节点密码|GPT+流媒体|共享'
@@ -137,7 +137,7 @@ proxies:
   server: s4.db-link.in
   port: 443
   uuid: a1b99cf4-234c-36a3-8d46-abfb2dd368cb
-  fragment: 1470
+  fragment: 1443
   client-fingerprint: chrome
   packet-encoding: xudp
   udp: true
@@ -146,19 +146,19 @@ proxies:
   - h2
   - h3
   - http/1.1
-  servername: 149ea48373.shopify.com
+  servername: cb4666968b.shopify.com
   network: ws
-  ws-path: /db1024149ea48373
+  ws-path: /db1024cb4666968b
   ws-headers:
-    Host: 149ea48373.shopify.com
-    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:87.0) Gecko/20151470
-      Firefox/87.0
+    Host: cb4666968b.shopify.com
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
+      like Gecko) Chrome/90.0.1443.212 Safari/537.36
   ws-opts:
     headers:
-      Host: 149ea48373.shopify.com
+      Host: cb4666968b.shopify.com
       User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/90.0.1470.212 Safari/537.36
-    path: /db1024149ea48373
+        like Gecko) Opera/75.0.1443.149 Safari/537.36
+    path: /db1024cb4666968b
   tls: true
   skip-cert-verify: true
 - name: '[大白]_1 WEB限速1-🇭🇰 香港|最低35%-aff招募进行中|共享'
@@ -166,7 +166,7 @@ proxies:
   server: s4.db-link.in
   port: 443
   uuid: a1b99cf4-234c-36a3-8d46-abfb2dd368cb
-  fragment: 1202
+  fragment: 1142
   client-fingerprint: chrome
   packet-encoding: xudp
   udp: true
@@ -175,19 +175,19 @@ proxies:
   - h2
   - h3
   - http/1.1
-  servername: d48c2dd959.shopify.com
+  servername: 5913880dcb.shopify.com
   network: ws
-  ws-path: /db1024d48c2dd959
+  ws-path: /db10245913880dcb
   ws-headers:
-    Host: d48c2dd959.shopify.com
+    Host: 5913880dcb.shopify.com
     User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-      like Gecko) Chrome/90.0.1202.212 Safari/537.36
+      like Gecko) Edge/91.0.1142.59 Safari/537.36
   ws-opts:
     headers:
-      Host: d48c2dd959.shopify.com
+      Host: 5913880dcb.shopify.com
       User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/90.0.1202.212 Safari/537.36
-    path: /db1024d48c2dd959
+        like Gecko) Chrome/91.0.1142.124 Safari/537.36
+    path: /db10245913880dcb
   tls: true
   skip-cert-verify: true
 - name: '[大白]_2 WEB限速1-🇭🇰 香港|【注册免费领1TB流量】前往-注册|共享'
@@ -195,7 +195,7 @@ proxies:
   server: s4.db-link.in
   port: 443
   uuid: 607e0ab1-6417-3b40-8937-1632c3b2aa4b
-  fragment: 1194
+  fragment: 1188
   client-fingerprint: chrome
   packet-encoding: xudp
   udp: true
@@ -204,19 +204,19 @@ proxies:
   - h2
   - h3
   - http/1.1
-  servername: 4e85bbd03a.shopify.com
+  servername: 3558411086.shopify.com
   network: ws
-  ws-path: /db10244e85bbd03a
+  ws-path: /db10243558411086
   ws-headers:
-    Host: 4e85bbd03a.shopify.com
-    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-      like Gecko) Opera/75.0.1194.149 Safari/537.36
+    Host: 3558411086.shopify.com
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:87.0) Gecko/20151188
+      Firefox/87.0
   ws-opts:
     headers:
-      Host: 4e85bbd03a.shopify.com
+      Host: 3558411086.shopify.com
       User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/90.0.1194.212 Safari/537.36
-    path: /db10244e85bbd03a
+        like Gecko) Opera/75.0.1188.149 Safari/537.36
+    path: /db10243558411086
   tls: true
   skip-cert-verify: true
 - name: '[大白]_2 WEB限速1-🇭🇰 香港|【节点优先级】按量>[不限量]>[免费]>[公共订阅]|共享'
@@ -224,7 +224,7 @@ proxies:
   server: s4.db-link.in
   port: 443
   uuid: 607e0ab1-6417-3b40-8937-1632c3b2aa4b
-  fragment: 1111
+  fragment: 1203
   client-fingerprint: chrome
   packet-encoding: xudp
   udp: true
@@ -233,19 +233,19 @@ proxies:
   - h2
   - h3
   - http/1.1
-  servername: f3b1ea1f00.shopify.com
+  servername: 80f2446fd2.shopify.com
   network: ws
-  ws-path: /db1024f3b1ea1f00
+  ws-path: /db102480f2446fd2
   ws-headers:
-    Host: f3b1ea1f00.shopify.com
-    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:87.0) Gecko/20151111
-      Firefox/87.0
+    Host: 80f2446fd2.shopify.com
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
+      like Gecko) Opera/75.0.1203.149 Safari/537.36
   ws-opts:
     headers:
-      Host: f3b1ea1f00.shopify.com
+      Host: 80f2446fd2.shopify.com
       User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Opera/75.0.1111.149 Safari/537.36
-    path: /db1024f3b1ea1f00
+        like Gecko) Chrome/90.0.1203.212 Safari/537.36
+    path: /db102480f2446fd2
   tls: true
   skip-cert-verify: true
 - name: '[大白]_2 WEB限速1-🇭🇰 香港|【dabai.in】<<前往官网|GPT+流媒体|共享'
@@ -253,7 +253,7 @@ proxies:
   server: s4.db-link.in
   port: 443
   uuid: 607e0ab1-6417-3b40-8937-1632c3b2aa4b
-  fragment: 1287
+  fragment: 1190
   client-fingerprint: chrome
   packet-encoding: xudp
   udp: true
@@ -262,19 +262,19 @@ proxies:
   - h2
   - h3
   - http/1.1
-  servername: 405b3edcd3.shopify.com
+  servername: 8ae80928a3.shopify.com
   network: ws
-  ws-path: /db1024405b3edcd3
+  ws-path: /db10248ae80928a3
   ws-headers:
-    Host: 405b3edcd3.shopify.com
+    Host: 8ae80928a3.shopify.com
     User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-      like Gecko) Opera/75.0.1287.149 Safari/537.36
+      like Gecko) Chrome/91.0.1190.124 Safari/537.36
   ws-opts:
     headers:
-      Host: 405b3edcd3.shopify.com
+      Host: 8ae80928a3.shopify.com
       User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/91.0.1287.124 Safari/537.36
-    path: /db1024405b3edcd3
+        like Gecko) Opera/75.0.1190.149 Safari/537.36
+    path: /db10248ae80928a3
   tls: true
   skip-cert-verify: true
 - name: '[大白]_2 WEB限速1-🇭🇰 香港|【db01.in】<<前往官网|GPT+流媒体|共享'
@@ -282,7 +282,7 @@ proxies:
   server: s4.db-link.in
   port: 443
   uuid: 607e0ab1-6417-3b40-8937-1632c3b2aa4b
-  fragment: 1375
+  fragment: 1122
   client-fingerprint: chrome
   packet-encoding: xudp
   udp: true
@@ -291,19 +291,19 @@ proxies:
   - h2
   - h3
   - http/1.1
-  servername: 10c17d8312.shopify.com
+  servername: 9ab1f93a66.shopify.com
   network: ws
-  ws-path: /db102410c17d8312
+  ws-path: /db10249ab1f93a66
   ws-headers:
-    Host: 10c17d8312.shopify.com
-    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:87.0) Gecko/20151375
-      Firefox/87.0
+    Host: 9ab1f93a66.shopify.com
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
+      like Gecko) Edge/91.0.1122.59 Safari/537.36
   ws-opts:
     headers:
-      Host: 10c17d8312.shopify.com
-      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/91.0.1375.124 Safari/537.36
-    path: /db102410c17d8312
+      Host: 9ab1f93a66.shopify.com
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:87.0) Gecko/20151122
+        Firefox/87.0
+    path: /db10249ab1f93a66
   tls: true
   skip-cert-verify: true
 - name: '[大白]_2 WEB限速1-🇭🇰 香港|【使用前请更新订阅】每日会变更节点密码|GPT+流媒体|共享'
@@ -311,7 +311,7 @@ proxies:
   server: s4.db-link.in
   port: 443
   uuid: 607e0ab1-6417-3b40-8937-1632c3b2aa4b
-  fragment: 1375
+  fragment: 1341
   client-fingerprint: chrome
   packet-encoding: xudp
   udp: true
@@ -320,19 +320,19 @@ proxies:
   - h2
   - h3
   - http/1.1
-  servername: 774130c1d8.shopify.com
+  servername: eec82a3dbd.shopify.com
   network: ws
-  ws-path: /db1024774130c1d8
+  ws-path: /db1024eec82a3dbd
   ws-headers:
-    Host: 774130c1d8.shopify.com
+    Host: eec82a3dbd.shopify.com
     User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-      like Gecko) Chrome/91.0.1375.124 Safari/537.36
+      like Gecko) Opera/75.0.1341.149 Safari/537.36
   ws-opts:
     headers:
-      Host: 774130c1d8.shopify.com
+      Host: eec82a3dbd.shopify.com
       User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/90.0.1375.212 Safari/537.36
-    path: /db1024774130c1d8
+        like Gecko) Edge/91.0.1341.59 Safari/537.36
+    path: /db1024eec82a3dbd
   tls: true
   skip-cert-verify: true
 - name: '[大白]_2 WEB限速1-🇭🇰 香港|最低35%-aff招募进行中|共享'
@@ -349,21 +349,125 @@ proxies:
   - h2
   - h3
   - http/1.1
-  servername: 696ad84bae.shopify.com
+  servername: 4211c7256a.shopify.com
   network: ws
-  ws-path: /db1024696ad84bae
+  ws-path: /db10244211c7256a
   ws-headers:
-    Host: 696ad84bae.shopify.com
+    Host: 4211c7256a.shopify.com
     User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-      like Gecko) Opera/75.0.1423.149 Safari/537.36
+      like Gecko) Edge/91.0.1423.59 Safari/537.36
   ws-opts:
     headers:
-      Host: 696ad84bae.shopify.com
+      Host: 4211c7256a.shopify.com
       User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/90.0.1423.212 Safari/537.36
-    path: /db1024696ad84bae
+        like Gecko) Opera/75.0.1423.149 Safari/537.36
+    path: /db10244211c7256a
   tls: true
   skip-cert-verify: true
+- name: '[漏网之鱼]_1 剩余流量：100 GB'
+  type: vmess
+  server: 212.192.13.86
+  port: 23187
+  uuid: e68799d7-c43c-428f-8a17-3c5c9cbe5142
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: false
+  ws-opts:
+    path: ''
+    headers:
+      Host: ''
+- name: '[漏网之鱼]_1 套餐到期：长期有效'
+  type: vmess
+  server: 212.192.13.86
+  port: 23187
+  uuid: e68799d7-c43c-428f-8a17-3c5c9cbe5142
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: false
+  ws-opts:
+    path: ''
+    headers:
+      Host: ''
+- name: '[漏网之鱼]_1 过滤掉3条线路'
+  type: vmess
+  server: 212.192.13.86
+  port: 23187
+  uuid: e68799d7-c43c-428f-8a17-3c5c9cbe5142
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: false
+  ws-opts:
+    path: ''
+    headers:
+      Host: ''
+- name: '[漏网之鱼]_1 美国-拉斯维加斯-001'
+  type: vmess
+  server: 212.192.13.86
+  port: 23187
+  uuid: e68799d7-c43c-428f-8a17-3c5c9cbe5142
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: false
+  ws-opts:
+    path: ''
+    headers:
+      Host: ''
+- name: '[漏网之鱼]_1 美国-拉斯维加斯-002'
+  type: vmess
+  server: 212.192.13.86
+  port: 25170
+  uuid: e68799d7-c43c-428f-8a17-3c5c9cbe5142
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: false
+  ws-opts:
+    path: ''
+    headers:
+      Host: ''
+- name: '[漏网之鱼]_1 美国-纽约-001'
+  type: vmess
+  server: 212.192.13.86
+  port: 22128
+  uuid: e68799d7-c43c-428f-8a17-3c5c9cbe5142
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: false
+  ws-opts:
+    path: ''
+    headers:
+      Host: ''
+- name: '[漏网之鱼]_1 ❤️故障报修邮箱❤️'
+  type: vmess
+  server: 212.192.15.176
+  port: 26123
+  uuid: e68799d7-c43c-428f-8a17-3c5c9cbe5142
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: false
+  ws-opts:
+    path: ''
+    headers:
+      Host: ''
+- name: '[漏网之鱼]_1 邮箱:louwangzhiyu.org@gmail.com'
+  type: vmess
+  server: 212.192.13.86
+  port: 27123
+  uuid: e68799d7-c43c-428f-8a17-3c5c9cbe5142
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: false
+  ws-opts:
+    path: ''
+    headers:
+      Host: ''
 proxy-groups:
 - name: 🔮 PROXY
   type: select
@@ -389,6 +493,14 @@ proxy-groups:
   - '[大白]_2 WEB限速1-🇭🇰 香港|【db01.in】<<前往官网|GPT+流媒体|共享'
   - '[大白]_2 WEB限速1-🇭🇰 香港|【使用前请更新订阅】每日会变更节点密码|GPT+流媒体|共享'
   - '[大白]_2 WEB限速1-🇭🇰 香港|最低35%-aff招募进行中|共享'
+  - '[漏网之鱼]_1 剩余流量：100 GB'
+  - '[漏网之鱼]_1 套餐到期：长期有效'
+  - '[漏网之鱼]_1 过滤掉3条线路'
+  - '[漏网之鱼]_1 美国-拉斯维加斯-001'
+  - '[漏网之鱼]_1 美国-拉斯维加斯-002'
+  - '[漏网之鱼]_1 美国-纽约-001'
+  - '[漏网之鱼]_1 ❤️故障报修邮箱❤️'
+  - '[漏网之鱼]_1 邮箱:louwangzhiyu.org@gmail.com'
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: 所有节点
@@ -406,6 +518,14 @@ proxy-groups:
   - '[大白]_2 WEB限速1-🇭🇰 香港|【db01.in】<<前往官网|GPT+流媒体|共享'
   - '[大白]_2 WEB限速1-🇭🇰 香港|【使用前请更新订阅】每日会变更节点密码|GPT+流媒体|共享'
   - '[大白]_2 WEB限速1-🇭🇰 香港|最低35%-aff招募进行中|共享'
+  - '[漏网之鱼]_1 剩余流量：100 GB'
+  - '[漏网之鱼]_1 套餐到期：长期有效'
+  - '[漏网之鱼]_1 过滤掉3条线路'
+  - '[漏网之鱼]_1 美国-拉斯维加斯-001'
+  - '[漏网之鱼]_1 美国-拉斯维加斯-002'
+  - '[漏网之鱼]_1 美国-纽约-001'
+  - '[漏网之鱼]_1 ❤️故障报修邮箱❤️'
+  - '[漏网之鱼]_1 邮箱:louwangzhiyu.org@gmail.com'
 - name: 大白
   type: select
   proxies:
@@ -433,6 +553,14 @@ proxy-groups:
 - name: 漏网之鱼
   type: select
   proxies:
+  - '[漏网之鱼]_1 剩余流量：100 GB'
+  - '[漏网之鱼]_1 套餐到期：长期有效'
+  - '[漏网之鱼]_1 过滤掉3条线路'
+  - '[漏网之鱼]_1 美国-拉斯维加斯-001'
+  - '[漏网之鱼]_1 美国-拉斯维加斯-002'
+  - '[漏网之鱼]_1 美国-纽约-001'
+  - '[漏网之鱼]_1 ❤️故障报修邮箱❤️'
+  - '[漏网之鱼]_1 邮箱:louwangzhiyu.org@gmail.com'
   - 🚀 Auto
   - 所有节点
   - DIRECT
